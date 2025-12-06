@@ -205,7 +205,10 @@
 
 /obj/item/storage/pouch/ammo/marksman
 	name = "marksman's knife pouch"
-	unique_reskin = NONE
+
+/obj/item/storage/pouch/ammo/marksman/Initialize(mapload)
+	. = ..()
+	qdel(GetComponent(/datum/component/reskinable_item))
 
 /obj/item/storage/pouch/ammo/marksman/Initialize(mapload)
 	. = ..()

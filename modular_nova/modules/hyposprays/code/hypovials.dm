@@ -1,3 +1,42 @@
+/datum/atom_skin/hypovial
+	abstract_type = /datum/atom_skin/hypovial
+
+/datum/atom_skin/hypovial/sterile
+	preview_name = "Sterile"
+	new_icon_state = "hypovial"
+
+/datum/atom_skin/hypovial/generic
+	preview_name = "Generic"
+	new_icon_state = "hypovial-generic"
+
+/datum/atom_skin/hypovial/brute
+	preview_name = "Brute"
+	new_icon_state = "hypovial-brute"
+
+/datum/atom_skin/hypovial/burn
+	preview_name = "Burn"
+	new_icon_state = "hypovial-burn"
+
+/datum/atom_skin/hypovial/tox
+	preview_name = "Toxin"
+	new_icon_state = "hypovial-tox"
+
+/datum/atom_skin/hypovial/oxy
+	preview_name = "Oxyloss"
+	new_icon_state = "hypovial-oxy"
+
+/datum/atom_skin/hypovial/crit
+	preview_name = "Crit"
+	new_icon_state = "hypovial-crit"
+
+/datum/atom_skin/hypovial/buff
+	preview_name = "Buff"
+	new_icon_state = "hypovial-buff"
+
+/datum/atom_skin/hypovial/custom
+	preview_name = "Custom"
+	new_icon_state = "hypovial-custom"
+
 /obj/item/reagent_containers/cup/vial
 	name = "broken hypovial"
 	desc = "You probably shouldn't be seeing this. Shout at a coder."
@@ -14,17 +53,10 @@
 	fill_icon = 'modular_nova/modules/hyposprays/icons/hypospray_fillings.dmi'
 	current_skin = "hypovial"
 
-	unique_reskin = list(
-		"Sterile" = "hypovial",
-		"Generic" = "hypovial-generic",
-		"Brute" = "hypovial-brute",
-		"Burn" = "hypovial-burn",
-		"Toxin" = "hypovial-tox",
-		"Oxyloss" = "hypovial-oxy",
-		"Crit" = "hypovial-crit",
-		"Buff" = "hypovial-buff",
-		"Custom" = "hypovial-custom",
-	)
+/obj/item/reagent_containers/cup/vial/Initialize(mapload)
+	. = ..()
+	AddComponent(/datum/component/reskinable_item, /datum/atom_skin/hypovial)
+
 	/// The original icon file where our overlays reside.
 	var/original_icon = 'modular_nova/modules/hyposprays/icons/vials.dmi'
 
@@ -112,6 +144,46 @@
 	icon_state = "hypovial-buff"
 
 //Fit in CMO hypo only
+
+/datum/atom_skin/large
+	abstract_type = /datum/atom_skin/large
+
+/datum/atom_skin/large/hypoviallarge
+	preview_name = "Sterile"
+	new_icon_state = "hypoviallarge"
+
+/datum/atom_skin/large/hypoviallarge_generic
+	preview_name = "Generic"
+	new_icon_state = "hypoviallarge-generic"
+
+/datum/atom_skin/large/hypoviallarge_brute
+	preview_name = "Brute"
+	new_icon_state = "hypoviallarge-brute"
+
+/datum/atom_skin/large/hypoviallarge_burn
+	preview_name = "Burn"
+	new_icon_state = "hypoviallarge-burn"
+
+/datum/atom_skin/large/hypoviallarge_tox
+	preview_name = "Toxin"
+	new_icon_state = "hypoviallarge-tox"
+
+/datum/atom_skin/large/hypoviallarge_oxy
+	preview_name = "Oxyloss"
+	new_icon_state = "hypoviallarge-oxy"
+
+/datum/atom_skin/large/hypoviallarge_crit
+	preview_name = "Crit"
+	new_icon_state = "hypoviallarge-crit"
+
+/datum/atom_skin/large/hypoviallarge_buff
+	preview_name = "Buff"
+	new_icon_state = "hypoviallarge-buff"
+
+/datum/atom_skin/large/hypoviallarge_custom
+	preview_name = "Custom"
+	new_icon_state = "hypoviallarge-custom"
+
 /obj/item/reagent_containers/cup/vial/large
 	name = "large hypovial"
 	icon_state = "hypoviallarge"
@@ -122,17 +194,10 @@
 	possible_transfer_amounts = list(5,10,15,20,30,40,60,120)
 	type_suffix = "-l"
 
-	unique_reskin = list(
-		"Sterile" = "hypoviallarge",
-		"Generic" = "hypoviallarge-generic",
-		"Brute" = "hypoviallarge-brute",
-		"Burn" = "hypoviallarge-burn",
-		"Toxin" = "hypoviallarge-tox",
-		"Oxyloss" = "hypoviallarge-oxy",
-		"Crit" = "hypoviallarge-crit",
-		"Buff" = "hypoviallarge-buff",
-		"Custom" = "hypoviallarge-custom",
-	)
+/obj/item/reagent_containers/cup/vial/large/Initialize(mapload)
+	. = ..()
+	AddComponent(/datum/component/reskinable_item, /datum/atom_skin/large)
+
 
 /obj/item/reagent_containers/cup/vial/large/style/
 	icon_state = "hypoviallarge"
@@ -154,6 +219,46 @@
 	icon_state = "hypoviallarge-buff"
 
 //Interdyne exclusive
+
+/datum/atom_skin/interdyne_medium
+	abstract_type = /datum/atom_skin/interdyne_medium
+
+/datum/atom_skin/interdyne_medium/hypovial_interdyne
+	preview_name = "Sterile"
+	new_icon_state = "hypovial-interdyne"
+
+/datum/atom_skin/interdyne_medium/hypovial_interdyne_generic
+	preview_name = "Generic"
+	new_icon_state = "hypovial-interdyne-generic"
+
+/datum/atom_skin/interdyne_medium/hypovial_interdyne_brute
+	preview_name = "Brute"
+	new_icon_state = "hypovial-interdyne-brute"
+
+/datum/atom_skin/interdyne_medium/hypovial_interdyne_burn
+	preview_name = "Burn"
+	new_icon_state = "hypovial-interdyne-burn"
+
+/datum/atom_skin/interdyne_medium/hypovial_interdyne_tox
+	preview_name = "Toxin"
+	new_icon_state = "hypovial-interdyne-tox"
+
+/datum/atom_skin/interdyne_medium/hypovial_interdyne_oxy
+	preview_name = "Oxyloss"
+	new_icon_state = "hypovial-interdyne-oxy"
+
+/datum/atom_skin/interdyne_medium/hypovial_interdyne_crit
+	preview_name = "Crit"
+	new_icon_state = "hypovial-interdyne-crit"
+
+/datum/atom_skin/interdyne_medium/hypovial_interdyne_buff
+	preview_name = "Buff"
+	new_icon_state = "hypovial-interdyne-buff"
+
+/datum/atom_skin/interdyne_medium/hypovial_interdyne_custom
+	preview_name = "Custom"
+	new_icon_state = "hypovial-interdyne-custom"
+
 /obj/item/reagent_containers/cup/vial/interdyne_medium
 	name = "medium mountable hypovial"
 	icon_state = "hypovial-interdyne"
@@ -164,17 +269,10 @@
 	possible_transfer_amounts = list(1,2,5,10,15,20,30,60,90)
 	type_suffix = "-interdyne"
 
-	unique_reskin = list(
-		"Sterile" = "hypovial-interdyne",
-		"Generic" = "hypovial-interdyne-generic",
-		"Brute" = "hypovial-interdyne-brute",
-		"Burn" = "hypovial-interdyne-burn",
-		"Toxin" = "hypovial-interdyne-tox",
-		"Oxyloss" = "hypovial-interdyne-oxy",
-		"Crit" = "hypovial-interdyne-crit",
-		"Buff" = "hypovial-interdyne-buff",
-		"Custom" = "hypovial-interdyne-custom",
-	)
+/obj/item/reagent_containers/cup/vial/interdyne_medium/Initialize(mapload)
+	. = ..()
+	AddComponent(/datum/component/reskinable_item, /datum/atom_skin/interdyne_medium)
+
 
 /obj/item/reagent_containers/cup/vial/interdyne_medium/style/
 	icon_state = "hypovial-interdyne"

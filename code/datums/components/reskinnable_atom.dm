@@ -24,6 +24,10 @@
 	var/new_icon
 	/// Optional, icon_state to change the atom to when applied
 	var/new_icon_state
+	// NOVA EDIT ADDITION START
+	/// Optional, worn icon to change the atom to when applied
+	var/new_worn_icon
+	// NOVA EDIT ADDITION
 
 /**
  * Applies all relevant skin changes to the given atom
