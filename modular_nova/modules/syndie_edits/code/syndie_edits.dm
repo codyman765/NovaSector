@@ -102,10 +102,7 @@
 	worn_icon = 'modular_nova/master_files/icons/mob/clothing/belt.dmi'
 	icon_state = "webbingds"
 	worn_icon_state = "webbingds"
-
-/obj/item/storage/belt/security/webbing/ds/Initialize(mapload)
-	. = ..()
-	qdel(GetComponent(/datum/component/reskinable_item))
+	can_reskin = FALSE
 
 /obj/item/clothing/suit/armor/bulletproof/old
 	desc = "A Type III heavy bulletproof vest that excels in protecting the wearer against traditional projectile weaponry and explosives to a minor extent."
@@ -283,10 +280,7 @@
 	icon = 'modular_nova/master_files/icons/obj/clothing/suits/armor.dmi'
 	worn_icon = 'modular_nova/master_files/icons/mob/clothing/suits/armor.dmi'
 	worn_icon_teshari = 'modular_nova/master_files/icons/mob/clothing/species/teshari/suit.dmi'
-
-/obj/item/clothing/suit/armor/hos/deckofficer/Initialize(mapload)
-	. = ..()
-	qdel(GetComponent(/datum/component/reskinable_item))
+	can_reskin = FALSE
 
 /obj/item/clothing/suit/toggle/labcoat/nova/interdyne_labcoat/black
 	name = "interdyne black labcoat"

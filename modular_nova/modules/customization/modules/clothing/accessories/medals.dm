@@ -198,46 +198,47 @@ Potential future ideas:
 // Special Medals
 */
 
-/datum/atom_skin/glowcrystal_necklace
-	abstract_type = /datum/atom_skin/glowcrystal_necklace
+/datum/atom_skin/glow_crystal_necklace
+	abstract_type = /datum/atom_skin/glow_crystal_necklace
+	greyscale_item_path = /obj/item/clothing/accessory/nova/acc_medal/glowcrystal
 
-/datum/atom_skin/glowcrystal_necklace/necklace_crystal
+/datum/atom_skin/glow_crystal_necklace/necklace_crystal
 	preview_name = "Crystal"
 	new_icon_state = "necklace_crystal"
 
-/datum/atom_skin/glowcrystal_necklace/necklace_bar
+/datum/atom_skin/glow_crystal_necklace/necklace_bar
 	preview_name = "Bar"
 	new_icon_state = "necklace_bar"
 
-/datum/atom_skin/glowcrystal_necklace/necklace_bar_hollow
+/datum/atom_skin/glow_crystal_necklace/necklace_bar_hollow
 	preview_name = "Hollow Bar"
 	new_icon_state = "necklace_bar_hollow"
 
-/datum/atom_skin/glowcrystal_necklace/necklace_diamond
+/datum/atom_skin/glow_crystal_necklace/necklace_diamond
 	preview_name = "Diamond"
 	new_icon_state = "necklace_diamond"
 
-/datum/atom_skin/glowcrystal_necklace/necklace_diamond_hollow
+/datum/atom_skin/glow_crystal_necklace/necklace_diamond_hollow
 	preview_name = "Hollow Diamond"
 	new_icon_state = "necklace_diamond_hollow"
 
-/datum/atom_skin/glowcrystal_necklace/necklace_shard
+/datum/atom_skin/glow_crystal_necklace/necklace_shard
 	preview_name = "Shard"
 	new_icon_state = "necklace_shard"
 
-/datum/atom_skin/glowcrystal_necklace/necklace_shard_hollow
+/datum/atom_skin/glow_crystal_necklace/necklace_shard_hollow
 	preview_name = "Hollow Shard"
 	new_icon_state = "necklace_shard_hollow"
 
-/datum/atom_skin/glowcrystal_necklace/necklace_triangle
+/datum/atom_skin/glow_crystal_necklace/necklace_triangle
 	preview_name = "Triangle"
 	new_icon_state = "necklace_triangle"
 
-/datum/atom_skin/glowcrystal_necklace/necklace_triangle_hollow
+/datum/atom_skin/glow_crystal_necklace/necklace_triangle_hollow
 	preview_name = "Hollow Triangle"
 	new_icon_state = "necklace_triangle_hollow"
 
-/datum/atom_skin/glowcrystal_necklace/necklace_circle
+/datum/atom_skin/glow_crystal_necklace/necklace_circle
 	preview_name = "Circle"
 	new_icon_state = "necklace_circle"
 
@@ -253,7 +254,7 @@ Potential future ideas:
 
 /obj/item/clothing/accessory/nova/acc_medal/glowcrystal/Initialize(mapload)
 	. = ..()
-	AddComponent(/datum/component/reskinable_item, /datum/atom_skin/glowcrystal_necklace)
+	AddComponent(/datum/component/reskinable_item, /datum/atom_skin/glow_crystal_necklace)
 
 /obj/item/clothing/accessory/nova/acc_medal/dogtags
 	name = "dogtags"

@@ -64,10 +64,7 @@
 	worn_icon = 'modular_nova/master_files/icons/mob/clothing/belt.dmi'
 	icon_state = "blue_webbing"
 	worn_icon_state = "blue_webbing"
-
-/obj/item/storage/belt/security/webbing/peacekeeper/Initialize(mapload)
-	. = ..()
-	qdel(GetComponent(/datum/component/reskinable_item))
+	can_reskin = FALSE
 
 //BOOTS
 /obj/item/clothing/shoes/jackboots/peacekeeper

@@ -1,7 +1,7 @@
 /// NT-E Laevateinn .38 revolver - it's a bit chunky but it has a barrel charger
 
 /datum/atom_skin/laevateinn_revolver
-	abstract_type = /datum/atom_skin/super
+	abstract_type = /datum/atom_skin/laevateinn_revolver
 
 /datum/atom_skin/laevateinn_revolver/base
 	preview_name = "Baseline"

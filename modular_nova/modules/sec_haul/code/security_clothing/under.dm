@@ -136,7 +136,7 @@
 
 /obj/item/clothing/under/rank/security/nova/skirt/mini/Initialize(mapload)
 	. = ..()
-	AddComponent(/datum/component/reskinable_item, /datum/atom_skin/mini)
+	AddComponent(/datum/component/reskinable_item, /datum/atom_skin/security_miniskirt)
 
 /datum/atom_skin/security_miniskirt_blue
 	abstract_type = /datum/atom_skin/security_miniskirt_blue
@@ -172,10 +172,7 @@
 	desc = "An asymmetrical, unisex uniform with the legs replaced by a utility skirt."
 	icon_state = "security_skirt"
 	alt_covers_chest = FALSE
-
-/obj/item/clothing/suit/armor/hos/trenchcoat/winter/Initialize(mapload)
-	. = ..()
-	qdel(GetComponent(/datum/component/reskinable_item))
+	can_reskin = FALSE
 
 /obj/item/clothing/under/rank/security/nova/dress/blue
 	icon_state = "security_skirt_blue"
@@ -223,7 +220,7 @@
 	AddComponent(/datum/component/reskinable_item, /datum/atom_skin/security_trousers/blue)
 
 /datum/atom_skin/security_shorts
-	abstract_type = /datum/atom_skin/shorts
+	abstract_type = /datum/atom_skin/security_shorts
 
 /datum/atom_skin/security_shorts/red_short
 	preview_name = "Red Variant, Short"

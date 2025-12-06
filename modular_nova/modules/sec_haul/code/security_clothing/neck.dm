@@ -29,14 +29,30 @@
 	worn_icon = 'modular_nova/master_files/icons/mob/clothing/neck.dmi'
 	icon_state = "cape_black"
 	inhand_icon_state = "" //no unique inhands
+	///Decides the shoulder it lays on, false = RIGHT, TRUE = LEFT
+	var/swapped = FALSE
 
 /obj/item/clothing/neck/security_cape/Initialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/reskinable_item, /datum/atom_skin/security_cape)
-	///Decides the shoulder it lays on, false = RIGHT, TRUE = LEFT
-	var/swapped = FALSE
+
+/obj/item/clothing/neck/security_cape/click_alt(mob/user)
+	swapped = !swapped
+	to_chat(user, span_notice("You swap which arm [src] will lay over."))
+	update_appearance()
+	return CLICK_ACTION_SUCCESS
+
+/obj/item/clothing/neck/security_cape/update_appearance(updates)
+	. = ..()
+	if(swapped)
+		worn_icon_state = icon_state
+	else
+		worn_icon_state = "[icon_state]_left"
+
+	usr.update_worn_neck()
 
 /datum/atom_skin/security_gauntlet
+	abstract_type = /datum/atom_skin/security_gauntlet
 
 /datum/atom_skin/security_gauntlet/black
 	preview_name = "Black Variant"
@@ -62,18 +78,3 @@
 /obj/item/clothing/neck/security_cape/armplate/Initialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/reskinable_item, /datum/atom_skin/security_gauntlet)
-
-/obj/item/clothing/neck/security_cape/click_alt(mob/user)
-	swapped = !swapped
-	to_chat(user, span_notice("You swap which arm [src] will lay over."))
-	update_appearance()
-	return CLICK_ACTION_SUCCESS
-
-/obj/item/clothing/neck/security_cape/update_appearance(updates)
-	. = ..()
-	if(swapped)
-		worn_icon_state = icon_state
-	else
-		worn_icon_state = "[icon_state]_left"
-
-	usr.update_worn_neck()

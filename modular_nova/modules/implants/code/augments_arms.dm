@@ -388,7 +388,8 @@
 /datum/atom_skin/razorwire
 	abstract_type = /datum/atom_skin/razorwire
 
-/datum/atom_skin/razorwire/red	preview_name = "Evil Red"
+/datum/atom_skin/razorwire/red
+	preview_name = "Evil Red"
 	new_icon_state = "razorwire_weapon"
 
 /datum/atom_skin/razorwire/teal

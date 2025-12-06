@@ -404,12 +404,13 @@ GLOBAL_LIST_INIT(all_loadout_categories, init_loadout_categories())
 
 	var/list/reskins = list()
 
+	var/base_state = item_path::icon_state
 	for(var/datum/atom_skin/skin as anything in valid_subtypesof(reskin_datum))
 		UNTYPED_LIST_ADD(reskins, list(
 			"name" = skin::new_name || skin::preview_name,
 			"tooltip" = skin::preview_name,
-			"skin_icon" = skin::new_icon,
-			"skin_icon_state" = ((loadout_flags & LOADOUT_FLAG_GREYSCALING_ALLOWED) && !(loadout_flags & LOADOUT_FLAG_JOB_GREYSCALING)) ? item_path::icon_state : skin::new_icon_state, // NOVA EDIT CHANGE - ORIGINAL: "skin_icon_state" = skin::new_icon_state,
+			"skin_icon" = skin::greyscale_preview_icon || skin::new_icon,
+			"skin_icon_state" = (skin::greyscale_preview_icon && !skin::default_skin) ? base_state : "[base_state]--[skin::new_icon_state]",
 		))
 
 	return reskins

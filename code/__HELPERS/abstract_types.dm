@@ -12,3 +12,6 @@
 /// Like subtypesof, but automatically excludes abstract typepaths
 /proc/valid_subtypesof(datum/sometype)
 	return subtypesof(sometype) - get_abstract_types()
+
+/proc/valid_typesof(datum/sometype)
+	return typesof(sometype) - get_abstract_types()

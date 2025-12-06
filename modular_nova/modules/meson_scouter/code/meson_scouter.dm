@@ -13,22 +13,16 @@
 	new_icon_state = "meson_scouter"
 
 /obj/item/clothing/glasses/meson
+	can_reskin = FALSE
 
-/obj/item/clothing/glasses/meson/Initialize(mapload)
-	. = ..()
-	AddComponent(/datum/component/reskinable_item, /datum/atom_skin/meson)
+/obj/item/clothing/glasses/meson/night
+	can_reskin = FALSE
 
-/obj/item/clothing/glasses/meson/night/Initialize(mapload)
-	. = ..()
-	qdel(GetComponent(/datum/component/reskinable_item))
+/obj/item/clothing/glasses/meson/gar
+	can_reskin = FALSE
 
-/obj/item/clothing/glasses/meson/gar/Initialize(mapload)
-	. = ..()
-	qdel(GetComponent(/datum/component/reskinable_item))
-
-/obj/item/clothing/glasses/meson/prescription/Initialize(mapload)
-	. = ..()
-	qdel(GetComponent(/datum/component/reskinable_item))
+/obj/item/clothing/glasses/meson/prescription
+	can_reskin = FALSE
 
 /datum/atom_skin/meson/engine
 	abstract_type = /datum/atom_skin/meson/engine
@@ -49,18 +43,14 @@
 	. = ..()
 	AddComponent(/datum/component/reskinable_item, /datum/atom_skin/meson/engine)
 
-/obj/item/clothing/glasses/meson/engine/tray/Initialize(mapload)
-	. = ..()
-	qdel(GetComponent(/datum/component/reskinable_item))
+/obj/item/clothing/glasses/meson/engine/tray
+	can_reskin = FALSE
 
-/obj/item/clothing/glasses/meson/engine/shuttle/Initialize(mapload)
-	. = ..()
-	qdel(GetComponent(/datum/component/reskinable_item))
+/obj/item/clothing/glasses/meson/engine/shuttle
+	can_reskin = FALSE
 
-/obj/item/clothing/glasses/meson/engine/atmos_imaging/Initialize(mapload)
-	. = ..()
-	qdel(GetComponent(/datum/component/reskinable_item))
+/obj/item/clothing/glasses/meson/engine/atmos_imaging
+	can_reskin = FALSE
 
-/obj/item/clothing/glasses/meson/engine/prescription/Initialize(mapload)
-	. = ..()
-	qdel(GetComponent(/datum/component/reskinable_item))
+/obj/item/clothing/glasses/meson/engine/prescription
+	can_reskin = FALSE

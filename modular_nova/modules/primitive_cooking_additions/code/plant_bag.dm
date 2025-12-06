@@ -1,5 +1,5 @@
 /datum/atom_skin/plant_bag
-	abstract_type = /datum/atom_skin/plants
+	abstract_type = /datum/atom_skin/plant_bag
 
 /datum/atom_skin/plant_bag/original
 	preview_name = "Original"
@@ -17,7 +17,7 @@
 
 /obj/item/storage/bag/plants/Initialize(mapload)
 	. = ..()
-	AddComponent(/datum/component/reskinable_item, /datum/atom_skin/plants)
+	AddComponent(/datum/component/reskinable_item, /datum/atom_skin/plant_bag)
 
 // This is so the linen reskin shows properly in the suit storage.
 ///obj/item/storage/bag/plants/build_worn_icon(default_layer, default_icon_file, isinhands, female_uniform, override_state, override_file, mutant_styles)
@@ -28,7 +28,7 @@
 
 /// Simple helper to reskin this item into its primitive variant.
 /obj/item/storage/bag/plants/proc/make_primitive()
-	current_skin = "Linen"
+	//current_skin = "Linen"
 
 	//icon = unique_reskin[current_skin][RESKIN_ICON]
 	//icon_state = unique_reskin[current_skin][RESKIN_ICON_STATE]
@@ -44,10 +44,7 @@
 	icon_state = "plantbag_primitive"
 	worn_icon = 'modular_nova/modules/primitive_cooking_additions/icons/plant_bag_worn.dmi'
 	worn_icon_state = "plantbag_primitive"
-
-/obj/item/storage/bag/plants/primitive/Initialize(mapload)
-	. = ..()
-	qdel(GetComponent(/datum/component/reskinable_item))
+	can_reskin = FALSE
 
 /obj/item/storage/bag/plants/on_craft_completion(list/components, datum/crafting_recipe/current_recipe, atom/crafter)
 	. = ..()
@@ -55,7 +52,6 @@
 		return
 	make_primitive()
 
-/obj/item/storage/bag/plants/portaseeder/Initialize(mapload)
-	. = ..()
-	qdel(GetComponent(/datum/component/reskinable_item))
+/obj/item/storage/bag/plants/portaseeder
+	can_reskin = FALSE
 

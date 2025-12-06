@@ -97,7 +97,7 @@
 
 
 /datum/atom_skin/nachtreiher_shotgun
-	abstract_type = /datum/atom_skin/super
+	abstract_type = /datum/atom_skin/nachtreiher_shotgun
 
 /datum/atom_skin/nachtreiher_shotgun/standard
 	preview_name = "Standard"

@@ -1081,16 +1081,6 @@
 	icon_state = "plasmaman_jax"
 
 // Donation reward for snakebitenn
-/datum/action/item_action/adjust/psychomalicek/Trigger(trigger_flags)
-	. = ..()
-	if(!.)
-		return
-	var/obj/item/clothing/mask/gas/psycho_malice/psycho_malice = target
-	if(trigger_flags & TRIGGER_SECONDARY_ACTION)
-		psycho_malice.adjust_mask(usr)
-	else
-		psycho_malice.reskin_obj(usr)
-
 /obj/item/clothing/mask/gas/psycho_malice
 	name = "composite filtration mask"
 	desc = "Less of a mask and more of a second face, this device was primarily useful for climate-adjustment and keeping unwanted gasses and particulates out of whoever it's on. However, it's since been adapted into a faceplate for use by humanoid machines."

@@ -9,11 +9,23 @@
 	var/obj/item/clothing/mask/paper/paper_mask = target
 	if(trigger_flags & TRIGGER_SECONDARY_ACTION)
 		paper_mask.adjust_mask(usr)
-	else
-		paper_mask.reskin_obj(usr)
+	//else
+	//	paper_mask.reskin_obj(usr)
 
 /datum/atom_skin/paper_mask
 	abstract_type = /datum/atom_skin/paper_mask
+
+/datum/atom_skin/paper_mask/apply(atom/apply_to, mob/user)
+	. = ..()
+	if(!user.is_holding_item_of_type(/obj/item/pen))
+		user.balloon_alert(user, "must be holding a pen!")
+		return
+
+	var/mob/living/carbon/carbon_user
+	if(iscarbon(user))
+		carbon_user = user
+	if(carbon_user && carbon_user.wear_mask == src)
+		carbon_user.update_worn_mask()
 
 /datum/atom_skin/paper_mask/paper
 	preview_name = "Blank"
@@ -135,7 +147,7 @@
 
 /obj/item/clothing/mask/paper/Initialize(mapload)
 	. = ..()
-	AddComponent(/datum/component/reskinable_item, /datum/atom_skin/paper_mask)
+	AddComponent(/datum/component/reskinable_item, /datum/atom_skin/paper_mask, infinite_reskin = TRUE)
 
 /obj/item/clothing/mask/paper/Initialize(mapload)
 	. = ..()
@@ -160,21 +172,6 @@
 	context[SCREENTIP_CONTEXT_ALT_RMB] = "Adjust Mask"
 	context[SCREENTIP_CONTEXT_CTRL_LMB] = "Hide/Show Strap"
 	return CONTEXTUAL_SCREENTIP_SET
-
-/obj/item/clothing/mask/paper/reskin_obj(mob/user)
-	if(!user.is_holding_item_of_type(/obj/item/pen))
-		balloon_alert(user, "must be holding a pen!")
-		return
-
-	. = ..()
-
-	var/mob/living/carbon/carbon_user
-	if(iscarbon(user))
-		carbon_user = user
-	if(carbon_user && carbon_user.wear_mask == src)
-		carbon_user.update_worn_mask()
-
-	current_skin = null //so we can infinitely reskin
 
 /obj/item/clothing/mask/paper/proc/adjust_mask(mob/living/carbon/human/user)
 	if(!istype(user))

@@ -196,13 +196,11 @@
 	. = ..()
 	AddComponent(/datum/component/reskinable_item, /datum/atom_skin/security_hudglasses)
 
-/obj/item/clothing/glasses/hud/security/sunglasses/Initialize(mapload)
-	. = ..()
-	qdel(GetComponent(/datum/component/reskinable_item))
+/obj/item/clothing/glasses/hud/security/sunglasses
+	can_reskin = FALSE
 
-/obj/item/clothing/glasses/hud/security/prescription/Initialize(mapload)
-	. = ..()
-	qdel(GetComponent(/datum/component/reskinable_item))
+/obj/item/clothing/glasses/hud/security/prescription
+	can_reskin = FALSE
 
 /datum/atom_skin/security_hud_sunglasses
 	abstract_type = /datum/atom_skin/security_hud_sunglasses
@@ -229,9 +227,8 @@
 	. = ..()
 	AddComponent(/datum/component/reskinable_item, /datum/atom_skin/security_hud_sunglasses)
 
-/obj/item/clothing/glasses/hud/security/night/Initialize(mapload)
-	. = ..()
-	qdel(GetComponent(/datum/component/reskinable_item))
+/obj/item/clothing/glasses/hud/security/night
+	can_reskin = FALSE
 
 /datum/atom_skin/security_eyepatch
 	abstract_type = /datum/atom_skin/security_eyepatch
@@ -253,7 +250,7 @@
 	AddComponent(/datum/component/reskinable_item, /datum/atom_skin/security_eyepatch)
 
 /datum/atom_skin/sec_gars
-	abstract_type = /datum/atom_skin/gars
+	abstract_type = /datum/atom_skin/sec_gars
 
 /datum/atom_skin/sec_gars/red
 	preview_name = "Red Gars"
@@ -303,9 +300,8 @@
 	. = ..()
 	AddComponent(/datum/component/reskinable_item, /datum/atom_skin/hos_cap)
 
-/obj/item/clothing/head/hats/hos/cap/syndicate/Initialize(mapload)
-	. = ..()
-	qdel(GetComponent(/datum/component/reskinable_item))
+/obj/item/clothing/head/hats/hos/cap/syndicate
+	can_reskin = FALSE
 
 /*
 * GLOVES
@@ -389,9 +385,8 @@
 	. = ..()
 	AddComponent(/datum/component/reskinable_item, /datum/atom_skin/hos_coat)
 
-/obj/item/clothing/suit/armor/hos/trenchcoat/winter/Initialize(mapload)
-	. = ..()
-	qdel(GetComponent(/datum/component/reskinable_item))
+/obj/item/clothing/suit/armor/hos/trenchcoat/winter
+	can_reskin = FALSE
 
 //Standard Bulletproof Vest
 /obj/item/clothing/suit/armor/bulletproof
