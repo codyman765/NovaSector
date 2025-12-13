@@ -407,13 +407,13 @@ GLOBAL_LIST_INIT(all_loadout_categories, init_loadout_categories())
 
 	var/base_state = item_path::icon_state
 	var/list/atom_skins = get_atom_skins()
-	var/datum/atom_skin/atom_skin = atom_skins[reskin_datum]
-	for(var/datum/atom_skin/skin as anything in valid_subtypesof(reskin_datum))
+	for(var/datum/atom_skin/skin_path as anything in valid_subtypesof(reskin_datum))
+		var/datum/atom_skin/atom_skin = atom_skins[skin_path]
 		UNTYPED_LIST_ADD(reskins, list(
-			"name" = skin::new_name || skin::preview_name,
-			"tooltip" = skin::preview_name,
-			"skin_icon" = skin::new_icon,
-			"skin_icon_state" = (atom_skin?.greyscale_preview_icon && !atom_skin?.default_skin) ? "[base_state]--[skin::new_icon_state]" : base_state,
+			"name" = skin_path::new_name || skin_path::preview_name,
+			"tooltip" = skin_path::preview_name,
+			"skin_icon" = skin_path::new_icon,
+			"skin_icon_state" = (atom_skin?.greyscale_preview_icon && !atom_skin?.default_skin) ? "[base_state]--[skin_path::new_icon_state]" : base_state,
 		))
 
 	return reskins

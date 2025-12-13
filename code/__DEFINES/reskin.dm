@@ -2,8 +2,10 @@
 GLOBAL_LIST_EMPTY_TYPED(atom_skins, /datum/atom_skin)
 
 /proc/get_atom_skins()
-	if(!length(GLOB.atom_skins))
-		GLOB.atom_skins = init_subtypes_w_path_keys(/datum/atom_skin)
+	var/list/atom_skins = GLOB.atom_skins
+	if(!length(atom_skins))
+		atom_skins = init_subtypes_w_path_keys(/datum/atom_skin)
+	return atom_skins
 
 /// Sets the atom's varname to newvalue if newvalue is not null, otherwise resets it to its initial value if resetcondition is true
 #define APPLY_VAR_OR_RESET_INITIAL(atom, varname, newvalue, resetcondition) \
