@@ -147,7 +147,7 @@
 
 /obj/item/clothing/mask/paper/Initialize(mapload)
 	. = ..()
-	AddComponent(/datum/component/reskinable_item, /datum/atom_skin/paper_mask, infinite_reskin = TRUE)
+	AddComponent(/datum/component/reskinable_item, /datum/atom_skin/paper_mask, infinite = TRUE)
 
 /obj/item/clothing/mask/paper/Initialize(mapload)
 	. = ..()

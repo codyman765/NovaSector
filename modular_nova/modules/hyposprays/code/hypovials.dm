@@ -170,7 +170,7 @@
 	preview_name = "Buff"
 	new_icon_state = "hypoviallarge-buff"
 
-/datum/atom_skin/hypovial/large/sterile/custom/large
+/datum/atom_skin/hypovial/large/sterile/custom
 	preview_name = "Custom"
 	new_icon_state = "hypoviallarge-custom"
 	update_greyscale = TRUE

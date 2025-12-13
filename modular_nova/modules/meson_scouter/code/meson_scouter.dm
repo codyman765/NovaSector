@@ -1,5 +1,5 @@
-/datum/atom_skin/meson
-	abstract_type = /datum/atom_skin/meson
+/datum/atom_skin/mesons
+	abstract_type = /datum/atom_skin/mesons
 	new_icon_state = "meson_scouter"
 
 /datum/atom_skin/mesons/glasses
@@ -8,7 +8,7 @@
 	new_icon_state = "meson"
 	new_worn_icon = 'icons/mob/clothing/eyes.dmi'
 
-/datum/atom_skin/meson/scouter
+/datum/atom_skin/mesons/scouter
 	preview_name = "Meson Scouter"
 	new_icon_state = "meson_scouter"
 
@@ -25,7 +25,7 @@
 	can_reskin = FALSE
 
 /datum/atom_skin/meson/engine
-	abstract_type = /datum/atom_skin/meson/engine
+	abstract_type = /datum/atom_skin/mesons/engine
 
 /datum/atom_skin/meson/engine/trayson
 	preview_name = "Engine Glasses"
@@ -41,7 +41,7 @@
 
 /obj/item/clothing/glasses/meson/engine/Initialize(mapload)
 	. = ..()
-	AddComponent(/datum/component/reskinable_item, /datum/atom_skin/meson/engine)
+	AddComponent(/datum/component/reskinable_item, /datum/atom_skin/mesons, initial_skin = /datum/atom_skin/mesons/engine)
 
 /obj/item/clothing/glasses/meson/engine/tray
 	can_reskin = FALSE

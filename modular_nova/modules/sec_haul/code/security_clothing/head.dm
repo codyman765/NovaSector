@@ -104,7 +104,7 @@
 	preview_name = "Black"
 	new_icon_state = "policeofficerpatrolcap"
 
-/datum/atom_skin/patrol/policecadetcap
+/datum/atom_skin/police_patrol_cap/policecadetcap
 	preview_name = "Cadet"
 	new_icon_state = "policecadetcap"
 

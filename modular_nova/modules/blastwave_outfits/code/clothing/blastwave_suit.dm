@@ -18,7 +18,7 @@
 	new_icon_state = "blastwave_suit_b"
 
 /datum/atom_skin/blastwave_suit/yellow
-	preview_name = "Blue"
+	preview_name = "Yellow"
 	new_icon_state = "blastwave_suit_y"
 
 /obj/item/clothing/suit/blastwave

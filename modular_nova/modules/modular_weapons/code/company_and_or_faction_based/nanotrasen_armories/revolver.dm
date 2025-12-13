@@ -19,11 +19,11 @@
 	preview_name = "Shadow Baseline"
 	new_icon_state = "c38rail_dark"
 
-/datum/atom_skin/laevateinn_revolver/shadow/reflex
+/datum/atom_skin/laevateinn_revolver/base/shadow/reflex
 	preview_name = "Shadow Reflex"
 	new_icon_state = "c38rail_dark_sight"
 
-/datum/atom_skin/laevateinn_revolver/shadow/hunter
+/datum/atom_skin/laevateinn_revolver/base/shadow/hunter
 	preview_name = "Shadow Hunter"
 	new_icon_state = "c38rail_dark_scope"
 

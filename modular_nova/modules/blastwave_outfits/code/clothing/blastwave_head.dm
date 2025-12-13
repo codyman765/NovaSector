@@ -18,7 +18,7 @@
 	new_icon_state = "blastwave_helmet_b"
 
 /datum/atom_skin/blastwave_helmet/yellow
-	preview_name = "Blue"
+	preview_name = "Yellow"
 	new_icon_state = "blastwave_helmet_y"
 
 /obj/item/clothing/head/blastwave
@@ -53,7 +53,7 @@
 	new_icon_state = "blastwave_offcap_b"
 
 /datum/atom_skin/blastwave_officer_cap/yellow
-	preview_name = "Blue"
+	preview_name = "Yellow"
 	new_icon_state = "blastwave_offcap_y"
 
 /obj/item/clothing/head/blastwave/officer

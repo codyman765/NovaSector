@@ -133,9 +133,13 @@
 		return COMPONENT_REDUNDANT
 
 #ifdef UNIT_TESTS
-	var/datum/atom_skin/reskin_type
-	if(atom_parent.greyscale_config && isnull(reskin_type::greyscale_item_path))
-		stack_trace("[type] added to a greyscale item without setting the greyscale_item_path! Please set that in [reskin_type].")
+	if(atom_parent.greyscale_config)
+		var/datum/atom_skin/reskin_type = base_reskin_type
+		if(isnull(reskin_type::greyscale_item_path)) // greyscale_item_path unset
+			stack_trace("[type] added to a greyscale item without setting the greyscale_item_path! In [reskin_type], add [reskin_type::greyscale_item_path].")
+		else if(atom_parent.type != reskin_type::greyscale_item_path) // greyscale_item_path set but doesn't match the item it's being added to
+			stack_trace("[type] added to an invalid item type, [atom_parent.type]. [reskin_type] is set up to only be added to: [reskin_type::greyscale_item_path]. \
+				Either fix its greyscale_item_path if this is incorrect, or apply a different skin.")
 #endif
 
 	src.base_reskin_type = base_reskin_type

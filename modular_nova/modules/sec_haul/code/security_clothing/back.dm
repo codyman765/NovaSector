@@ -22,13 +22,13 @@
 	AddComponent(/datum/component/reskinable_item, /datum/atom_skin/security_backpack_blue)
 
 /datum/atom_skin/security_satchel_blue
-	abstract_type = /datum/atom_skin/blue
+	abstract_type = /datum/atom_skin/security_satchel_blue
 
-/datum/atom_skin/blue/security_satchel_blue/black
+/datum/atom_skin/security_satchel_blue/black
 	preview_name = "Black Variant"
 	new_icon_state = "satchel_security_black"
 
-/datum/atom_skin/blue/security_satchel_blue/white
+/datum/atom_skin/security_satchel_blue/white
 	preview_name = "White Variant"
 	new_icon_state = "satchel_security_white"
 
@@ -44,14 +44,14 @@
 	. = ..()
 	AddComponent(/datum/component/reskinable_item, /datum/atom_skin/security_satchel_blue)
 
-/datum/atom_skin/security_duffelbag_blue
-	abstract_type = /datum/atom_skin/security_duffelbag_blue
+/datum/atom_skin/security_duffelbag_black
+	abstract_type = /datum/atom_skin/security_duffelbag_black
 
-/datum/atom_skin/security_duffelbag_blue/black
+/datum/atom_skin/security_duffelbag_black/black
 	preview_name = "Black Variant"
 	new_icon_state = "duffel_security_black"
 
-/datum/atom_skin/security_duffelbag_blue/white
+/datum/atom_skin/security_duffelbag_black/white
 	preview_name = "White Variant"
 	new_icon_state = "duffel_security_white"
 
@@ -65,7 +65,7 @@
 
 /obj/item/storage/backpack/duffelbag/sec/blue/Initialize(mapload)
 	. = ..()
-	AddComponent(/datum/component/reskinable_item, /datum/atom_skin/security_duffelbag_blue)
+	AddComponent(/datum/component/reskinable_item, /datum/atom_skin/security_duffelbag_black)
 
 /datum/atom_skin/security_messenger_security_blue
 	abstract_type = /datum/atom_skin/security_messenger_security_blue

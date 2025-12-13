@@ -9,7 +9,7 @@
 	for(var/atom_skin_path, atom_skin in GLOB.atom_skins)
 		var/datum/atom_skin/skin = atom_skin
 
-		if(isnull(skin.preview_name))
+		if(isnull(skin::preview_name))
 			TEST_FAIL("Reskin [skin] is missing a preview_name.")
 		// preview names are bundled by abstract types
 		else if(known_names["[skin.preview_name]-[skin.abstract_type]"])
@@ -36,6 +36,11 @@
 		if(!field_count)
 			continue
 		if(field_count != 4)
-			TEST_FAIL("[skin]: incomplete greyscale definition: item_path: [greyscale_item_path], config: [greyscale_config], colors: [greyscale_colors], preview_icon: [greyscale_preview_icon]")
+			TEST_FAIL("[skin]: incomplete greyscale definition: item_path: [greyscale_item_path], \
+			config: [greyscale_config], \
+			colors: [greyscale_colors], \
+			preview_icon: [greyscale_preview_icon]")
+
 		if(isnull(greyscale_item_path::greyscale_config) || isnull(greyscale_item_path::greyscale_colors))
-			TEST_FAIL("[skin]: greyscale_item_path is set to an item that does not have a greyscale config or greyscale_colors set! Either set those up for the item, or set all the greyscale fields on the skin to null.")
+			TEST_FAIL("[skin]: greyscale_item_path is set to an item that does not have a greyscale config or greyscale_colors set! \
+				Either set those up for the item, or set all the greyscale fields on the skin to null.")

@@ -24,12 +24,12 @@
 /datum/atom_skin/security_uniform_black
 	abstract_type = /datum/atom_skin/security_uniform_black
 
-/datum/atom_skin/black/security_uniform_black/black
+/datum/atom_skin/security_uniform_black/black
 	preview_name = "Black Variant"
 	new_icon_state = "security_black"
 	new_worn_icon = 'modular_nova/master_files/icons/mob/clothing/under/security.dmi'
 
-/datum/atom_skin/black/security_uniform_black/white
+/datum/atom_skin/security_uniform_black/white
 	preview_name = "White Variant"
 	new_icon_state = "security_white"
 	new_worn_icon = 'modular_nova/master_files/icons/mob/clothing/under/security.dmi'
@@ -248,7 +248,7 @@
 	AddComponent(/datum/component/reskinable_item, /datum/atom_skin/security_shorts)
 
 /datum/atom_skin/security_shorts/blue
-	abstract_type = /datum/atom_skin/blue
+	abstract_type = /datum/atom_skin/security_shorts/blue
 
 /datum/atom_skin/security_shorts/blue/blue_short
 	preview_name = "Blue Variant, Short"
