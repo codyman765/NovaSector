@@ -135,8 +135,8 @@
 #ifdef UNIT_TESTS
 	if(atom_parent.greyscale_config && (atom_parent.type in GLOB.all_loadout_datums)) // We only care about these when they're in the loadout
 		var/datum/atom_skin/reskin_type = base_reskin_type
-		if(isnull(reskin_type::greyscale_item_path)) // greyscale_item_path unset
-			stack_trace("[type] added to a greyscale item without setting the greyscale_item_path! In [reskin_type], add 'greyscale_item_path = [parent_atom::type]'.")
+		if(reskin_type && isnull(reskin_type::greyscale_item_path)) // greyscale_item_path unset
+			stack_trace("[type] added to a greyscale item without setting the greyscale_item_path! In [reskin_type], add 'greyscale_item_path = [atom_parent::type]'.")
 		else if(atom_parent.type != reskin_type::greyscale_item_path) // greyscale_item_path set but doesn't match the item it's being added to
 			stack_trace("[type] added to an invalid item type, [atom_parent.type]. [reskin_type] is set up to only be added to: [reskin_type::greyscale_item_path]. \
 				Either fix its greyscale_item_path if this is incorrect, or apply a different skin.")
