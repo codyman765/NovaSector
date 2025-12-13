@@ -133,7 +133,7 @@
 		return COMPONENT_REDUNDANT
 
 #ifdef UNIT_TESTS
-	if(atom_parent.greyscale_config)
+	if(atom_parent.greyscale_config && (atom_parent.type in GLOB.all_loadout_datums)) // We only care about these when they're in the loadout
 		var/datum/atom_skin/reskin_type = base_reskin_type
 		if(isnull(reskin_type::greyscale_item_path)) // greyscale_item_path unset
 			stack_trace("[type] added to a greyscale item without setting the greyscale_item_path! In [reskin_type], add [reskin_type::greyscale_item_path].")
