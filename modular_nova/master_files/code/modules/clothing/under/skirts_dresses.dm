@@ -316,6 +316,7 @@
 
 /datum/atom_skin/midnight_gown
 	abstract_type = /datum/atom_skin/midnight_gown
+	greyscale_item_path = /obj/item/clothing/under/dress/nova/midnight_gown
 
 /datum/atom_skin/midnight_gown/right
 	preview_name = "Right"

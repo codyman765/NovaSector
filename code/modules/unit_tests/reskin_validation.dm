@@ -2,10 +2,6 @@
 
 /datum/unit_test/reskin_validation/Run()
 	var/list/known_names = list()
-
-	if(!length(GLOB.atom_skins))
-		GLOB.atom_skins = init_subtypes_w_path_keys(/datum/atom_skin)
-
 	for(var/atom_skin_path, atom_skin in GLOB.atom_skins)
 		var/datum/atom_skin/skin = atom_skin
 

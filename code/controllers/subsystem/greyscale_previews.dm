@@ -12,8 +12,6 @@ SUBSYSTEM_DEF(greyscale_previews)
 	)
 
 /datum/controller/subsystem/greyscale_previews/Initialize()
-	if(!length(GLOB.atom_skins)) // Needs to be initialized early for the loadout previews icons, or things will break.
-		GLOB.atom_skins = init_subtypes_w_path_keys(/datum/atom_skin)
 #ifndef UNIT_TESTS // We want this to run during unit tests regardless of the config
 	if(!CONFIG_GET(flag/generate_assets_in_init))
 		return SS_INIT_SUCCESS

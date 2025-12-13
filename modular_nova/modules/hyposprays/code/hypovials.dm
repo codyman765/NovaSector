@@ -59,7 +59,6 @@
 
 /datum/atom_skin/hypovial/sterile/custom
 	preview_name = "Custom"
-	new_icon_state = "hypovial-custom"
 	update_greyscale = TRUE
 
 /obj/item/reagent_containers/cup/vial
@@ -172,7 +171,6 @@
 
 /datum/atom_skin/hypovial/large/sterile/custom
 	preview_name = "Custom"
-	new_icon_state = "hypoviallarge-custom"
 	update_greyscale = TRUE
 
 /obj/item/reagent_containers/cup/vial/large
@@ -246,7 +244,6 @@
 
 /datum/atom_skin/hypovial/interdyne_medium/sterile/custom
 	preview_name = "Custom"
-	new_icon_state = "hypovial-interdyne-custom"
 	update_greyscale = TRUE
 
 /obj/item/reagent_containers/cup/vial/interdyne_medium

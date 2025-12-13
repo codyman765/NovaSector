@@ -19,6 +19,7 @@
 
 /datum/atom_skin/seecloak
 	abstract_type = /datum/atom_skin/seecloak
+	greyscale_item_path = /obj/item/clothing/neck/greyscaled/seecloak
 
 /datum/atom_skin/seecloak/seecloak
 	preview_name = "default"
@@ -43,6 +44,7 @@
 /obj/item/clothing/neck/greyscaled/seecloak/Initialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/reskinable_item, /datum/atom_skin/seecloak, initial_skin = /datum/atom_skin/seecloak/seecloak)
+
 /obj/item/clothing/neck/greyscaled/matroncloak
 	name = "Antique Matron Cloak"
 	desc = "A large antique cloak with large puffy fluff."
