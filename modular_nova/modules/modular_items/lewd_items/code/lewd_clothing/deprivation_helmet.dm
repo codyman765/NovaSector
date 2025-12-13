@@ -10,6 +10,7 @@
 
 /datum/atom_skin/deprivation_helmet
 	abstract_type = /datum/atom_skin/deprivation_helmet
+	greyscale_item_path = /obj/item/clothing/head/deprivation_helmet
 
 /datum/atom_skin/deprivation_helmet/earred
 	preview_name = "Earred"

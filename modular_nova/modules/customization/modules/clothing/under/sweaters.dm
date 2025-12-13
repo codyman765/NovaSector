@@ -1,5 +1,6 @@
 /datum/atom_skin/cableknit_sweater
 	abstract_type = /datum/atom_skin/cableknit_sweater
+	greyscale_item_path = /obj/item/clothing/under/sweater
 
 /datum/atom_skin/cableknit_sweater/turtleneck
 	preview_name = "Turtleneck"

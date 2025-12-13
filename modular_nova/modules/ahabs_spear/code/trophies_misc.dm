@@ -2,6 +2,9 @@
 /datum/atom_skin/crusher_skin/locked/ahabs_harpoon
 	new_name = "Ahab's harpoon"
 	preview_name = "Ahab's harpoon"
+	new_icon = 'modular_nova/modules/ahabs_spear/icons/ahabs_spear.dmi'
+	new_icon_state = "crusher_ahab"
+	new_inhand_icon_state = "crusher_ahab"
 	new_projectile_icon = 'modular_nova/modules/ahabs_spear/icons/ahabs_spear.dmi'
 	new_projectile_icon_state = "crusher_ahab"
 	new_inhand_icon_state = "crusher_ahab"

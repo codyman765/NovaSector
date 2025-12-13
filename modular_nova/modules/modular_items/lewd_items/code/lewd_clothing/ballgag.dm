@@ -17,6 +17,7 @@
 
 /datum/atom_skin/ballgag
 	abstract_type = /datum/atom_skin/ballgag
+	greyscale_item_path = /obj/item/clothing/mask/muzzle/ballgag/choking
 
 /datum/atom_skin/ballgag/small
 	preview_name = "Small"

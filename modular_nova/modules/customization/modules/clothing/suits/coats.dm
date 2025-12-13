@@ -164,6 +164,7 @@
 
 /datum/atom_skin/long_robe
 	abstract_type = /datum/atom_skin/long_robe
+	greyscale_item_path = /obj/item/clothing/suit/jacket/long_robe
 
 /datum/atom_skin/long_robe/long_robe
 	preview_name = "Regular"
@@ -192,6 +193,7 @@
 
 /datum/atom_skin/haori
 	abstract_type = /datum/atom_skin/haori
+	greyscale_item_path = /obj/item/clothing/suit/jacket/haori
 
 /datum/atom_skin/haori/gradient
 	preview_name = "Gradient"

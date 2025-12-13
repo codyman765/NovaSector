@@ -405,12 +405,13 @@ GLOBAL_LIST_INIT(all_loadout_categories, init_loadout_categories())
 	var/list/reskins = list()
 
 	var/base_state = item_path::icon_state
+	var/datum/atom_skin/atom_skin = GLOB.atom_skins[reskin_datum]
 	for(var/datum/atom_skin/skin as anything in valid_subtypesof(reskin_datum))
 		UNTYPED_LIST_ADD(reskins, list(
 			"name" = skin::new_name || skin::preview_name,
 			"tooltip" = skin::preview_name,
-			"skin_icon" = skin::greyscale_preview_icon || skin::new_icon,
-			"skin_icon_state" = (skin::greyscale_preview_icon && !skin::default_skin) ? base_state : "[base_state]--[skin::new_icon_state]",
+			"skin_icon" = skin::new_icon,
+			"skin_icon_state" = (atom_skin?.greyscale_preview_icon && !atom_skin?.default_skin) ? "[base_state]--[skin::new_icon_state]" : base_state,
 		))
 
 	return reskins

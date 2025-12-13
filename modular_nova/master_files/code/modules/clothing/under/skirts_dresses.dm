@@ -251,6 +251,7 @@
 
 /datum/atom_skin/giant_scarf
 	abstract_type = /datum/atom_skin/giant_scarf
+	greyscale_item_path = /obj/item/clothing/under/dress/nova/giant_scarf
 
 /datum/atom_skin/giant_scarf/giant_scarf
 	preview_name = "Plain"
@@ -311,7 +312,7 @@
 
 /obj/item/clothing/under/dress/nova/giant_scarf/Initialize(mapload)
 	. = ..()
-	AddComponent(/datum/component/reskinable_item, /datum/atom_skin/giant_scarf)
+	AddComponent(/datum/component/reskinable_item, /datum/atom_skin/giant_scarf, initial_skin = /datum/atom_skin/giant_scarf/giant_scarf)
 
 /datum/atom_skin/midnight_gown
 	abstract_type = /datum/atom_skin/midnight_gown
