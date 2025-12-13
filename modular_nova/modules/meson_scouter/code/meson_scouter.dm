@@ -41,7 +41,7 @@
 
 /obj/item/clothing/glasses/meson/engine/Initialize(mapload)
 	. = ..()
-	AddComponent(/datum/component/reskinable_item, /datum/atom_skin/mesons, initial_skin = /datum/atom_skin/meson/engine)
+	AddComponent(/datum/component/reskinable_item, /datum/atom_skin/meson, initial_skin = /datum/atom_skin/meson/engine)
 
 /obj/item/clothing/glasses/meson/engine/tray
 	can_reskin = FALSE
