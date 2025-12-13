@@ -67,8 +67,8 @@
 	. = ..()
 	AddComponent(/datum/component/reskinable_item, /datum/atom_skin/security_duffelbag_black)
 
-/datum/atom_skin/security_messenger_security_blue
-	abstract_type = /datum/atom_skin/security_messenger_security_blue
+/datum/atom_skin/security_messenger_blue
+	abstract_type = /datum/atom_skin/security_messenger_blue
 
 /datum/atom_skin/security_messenger_blue/black
 	preview_name = "Black Variant"
