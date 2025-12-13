@@ -44,7 +44,7 @@ SUBSYSTEM_DEF(greyscale_previews)
 	worklists["unsorted"] = list()
 
 	/// ---- atom skins ----
-	for (var/skin_path, atom_skin in GLOB.atom_skins)
+	for (var/skin_path, atom_skin in get_atom_skins())
 		var/datum/atom_skin/skin = atom_skin
 		var/atom/typepath = skin.greyscale_item_path
 		if (!typepath)

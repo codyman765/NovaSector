@@ -284,10 +284,11 @@ GLOBAL_LIST_INIT(all_loadout_categories, init_loadout_categories())
 	// NOVA EDIT ADDITION END
 	if(reskin_datum && item_details?[INFO_RESKIN])
 		var/skin_chosen = item_details[INFO_RESKIN]
+		var/list/atom_skins = get_atom_skins()
 		for(var/datum/atom_skin/skin_path as anything in valid_subtypesof(reskin_datum))
 			if(skin_path::preview_name != skin_chosen)
 				continue
-			var/datum/atom_skin/skin_instance = GLOB.atom_skins[skin_path]
+			var/datum/atom_skin/skin_instance = atom_skins[skin_path]
 			skin_instance.apply(equipped_item)
 			if(istype(equipped_item, /obj/item/clothing/accessory))
 				// Snowflake handing for accessories, because we need to update the thing it's attached to instead
@@ -405,7 +406,8 @@ GLOBAL_LIST_INIT(all_loadout_categories, init_loadout_categories())
 	var/list/reskins = list()
 
 	var/base_state = item_path::icon_state
-	var/datum/atom_skin/atom_skin = GLOB.atom_skins[reskin_datum]
+	var/list/atom_skins = get_atom_skins()
+	var/datum/atom_skin/atom_skin = atom_skins[reskin_datum]
 	for(var/datum/atom_skin/skin as anything in valid_subtypesof(reskin_datum))
 		UNTYPED_LIST_ADD(reskins, list(
 			"name" = skin::new_name || skin::preview_name,
