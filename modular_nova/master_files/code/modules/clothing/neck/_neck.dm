@@ -43,7 +43,7 @@
 
 /obj/item/clothing/neck/greyscaled/seecloak/Initialize(mapload)
 	. = ..()
-	AddComponent(/datum/component/reskinable_item, /datum/atom_skin/seecloak, initial_skin = /datum/atom_skin/seecloak/seecloak)
+	AddComponent(/datum/component/reskinable_item, /datum/atom_skin/seecloak, initial_skin = "default")
 
 /obj/item/clothing/neck/greyscaled/matroncloak
 	name = "Antique Matron Cloak"

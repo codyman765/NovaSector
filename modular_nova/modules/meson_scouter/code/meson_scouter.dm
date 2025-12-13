@@ -13,7 +13,10 @@
 	new_icon_state = "meson_scouter"
 
 /obj/item/clothing/glasses/meson
-	can_reskin = FALSE
+
+/obj/item/clothing/glasses/meson/Initialize(mapload)
+	. = ..()
+	AddComponent(/datum/component/reskinable_item, /datum/atom_skin/meson, initial_skin = "Meson Scouter")
 
 /obj/item/clothing/glasses/meson/night
 	can_reskin = FALSE
@@ -33,15 +36,16 @@
 	new_icon_state = "trayson-"
 	new_worn_icon = 'icons/mob/clothing/eyes.dmi'
 
-/datum/atom_skin/meson/engine/trayson
+/datum/atom_skin/meson/engine/scouter
 	preview_name = "Engine Scouter"
 	new_icon_state = "trayson-"
 
 /obj/item/clothing/glasses/meson/engine
+	can_reskin = TRUE
 
 /obj/item/clothing/glasses/meson/engine/Initialize(mapload)
 	. = ..()
-	AddComponent(/datum/component/reskinable_item, /datum/atom_skin/meson, initial_skin = /datum/atom_skin/meson/engine)
+	AddComponent(/datum/component/reskinable_item, /datum/atom_skin/meson/engine, initial_skin = "Engine Scouter")
 
 /obj/item/clothing/glasses/meson/engine/tray
 	can_reskin = FALSE

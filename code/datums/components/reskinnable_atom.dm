@@ -180,13 +180,12 @@
 
 /datum/component/reskinable_item/proc/set_skin_by_name(input_name, mob/user)
 	var/list/reskin_options = get_skins_by_name()
+	var/list/atom_skins = get_atom_skins()
 	if(current_skin)
-		var/list/atom_skins = get_atom_skins()
 		var/datum/atom_skin/previous_skin = atom_skins[reskin_options[current_skin]]
 		previous_skin.clear_skin(parent, user)
 
 	if(input_name)
-		var/list/atom_skins = get_atom_skins()
 		var/datum/atom_skin/reskin_to_apply = atom_skins[reskin_options[input_name]]
 		reskin_to_apply.apply(parent, user)
 

@@ -22,6 +22,7 @@
 /datum/loadout_item/suit/croptop
 	name = "Crop Top Turtleneck"
 	item_path = /obj/item/clothing/suit/jacket/croptop
+	reskin_datum = /datum/atom_skin/cableknit_sweater
 
 /datum/loadout_item/suit/czech
 	name = "Czech Coat"
