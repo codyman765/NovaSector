@@ -1,23 +1,60 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
-"bU" = (
-/obj/effect/turf_decal/siding/wideplating_new/terracotta{
-	dir = 1
-	},
-/obj/effect/turf_decal/weather/snow,
-/obj/effect/turf_decal/weather/snow/corner{
+"ah" = (
+/obj/structure/flora/tree/dead/style_6,
+/turf/open/misc/asteroid/snow/standard_air,
+/area/misc/condo)
+"aF" = (
+/obj/structure/flora/tree/dead/style_3,
+/turf/open/misc/asteroid/snow/standard_air,
+/area/misc/condo)
+"aK" = (
+/obj/effect/turf_decal/siding/wood/corner,
+/turf/open/floor/carpet/polite/red,
+/area/misc/condo)
+"bt" = (
+/obj/effect/turf_decal/siding/wood{
 	dir = 9
 	},
-/turf/open/floor/iron/terracotta/diagonal,
+/turf/open/indestructible/hotelwood,
 /area/misc/condo)
-"bW" = (
-/obj/structure/sauna_oven,
-/obj/item/stack/sheet/mineral/wood/fifty,
+"bB" = (
 /turf/open/floor/wood/large,
 /area/misc/condo)
-"dr" = (
-/turf/closed/indestructible/hoteldoor/fakedoor,
+"bN" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/turf/open/floor/carpet/polite/red,
 /area/misc/condo)
-"eV" = (
+"cH" = (
+/obj/structure/flora/rock/pile/icy/style_2,
+/turf/open/misc/asteroid/snow/standard_air,
+/area/misc/condo)
+"df" = (
+/obj/structure/chair/sofa/bench/right{
+	dir = 4
+	},
+/turf/open/floor/wood/large,
+/area/misc/condo)
+"dl" = (
+/obj/effect/turf_decal/siding/thinplating_new,
+/turf/open/floor/iron/brick_half{
+	dir = 1
+	},
+/area/misc/condo)
+"gE" = (
+/turf/open/space/basic,
+/area/misc/condo)
+"gS" = (
+/obj/machinery/vending/cola/black{
+	default_price = 0;
+	extended_inventory = 1;
+	extra_price = 0;
+	fair_market_price = 0
+	},
+/turf/open/floor/wood/wood_1,
+/area/misc/condo)
+"gT" = (
 /obj/effect/spawner/liquids_spawner,
 /obj/effect/turf_decal/siding/wideplating_new{
 	dir = 4
@@ -26,7 +63,98 @@
 	dir = 4
 	},
 /area/misc/condo)
-"ga" = (
+"hj" = (
+/obj/structure/fans/tiny,
+/obj/structure/mineral_door/wood,
+/obj/effect/turf_decal/siding/thinplating_new/corner{
+	dir = 8
+	},
+/turf/open/floor/stone,
+/area/misc/condo)
+"hG" = (
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 4
+	},
+/turf/open/floor/carpet/polite/red,
+/area/misc/condo)
+"hJ" = (
+/turf/open/floor/carpet/polite/red,
+/area/misc/condo)
+"hL" = (
+/obj/structure/chair/sofa/bench{
+	dir = 4
+	},
+/obj/machinery/light/warm/directional/west,
+/turf/open/floor/wood/large,
+/area/misc/condo)
+"lo" = (
+/turf/open/floor/wood/wood_1,
+/area/misc/condo)
+"lY" = (
+/obj/structure/hedge,
+/obj/structure/window/fulltile{
+	polarizer_id_on_spawn = "ilinkbooth2"
+	},
+/turf/open/floor/grass,
+/area/misc/condo)
+"nQ" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 6
+	},
+/turf/open/floor/carpet/polite/red,
+/area/misc/condo)
+"oj" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 5
+	},
+/turf/open/floor/carpet/polite/red,
+/area/misc/condo)
+"om" = (
+/turf/closed/indestructible/wood,
+/area/misc/condo)
+"ov" = (
+/obj/item/reagent_containers/cup/bucket/wooden,
+/turf/open/floor/wood/large,
+/area/misc/condo)
+"oE" = (
+/obj/structure/sauna_oven,
+/obj/item/stack/sheet/mineral/wood/fifty,
+/turf/open/floor/wood/large,
+/area/misc/condo)
+"pj" = (
+/obj/structure/flora/tree/dead/style_5,
+/turf/open/misc/asteroid/snow/standard_air,
+/area/misc/condo)
+"px" = (
+/obj/effect/spawner/liquids_spawner,
+/obj/effect/turf_decal/siding/wideplating_new{
+	dir = 9
+	},
+/turf/open/floor/iron/pool/cobble/corner{
+	dir = 1
+	},
+/area/misc/condo)
+"qm" = (
+/turf/closed/indestructible/stone,
+/area/misc/condo)
+"rg" = (
+/obj/item/wallframe/closet{
+	pixel_x = 32;
+	pixel_y = 0
+	},
+/turf/open/floor/stone,
+/area/misc/condo)
+"ru" = (
+/obj/effect/spawner/liquids_spawner,
+/obj/effect/turf_decal/siding/wideplating_new,
+/obj/machinery/light/directional/south,
+/turf/open/floor/iron/pool/cobble/side,
+/area/misc/condo)
+"sk" = (
+/obj/structure/chair/sofa/bench/corner,
+/turf/open/floor/wood/large,
+/area/misc/condo)
+"sq" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/machinery/door/airlock/public/glass{
 	name = "Lodge Exterior"
@@ -36,199 +164,7 @@
 	},
 /turf/open/floor/wood/wood_8,
 /area/misc/condo)
-"gb" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 9
-	},
-/turf/open/indestructible/hotelwood,
-/area/misc/condo)
-"hh" = (
-/obj/item/reagent_containers/cup/bucket/wooden,
-/turf/open/floor/wood/large,
-/area/misc/condo)
-"hW" = (
-/obj/effect/spawner/liquids_spawner,
-/obj/effect/turf_decal/siding/wideplating_new{
-	dir = 5
-	},
-/turf/open/floor/iron/pool/cobble/corner,
-/area/misc/condo)
-"if" = (
-/obj/structure/fans/tiny,
-/obj/structure/mineral_door/wood,
-/obj/effect/turf_decal/siding/thinplating_new/corner{
-	dir = 8
-	},
-/turf/open/floor/stone,
-/area/misc/condo)
-"iN" = (
-/obj/item/kirbyplants/random,
-/turf/open/floor/wood/wood_1,
-/area/misc/condo)
-"jl" = (
-/obj/effect/turf_decal/siding/wood/corner{
-	dir = 4
-	},
-/turf/open/floor/carpet/polite/red,
-/area/misc/condo)
-"jP" = (
-/obj/structure/chair/sofa/bench{
-	dir = 8
-	},
-/obj/machinery/light/warm/directional/east,
-/turf/open/floor/wood/large,
-/area/misc/condo)
-"km" = (
-/obj/structure/flora/tree/dead/style_3,
-/turf/open/misc/asteroid/snow/standard_air,
-/area/misc/condo)
-"lC" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 10
-	},
-/turf/open/indestructible/hotelwood,
-/area/misc/condo)
-"oe" = (
-/obj/structure/chair/sofa/bench/left{
-	dir = 8
-	},
-/turf/open/floor/wood/large,
-/area/misc/condo)
-"ou" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 6
-	},
-/turf/open/floor/carpet/polite/red,
-/area/misc/condo)
-"oL" = (
-/turf/open/floor/carpet/polite/red,
-/area/misc/condo)
-"pd" = (
-/obj/structure/chair/sofa/bench/corner,
-/turf/open/floor/wood/large,
-/area/misc/condo)
-"pV" = (
-/obj/effect/light_emitter/fake_outdoors,
-/turf/open/misc/asteroid/snow/standard_air,
-/area/misc/condo)
-"qz" = (
-/obj/structure/chair/pew/left{
-	dir = 8
-	},
-/obj/structure/sign/painting/library{
-	pixel_x = 32
-	},
-/turf/open/floor/wood/wood_3,
-/area/misc/condo)
-"qF" = (
-/obj/structure/chair/sofa/bench/corner{
-	dir = 4
-	},
-/turf/open/floor/wood/large,
-/area/misc/condo)
-"rl" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 8
-	},
-/turf/open/floor/carpet/polite/red,
-/area/misc/condo)
-"rw" = (
-/turf/open/floor/wood/large,
-/area/misc/condo)
-"rY" = (
-/obj/effect/spawner/liquids_spawner,
-/obj/effect/turf_decal/siding/wideplating_new{
-	dir = 1
-	},
-/turf/open/floor/iron/pool/cobble/side{
-	dir = 1
-	},
-/area/misc/condo)
-"sh" = (
-/obj/effect/spawner/liquids_spawner,
-/obj/effect/turf_decal/siding/wideplating_new,
-/turf/open/floor/iron/pool/cobble/side,
-/area/misc/condo)
-"sr" = (
-/obj/machinery/light/small/directional/north,
-/turf/open/floor/stone,
-/area/misc/condo)
-"sB" = (
-/obj/effect/turf_decal/siding/wideplating_new/terracotta{
-	dir = 1
-	},
-/obj/effect/turf_decal/weather/snow,
-/obj/effect/turf_decal/weather/snow/corner{
-	dir = 1
-	},
-/turf/open/floor/iron/terracotta/diagonal,
-/area/misc/condo)
-"sO" = (
-/obj/structure/flora/rock/pile/icy,
-/turf/open/misc/asteroid/snow/standard_air,
-/area/misc/condo)
-"tS" = (
-/obj/effect/turf_decal/siding/thinplating_new,
-/turf/open/floor/iron/brick_half{
-	dir = 1
-	},
-/area/misc/condo)
-"uJ" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 4
-	},
-/turf/open/floor/carpet/polite/red,
-/area/misc/condo)
-"uK" = (
-/obj/machinery/vending/cola/black{
-	default_price = 0;
-	extended_inventory = 1;
-	extra_price = 0;
-	fair_market_price = 0
-	},
-/turf/open/floor/wood/wood_1,
-/area/misc/condo)
-"vu" = (
-/turf/open/misc/asteroid/snow/standard_air,
-/area/misc/condo)
-"wR" = (
-/turf/open/floor/wood/wood_3,
-/area/misc/condo)
-"yg" = (
-/obj/structure/flora/tree/dead/style_5,
-/turf/open/misc/asteroid/snow/standard_air,
-/area/misc/condo)
-"yB" = (
-/obj/machinery/vending/coffee{
-	default_price = 0;
-	extended_inventory = 1;
-	extra_price = 0;
-	fair_market_price = 0
-	},
-/turf/open/floor/wood/wood_1,
-/area/misc/condo)
-"yS" = (
-/turf/open/water/hot_spring/cafe,
-/area/misc/condo)
-"zl" = (
-/turf/closed/indestructible/stone,
-/area/misc/condo)
-"zs" = (
-/turf/open/floor/stone,
-/area/misc/condo)
-"AP" = (
-/obj/effect/turf_decal/siding/thinplating_new/corner{
-	dir = 1
-	},
-/turf/open/floor/iron/brick_corner_inverse{
-	dir = 1
-	},
-/area/misc/condo)
-"Bd" = (
-/obj/effect/spawner/liquids_spawner,
-/turf/open/floor/iron/pool/cobble,
-/area/misc/condo)
-"Dt" = (
+"sT" = (
 /obj/effect/turf_decal/siding/wideplating_new{
 	dir = 8
 	},
@@ -241,23 +177,169 @@
 	},
 /turf/open/floor/wood/wood_8,
 /area/misc/condo)
-"DC" = (
+"sV" = (
+/obj/effect/turf_decal/siding/thinplating_new{
+	dir = 8
+	},
+/turf/open/floor/iron/brick_half{
+	dir = 4
+	},
+/area/misc/condo)
+"tI" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 5
+	},
+/turf/open/indestructible/hotelwood,
+/area/misc/condo)
+"vs" = (
+/obj/structure/flora/rock/pile/icy,
+/turf/open/misc/asteroid/snow/standard_air,
+/area/misc/condo)
+"vx" = (
+/turf/open/floor/iron/brick,
+/area/misc/condo)
+"wb" = (
+/obj/machinery/light/directional/west,
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/turf/open/floor/carpet/polite/red,
+/area/misc/condo)
+"wt" = (
+/obj/machinery/light/directional/west,
+/turf/open/water/hot_spring/cafe,
+/area/misc/condo)
+"xe" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 6
+	},
+/turf/open/indestructible/hotelwood,
+/area/misc/condo)
+"xo" = (
+/obj/machinery/light/directional/north,
+/obj/effect/turf_decal/siding/thinplating_new,
+/turf/open/floor/iron/brick_half{
+	dir = 1
+	},
+/area/misc/condo)
+"xM" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 10
+	},
+/turf/open/indestructible/hotelwood,
+/area/misc/condo)
+"xY" = (
+/obj/effect/spawner/liquids_spawner,
+/obj/effect/turf_decal/siding/wideplating_new{
+	dir = 1
+	},
+/turf/open/floor/iron/pool/cobble/side{
+	dir = 1
+	},
+/area/misc/condo)
+"yc" = (
+/obj/structure/flora/tree/dead/style_2,
+/turf/open/misc/asteroid/snow/standard_air,
+/area/misc/condo)
+"zM" = (
+/obj/structure/chair/sofa/bench{
+	dir = 8
+	},
+/obj/machinery/light/warm/directional/east,
+/turf/open/floor/wood/large,
+/area/misc/condo)
+"Ai" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 9
+	},
+/turf/open/floor/carpet/polite/red,
+/area/misc/condo)
+"Ap" = (
+/obj/effect/turf_decal/siding/thinplating_new/corner{
+	dir = 1
+	},
+/turf/open/floor/iron/brick_corner_inverse{
+	dir = 1
+	},
+/area/misc/condo)
+"BE" = (
+/obj/structure/chair/sofa/bench,
+/turf/open/floor/wood/large,
+/area/misc/condo)
+"CG" = (
 /obj/machinery/light_switch/directional/west,
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
 /turf/open/floor/carpet/polite/red,
 /area/misc/condo)
-"EC" = (
+"CL" = (
+/obj/structure/chair/sofa/bench/corner{
+	dir = 4
+	},
+/turf/open/floor/wood/large,
+/area/misc/condo)
+"CT" = (
+/obj/structure/displaycase/trophy,
+/turf/open/floor/wood/wood_1,
+/area/misc/condo)
+"Fh" = (
 /obj/effect/spawner/liquids_spawner,
 /obj/effect/turf_decal/siding/wideplating_new{
-	dir = 9
+	dir = 10
 	},
 /turf/open/floor/iron/pool/cobble/corner{
-	dir = 1
+	dir = 8
 	},
 /area/misc/condo)
-"ED" = (
+"FP" = (
+/obj/machinery/shower/directional/north,
+/obj/structure/drain,
+/turf/open/floor/stone,
+/area/misc/condo)
+"Gc" = (
+/obj/effect/turf_decal/siding/wideplating_new/terracotta{
+	dir = 1
+	},
+/obj/effect/turf_decal/weather/snow,
+/obj/effect/turf_decal/weather/snow/corner{
+	dir = 9
+	},
+/turf/open/floor/iron/terracotta/diagonal,
+/area/misc/condo)
+"GE" = (
+/turf/open/water/hot_spring/cafe,
+/area/misc/condo)
+"Im" = (
+/obj/structure/curtain/bounty/start_closed,
+/turf/open/floor/stone,
+/area/misc/condo)
+"Iu" = (
+/turf/closed/indestructible/rock/snow,
+/area/misc/condo)
+"Jx" = (
+/turf/open/floor/wood/wood_3,
+/area/misc/condo)
+"JG" = (
+/turf/closed/indestructible/hoteldoor/fakedoor,
+/area/misc/condo)
+"Kz" = (
+/obj/effect/light_emitter/fake_outdoors,
+/turf/open/misc/asteroid/snow/standard_air,
+/area/misc/condo)
+"KN" = (
+/obj/machinery/vending/coffee{
+	default_price = 0;
+	extended_inventory = 1;
+	extra_price = 0;
+	fair_market_price = 0
+	},
+/turf/open/floor/wood/wood_1,
+/area/misc/condo)
+"KO" = (
+/turf/open/floor/stone,
+/area/misc/condo)
+"Lu" = (
 /obj/effect/turf_decal/siding/wideplating_new/terracotta{
 	dir = 1
 	},
@@ -267,158 +349,11 @@
 	},
 /turf/open/floor/iron/terracotta/diagonal,
 /area/misc/condo)
-"Fr" = (
-/obj/effect/spawner/liquids_spawner,
-/obj/effect/turf_decal/siding/wideplating_new{
-	dir = 6
-	},
-/turf/open/floor/iron/pool/cobble/corner{
-	dir = 4
-	},
-/area/misc/condo)
-"HB" = (
-/obj/structure/chair/pew/right{
-	dir = 8
-	},
-/obj/structure/sign/painting/library{
-	pixel_x = 32
-	},
-/turf/open/floor/wood/wood_3,
-/area/misc/condo)
-"HH" = (
-/obj/effect/spawner/liquids_spawner,
-/obj/effect/turf_decal/siding/wideplating_new{
-	dir = 10
-	},
-/turf/open/floor/iron/pool/cobble/corner{
-	dir = 8
-	},
-/area/misc/condo)
-"Iu" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 5
-	},
-/turf/open/indestructible/hotelwood,
-/area/misc/condo)
-"Jh" = (
-/obj/effect/turf_decal/siding/wood/corner,
-/turf/open/floor/carpet/polite/red,
-/area/misc/condo)
-"JQ" = (
-/obj/structure/chair/sofa/bench/right{
-	dir = 4
-	},
-/turf/open/floor/wood/large,
-/area/misc/condo)
-"Kn" = (
-/obj/structure/flora/tree/dead/style_6,
-/turf/open/misc/asteroid/snow/standard_air,
-/area/misc/condo)
-"Kp" = (
-/obj/structure/chair/sofa/bench,
-/turf/open/floor/wood/large,
-/area/misc/condo)
-"Kt" = (
-/turf/closed/indestructible/rock/snow,
-/area/misc/condo)
-"Ku" = (
+"LD" = (
 /obj/machinery/light/directional/east,
 /turf/open/floor/wood/wood_1,
 /area/misc/condo)
-"Kw" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 6
-	},
-/turf/open/indestructible/hotelwood,
-/area/misc/condo)
-"KH" = (
-/obj/effect/planetary_turf_atmos_helper,
-/turf/closed/indestructible/stone,
-/area/misc/condo)
-"KM" = (
-/obj/effect/turf_decal/siding/thinplating_new{
-	dir = 8
-	},
-/turf/open/floor/iron/brick_half{
-	dir = 4
-	},
-/area/misc/condo)
-"Ln" = (
-/turf/open/floor/wood/wood_1,
-/area/misc/condo)
-"LT" = (
-/obj/structure/table/wood,
-/obj/structure/towel_bin,
-/turf/open/floor/iron/brick,
-/area/misc/condo)
-"Mm" = (
-/turf/open/floor/fakeice,
-/area/misc/condo)
-"MV" = (
-/obj/effect/turf_decal/siding/thinplating_new{
-	dir = 1
-	},
-/turf/open/floor/iron/brick_half,
-/area/misc/condo)
-"Nw" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 10
-	},
-/turf/open/floor/carpet/polite/red,
-/area/misc/condo)
-"OX" = (
-/obj/structure/hedge,
-/obj/structure/window/fulltile{
-	polarizer_id_on_spawn = "ilinkbooth2"
-	},
-/turf/open/floor/grass,
-/area/misc/condo)
-"QI" = (
-/turf/open/floor/wood/wood_7,
-/area/misc/condo)
-"QW" = (
-/obj/machinery/light/directional/north,
-/turf/open/water/hot_spring/cafe,
-/area/misc/condo)
-"SR" = (
-/obj/machinery/light/directional/west,
-/obj/effect/turf_decal/siding/wood{
-	dir = 8
-	},
-/turf/open/floor/carpet/polite/red,
-/area/misc/condo)
-"TZ" = (
-/obj/item/wallframe/closet{
-	pixel_x = 32;
-	pixel_y = 0
-	},
-/turf/open/floor/stone,
-/area/misc/condo)
-"Uh" = (
-/obj/machinery/shower/directional/north,
-/obj/structure/drain,
-/turf/open/floor/stone,
-/area/misc/condo)
-"Ul" = (
-/turf/open/floor/iron/brick,
-/area/misc/condo)
-"UK" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 9
-	},
-/turf/open/floor/carpet/polite/red,
-/area/misc/condo)
-"UM" = (
-/obj/structure/displaycase/trophy,
-/turf/open/floor/wood/wood_1,
-/area/misc/condo)
-"Vo" = (
-/obj/effect/spawner/liquids_spawner,
-/obj/effect/turf_decal/siding/wideplating_new,
-/obj/machinery/light/directional/south,
-/turf/open/floor/iron/pool/cobble/side,
-/area/misc/condo)
-"Vt" = (
+"Mi" = (
 /obj/effect/turf_decal/siding/thinplating_new/corner{
 	dir = 8
 	},
@@ -426,18 +361,110 @@
 	dir = 8
 	},
 /area/misc/condo)
-"VC" = (
-/turf/closed/indestructible/wood,
+"Mj" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 10
+	},
+/turf/open/floor/carpet/polite/red,
 /area/misc/condo)
-"VH" = (
-/obj/structure/bed/pod,
+"MM" = (
+/obj/effect/spawner/liquids_spawner,
+/obj/effect/turf_decal/siding/wideplating_new{
+	dir = 6
+	},
+/turf/open/floor/iron/pool/cobble/corner{
+	dir = 4
+	},
+/area/misc/condo)
+"MQ" = (
+/obj/structure/table/wood,
+/obj/structure/towel_bin,
 /turf/open/floor/iron/brick,
 /area/misc/condo)
-"Wa" = (
+"Nb" = (
+/turf/open/floor/wood/wood_7,
+/area/misc/condo)
+"Nf" = (
+/obj/effect/spawner/liquids_spawner,
+/obj/effect/turf_decal/siding/wideplating_new{
+	dir = 5
+	},
+/turf/open/floor/iron/pool/cobble/corner,
+/area/misc/condo)
+"No" = (
+/obj/item/kirbyplants/random,
+/turf/open/floor/wood/wood_1,
+/area/misc/condo)
+"Oc" = (
+/obj/structure/chair/pew/left{
+	dir = 8
+	},
+/obj/structure/sign/painting/library{
+	pixel_x = 32
+	},
+/turf/open/floor/wood/wood_3,
+/area/misc/condo)
+"OO" = (
+/obj/item/wallframe/closet,
+/turf/closed/indestructible/stone,
+/area/misc/condo)
+"Pw" = (
+/obj/structure/chair/pew{
+	dir = 8
+	},
+/turf/open/floor/wood/wood_7,
+/area/misc/condo)
+"PP" = (
+/obj/structure/dresser{
+	pixel_x = 0;
+	pixel_y = -10
+	},
+/turf/closed/indestructible/stone,
+/area/misc/condo)
+"QK" = (
 /obj/item/wallframe/closet,
 /turf/closed/indestructible/wood,
 /area/misc/condo)
-"WI" = (
+"Rf" = (
+/turf/open/misc/asteroid/snow/standard_air,
+/area/misc/condo)
+"Rg" = (
+/obj/effect/spawner/liquids_spawner,
+/obj/effect/turf_decal/siding/wideplating_new,
+/turf/open/floor/iron/pool/cobble/side,
+/area/misc/condo)
+"Rm" = (
+/obj/effect/turf_decal/siding/thinplating_new{
+	dir = 1
+	},
+/turf/open/floor/iron/brick_half,
+/area/misc/condo)
+"RW" = (
+/turf/open/floor/fakeice,
+/area/misc/condo)
+"St" = (
+/obj/effect/turf_decal/siding/wideplating_new/terracotta{
+	dir = 1
+	},
+/obj/effect/turf_decal/weather/snow,
+/obj/effect/turf_decal/weather/snow/corner{
+	dir = 1
+	},
+/turf/open/floor/iron/terracotta/diagonal,
+/area/misc/condo)
+"Tc" = (
+/obj/structure/chair/sofa/bench/left{
+	dir = 8
+	},
+/turf/open/floor/wood/large,
+/area/misc/condo)
+"Tx" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/turf/open/floor/carpet/polite/red,
+/area/misc/condo)
+"TQ" = (
 /obj/effect/spawner/liquids_spawner,
 /obj/effect/turf_decal/siding/wideplating_new{
 	dir = 8
@@ -447,323 +474,303 @@
 	dir = 8
 	},
 /area/misc/condo)
-"WU" = (
-/turf/open/space/basic,
+"Up" = (
+/obj/machinery/light/directional/north,
+/turf/open/water/hot_spring/cafe,
 /area/misc/condo)
-"Xa" = (
-/obj/structure/curtain/bounty/start_closed,
-/turf/open/floor/stone,
-/area/misc/condo)
-"Xe" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 5
-	},
-/turf/open/floor/carpet/polite/red,
-/area/misc/condo)
-"Xr" = (
-/obj/item/wallframe/closet,
-/turf/closed/indestructible/stone,
-/area/misc/condo)
-"XQ" = (
-/obj/structure/flora/tree/dead/style_2,
-/turf/open/misc/asteroid/snow/standard_air,
-/area/misc/condo)
-"Yb" = (
-/obj/structure/chair/pew{
+"VS" = (
+/obj/structure/chair/pew/right{
 	dir = 8
 	},
-/turf/open/floor/wood/wood_7,
-/area/misc/condo)
-"Yj" = (
-/obj/structure/flora/rock/pile/icy/style_2,
-/turf/open/misc/asteroid/snow/standard_air,
-/area/misc/condo)
-"Yv" = (
-/obj/machinery/light/directional/north,
-/obj/effect/turf_decal/siding/thinplating_new,
-/turf/open/floor/iron/brick_half{
-	dir = 1
+/obj/structure/sign/painting/library{
+	pixel_x = 32
 	},
+/turf/open/floor/wood/wood_3,
 /area/misc/condo)
-"ZB" = (
-/obj/structure/chair/sofa/bench{
-	dir = 4
+"VU" = (
+/obj/structure/bed/pod,
+/turf/open/floor/iron/brick,
+/area/misc/condo)
+"VV" = (
+/obj/effect/spawner/liquids_spawner,
+/turf/open/floor/iron/pool/cobble,
+/area/misc/condo)
+"ZE" = (
+/obj/item/wallframe/closet{
+	pixel_x = 32;
+	pixel_y = 0
 	},
-/obj/machinery/light/warm/directional/west,
-/turf/open/floor/wood/large,
-/area/misc/condo)
-"ZN" = (
-/obj/machinery/light/directional/west,
-/turf/open/water/hot_spring/cafe,
+/obj/machinery/light/floor,
+/turf/open/floor/stone,
 /area/misc/condo)
 
 (1,1,1) = {"
-WU
-WU
-zl
-zl
-VC
-VC
-zl
-zl
-zl
-zl
-zl
-zl
-zl
-zl
-zl
-KH
+gE
+gE
+qm
+qm
+om
+om
+qm
+qm
+qm
+qm
+qm
+qm
+qm
+qm
+qm
+qm
 "}
 (2,1,1) = {"
-WU
-WU
-zl
-qF
-ZB
-JQ
-hh
-zl
-yS
-ZN
-MV
-tS
-EC
-WI
-HH
-zl
+gE
+gE
+qm
+CL
+hL
+df
+ov
+qm
+GE
+wt
+Rm
+dl
+px
+TQ
+Fh
+qm
 "}
 (3,1,1) = {"
-WU
-WU
-VC
-Kp
-gb
-lC
-rw
-zl
-QW
-yS
-MV
-tS
-rY
-Bd
-Vo
-zl
+gE
+gE
+om
+BE
+bt
+xM
+bB
+qm
+Up
+GE
+Rm
+dl
+xY
+VV
+ru
+qm
 "}
 (4,1,1) = {"
-WU
-WU
-VC
-Kp
-Iu
-Kw
-rw
-if
-KM
-KM
-AP
-tS
-rY
-Bd
-sh
-zl
+gE
+gE
+om
+BE
+tI
+xe
+bB
+hj
+sV
+sV
+Ap
+dl
+xY
+VV
+Rg
+qm
 "}
 (5,1,1) = {"
-WU
-WU
-zl
-pd
-jP
-oe
-bW
-zl
-Xa
-VC
-VC
-tS
-rY
-Bd
-sh
-zl
+gE
+gE
+qm
+sk
+zM
+Tc
+oE
+qm
+Im
+om
+om
+dl
+xY
+VV
+Rg
+qm
 "}
 (6,1,1) = {"
-WU
-Kt
-zl
-zl
-VC
-VC
-zl
-zl
-sr
-Uh
-VC
-Yv
-hW
-eV
-Fr
-zl
+gE
+Iu
+qm
+qm
+om
+om
+qm
+PP
+KO
+FP
+om
+xo
+Nf
+gT
+MM
+qm
 "}
 (7,1,1) = {"
-Kt
-Kt
-Kt
-Kt
-Kt
-Kt
-Kt
-Xr
-zs
-Uh
-VC
-Vt
-KM
-KM
-KM
-zl
+Iu
+Iu
+Iu
+Iu
+Iu
+Iu
+Iu
+OO
+KO
+FP
+om
+Mi
+sV
+sV
+sV
+qm
 "}
 (8,1,1) = {"
-Kt
-Mm
-Mm
-Mm
-vu
-yg
-Kt
-Wa
-TZ
-TZ
-Xa
-Ul
-LT
-VH
-VH
-VC
+Iu
+RW
+RW
+RW
+Rf
+pj
+Iu
+QK
+ZE
+rg
+Im
+vx
+MQ
+VU
+VU
+om
 "}
 (9,1,1) = {"
-Kt
-Mm
-Mm
-km
-vu
-sO
-Kt
-VC
-VC
-VC
-VC
-Dt
-VC
-OX
-OX
-VC
+Iu
+RW
+RW
+aF
+Rf
+vs
+Iu
+om
+om
+om
+om
+sT
+om
+lY
+lY
+om
 "}
 (10,1,1) = {"
-Kt
-Mm
-Mm
-pV
-vu
-vu
-bU
-VC
-UK
-rl
-SR
-rl
-DC
-rl
-Nw
-VC
+Iu
+RW
+RW
+Kz
+Rf
+Rf
+Gc
+om
+Ai
+bN
+wb
+bN
+CG
+bN
+Mj
+om
 "}
 (11,1,1) = {"
-Kt
-Mm
-Mm
-vu
-XQ
-vu
-sB
-ga
-Xe
-uJ
-jl
-oL
-Jh
-uJ
-ou
-dr
+Iu
+RW
+RW
+Rf
+yc
+Rf
+St
+sq
+oj
+Tx
+hG
+hJ
+aK
+Tx
+nQ
+JG
 "}
 (12,1,1) = {"
-Kt
-Mm
-Yj
-vu
-vu
-vu
-ED
-VC
-uK
-Ln
-Xe
-uJ
-ou
-Ln
-UM
-VC
+Iu
+RW
+cH
+Rf
+Rf
+Rf
+Lu
+om
+gS
+lo
+oj
+Tx
+nQ
+lo
+CT
+om
 "}
 (13,1,1) = {"
-Kt
-Kt
-Mm
-Kn
-vu
-vu
-Kt
-VC
-yB
-Ln
-QI
-wR
-QI
-Ln
-UM
-VC
+Iu
+Iu
+RW
+ah
+Rf
+Rf
+Iu
+om
+KN
+lo
+Nb
+Jx
+Nb
+lo
+CT
+om
 "}
 (14,1,1) = {"
-WU
-Kt
-Kt
-vu
-vu
-Kt
-Kt
-VC
-UM
-Ku
-qz
-Yb
-HB
-Ku
-iN
-VC
+gE
+Iu
+Iu
+Rf
+Rf
+Iu
+Iu
+om
+CT
+LD
+Oc
+Pw
+VS
+LD
+No
+om
 "}
 (15,1,1) = {"
-WU
-WU
-Kt
-Kt
-Kt
-Kt
-WU
-VC
-VC
-VC
-VC
-VC
-VC
-VC
-VC
-VC
+gE
+gE
+Iu
+Iu
+Iu
+Iu
+gE
+om
+om
+om
+om
+om
+om
+om
+om
+om
 "}
