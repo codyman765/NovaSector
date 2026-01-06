@@ -78,14 +78,16 @@
 "kn" = (
 /obj/structure/bed/double,
 /obj/item/bedsheet/brown/double,
-/turf/open/floor/wood/large,
+/turf/open/floor/bamboo/tatami/black{
+	dir = 4
+	},
 /area/misc/condo)
 "kt" = (
 /turf/open/misc/dirt/jungle/wasteland,
 /area/misc/condo)
 "mv" = (
 /obj/structure/closet/cabinet,
-/turf/open/floor/wood/large,
+/turf/open/floor/bamboo/tatami/black,
 /area/misc/condo)
 "mE" = (
 /obj/effect/light_emitter/fake_outdoors,
@@ -102,11 +104,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
 	},
-/obj/structure/barricade/wooden{
-	dir = 4;
-	name = "latticed window"
-	},
-/turf/open/floor/wood/large,
+/turf/closed/indestructible/weeb,
 /area/misc/condo)
 "pZ" = (
 /turf/open/misc/dirt/jungle,
@@ -160,7 +158,7 @@
 /area/misc/condo)
 "xV" = (
 /obj/item/kirbyplants/random,
-/turf/open/floor/wood/large,
+/turf/open/floor/bamboo/tatami/black,
 /area/misc/condo)
 "zx" = (
 /obj/effect/turf_decal/siding/wideplating_new/end{
@@ -177,18 +175,22 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
-/obj/structure/mineral_door/wood,
-/turf/open/floor/wood/large,
+/obj/structure/mineral_door/paperframe{
+	name = "Shinto Cabin Bedroom"
+	},
+/turf/open/floor/bamboo,
 /area/misc/condo)
 "Br" = (
-/turf/open/floor/wood/large,
+/turf/open/floor/bamboo/tatami/black{
+	dir = 4
+	},
 /area/misc/condo)
 "FN" = (
 /obj/structure/flora/bush/reed,
 /turf/open/misc/dirt/station,
 /area/misc/condo)
 "GA" = (
-/turf/cordon,
+/turf/open/space/basic,
 /area/misc/condo)
 "HS" = (
 /obj/effect/turf_decal/siding/wood{
@@ -211,7 +213,7 @@
 /turf/closed/indestructible/rock,
 /area/misc/condo)
 "JR" = (
-/turf/open/floor/wood/tile,
+/turf/open/floor/bamboo/tatami/black,
 /area/misc/condo)
 "KM" = (
 /obj/structure/flora/bush/reed/style_4,
@@ -265,13 +267,15 @@
 /area/misc/condo)
 "SH" = (
 /obj/structure/dresser,
-/turf/open/floor/wood/large,
+/turf/open/floor/bamboo/tatami/black,
 /area/misc/condo)
 "TO" = (
 /obj/structure/chair/wood{
 	dir = 4
 	},
-/turf/open/floor/wood/large,
+/turf/open/floor/bamboo/tatami/black{
+	dir = 4
+	},
 /area/misc/condo)
 "Ud" = (
 /obj/structure/flora/bush/flowers_pp,
@@ -472,7 +476,7 @@ Jo
 vn
 xV
 JR
-Br
+JR
 JR
 AH
 kl
