@@ -1,13 +1,17 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "aG" = (
 /obj/structure/fake_stairs/wood/directional/north,
-/obj/structure/railing/wooden_fence{
-	dir = 8
-	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
 	},
 /turf/open/floor/wood,
+/area/misc/condo)
+"bP" = (
+/obj/structure/flora/rock/pile/jungle,
+/turf/open/misc/grass/jungle/station,
+/area/misc/condo)
+"eD" = (
+/turf/open/floor/wood/wood_9,
 /area/misc/condo)
 "eT" = (
 /obj/structure/bedsheetbin/basket,
@@ -20,6 +24,15 @@
 "fq" = (
 /turf/open/misc/grass/jungle/station,
 /area/misc/condo)
+"fy" = (
+/obj/effect/turf_decal/siding/dark{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/dark{
+	dir = 1
+	},
+/turf/open/floor/bamboo/tatami/black,
+/area/misc/condo)
 "fJ" = (
 /obj/structure/flora/tree/jungle/small/style_2,
 /turf/open/misc/grass/jungle/station,
@@ -28,10 +41,12 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
 	},
-/obj/structure/railing/wooden_fence{
+/obj/structure/railing/wooden_fencing{
 	dir = 8
 	},
-/turf/open/floor/wood/parquet,
+/turf/open/floor/wood/wood_9{
+	dir = 1
+	},
 /area/misc/condo)
 "hR" = (
 /obj/structure/bonfire/prelit,
@@ -56,6 +71,7 @@
 /area/misc/condo)
 "iK" = (
 /obj/structure/flora/bush/jungle/c/style_2,
+/obj/effect/light_emitter/fake_outdoors,
 /turf/open/misc/grass/jungle/station,
 /area/misc/condo)
 "jT" = (
@@ -73,11 +89,14 @@
 "kl" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/effect/light_emitter/fake_outdoors,
-/turf/open/floor/wood/parquet,
+/turf/open/floor/wood/wood_9,
 /area/misc/condo)
 "kn" = (
 /obj/structure/bed/double,
 /obj/item/bedsheet/brown/double,
+/obj/effect/turf_decal/siding/dark{
+	dir = 6
+	},
 /turf/open/floor/bamboo/tatami/black{
 	dir = 4
 	},
@@ -87,6 +106,9 @@
 /area/misc/condo)
 "mv" = (
 /obj/structure/closet/cabinet,
+/obj/effect/turf_decal/siding/dark/end{
+	dir = 1
+	},
 /turf/open/floor/bamboo/tatami/black,
 /area/misc/condo)
 "mE" = (
@@ -96,6 +118,15 @@
 "ng" = (
 /obj/structure/flora/bush/reed/style_3,
 /turf/open/misc/dirt/station,
+/area/misc/condo)
+"pk" = (
+/obj/effect/turf_decal/siding/dark{
+	dir = 7
+	},
+/obj/machinery/light/small/directional/south,
+/turf/open/floor/bamboo/tatami/black{
+	dir = 4
+	},
 /area/misc/condo)
 "pu" = (
 /obj/effect/turf_decal/siding/wood{
@@ -134,13 +165,28 @@
 /obj/structure/flora/bush/flowers_br,
 /turf/open/misc/grass/jungle/station,
 /area/misc/condo)
+"td" = (
+/obj/effect/turf_decal/siding/dark{
+	dir = 1
+	},
+/turf/open/floor/bamboo/tatami/black{
+	dir = 4
+	},
+/area/misc/condo)
 "tK" = (
-/turf/open/floor/wood/parquet,
+/obj/item/flashlight/sky_lantern,
+/turf/open/floor/wood/wood_9{
+	dir = 1
+	},
 /area/misc/condo)
 "tO" = (
 /turf/closed/indestructible/hoteldoor/fakedoor/travel_tile,
 /area/misc/condo)
 "vn" = (
+/obj/effect/turf_decal/siding/wood,
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
 /turf/closed/indestructible/weeb,
 /area/misc/condo)
 "vB" = (
@@ -158,6 +204,15 @@
 /area/misc/condo)
 "xV" = (
 /obj/item/kirbyplants/random,
+/obj/effect/turf_decal/siding/dark/end{
+	dir = 1
+	},
+/turf/open/floor/bamboo/tatami/black,
+/area/misc/condo)
+"yq" = (
+/obj/effect/turf_decal/siding/dark{
+	dir = 7
+	},
 /turf/open/floor/bamboo/tatami/black,
 /area/misc/condo)
 "zx" = (
@@ -166,9 +221,13 @@
 	},
 /turf/open/floor/stone,
 /area/misc/condo)
+"zz" = (
+/obj/item/flashlight/sky_lantern,
+/turf/open/misc/beach/sand,
+/area/misc/condo)
 "Aq" = (
 /obj/structure/flora/bush/reed/style_2,
-/turf/open/misc/dirt/jungle/dark,
+/turf/open/water/hot_spring/cafe,
 /area/misc/condo)
 "AH" = (
 /obj/effect/turf_decal/siding/wood,
@@ -185,6 +244,12 @@
 	dir = 4
 	},
 /area/misc/condo)
+"BT" = (
+/obj/structure/flora/rock/pile{
+	icon_state = "basalt3"
+	},
+/turf/open/misc/grass/jungle/station,
+/area/misc/condo)
 "FN" = (
 /obj/structure/flora/bush/reed,
 /turf/open/misc/dirt/station,
@@ -196,18 +261,17 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
 	},
-/obj/structure/railing/wooden_fence{
-	dir = 8
-	},
-/obj/structure/railing/wooden_fence,
 /obj/structure/chair/wood{
 	dir = 4
 	},
-/turf/open/floor/wood/parquet,
+/obj/structure/railing/wooden_fencing,
+/obj/structure/railing/wooden_fencing{
+	dir = 8
+	},
+/turf/open/floor/wood/wood_9,
 /area/misc/condo)
 "IV" = (
-/obj/effect/light_emitter/fake_outdoors,
-/turf/open/misc/dirt/jungle/dark,
+/turf/open/water/hot_spring/cafe,
 /area/misc/condo)
 "Jo" = (
 /turf/closed/indestructible/rock,
@@ -223,7 +287,9 @@
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 8
 	},
-/turf/open/floor/wood/parquet,
+/turf/open/floor/wood/wood_9{
+	dir = 1
+	},
 /area/misc/condo)
 "Mo" = (
 /turf/closed/indestructible/wood,
@@ -231,11 +297,19 @@
 "MP" = (
 /turf/open/misc/dirt/station,
 /area/misc/condo)
+"MQ" = (
+/obj/effect/turf_decal/siding/dark{
+	dir = 8
+	},
+/turf/open/floor/bamboo/tatami/black,
+/area/misc/condo)
 "Nk" = (
 /obj/effect/turf_decal/siding/wood,
-/obj/structure/railing/wooden_fence,
 /obj/structure/table/wood,
-/turf/open/floor/wood/parquet,
+/obj/structure/railing/wooden_fencing,
+/turf/open/floor/wood/wood_9{
+	dir = 1
+	},
 /area/misc/condo)
 "NV" = (
 /obj/structure/flora/tree/jungle/style_4,
@@ -244,6 +318,15 @@
 "OP" = (
 /obj/structure/flora/tree/jungle/small/style_4,
 /turf/open/misc/grass/jungle/station,
+/area/misc/condo)
+"OS" = (
+/obj/effect/turf_decal/siding/dark{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/dark/corner{
+	dir = 1
+	},
+/turf/open/floor/bamboo/tatami/black,
 /area/misc/condo)
 "OU" = (
 /obj/effect/turf_decal/siding/wideplating_new/end,
@@ -259,19 +342,40 @@
 /area/misc/condo)
 "Se" = (
 /obj/effect/turf_decal/siding/wood,
-/obj/structure/railing/wooden_fence,
 /obj/structure/chair/wood{
 	dir = 8
 	},
-/turf/open/floor/wood/parquet,
+/obj/structure/railing/wooden_fencing,
+/turf/open/floor/wood/wood_9,
+/area/misc/condo)
+"Ss" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/turf/closed/indestructible/weeb,
 /area/misc/condo)
 "SH" = (
 /obj/structure/dresser,
+/obj/effect/turf_decal/siding/dark{
+	dir = 6
+	},
+/turf/open/floor/bamboo/tatami/black,
+/area/misc/condo)
+"SJ" = (
+/obj/effect/turf_decal/siding/dark{
+	dir = 10
+	},
 /turf/open/floor/bamboo/tatami/black,
 /area/misc/condo)
 "TO" = (
 /obj/structure/chair/wood{
 	dir = 4
+	},
+/obj/effect/turf_decal/siding/dark{
+	dir = 1
 	},
 /turf/open/floor/bamboo/tatami/black{
 	dir = 4
@@ -295,8 +399,17 @@
 /turf/open/floor/stone,
 /area/misc/condo)
 "WG" = (
-/obj/effect/planetary_turf_atmos_helper,
-/turf/closed/indestructible/wood,
+/obj/item/flashlight/sky_lantern,
+/turf/open/misc/dirt/jungle/dark,
+/area/misc/condo)
+"Xf" = (
+/obj/effect/turf_decal/siding/dark{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/dark/corner{
+	dir = 4
+	},
+/turf/open/floor/bamboo/tatami/black,
 /area/misc/condo)
 "Xl" = (
 /turf/open/water/jungle,
@@ -307,7 +420,7 @@ GA
 GA
 GA
 GA
-GA
+Jo
 Jo
 Jo
 Jo
@@ -322,8 +435,8 @@ Jo
 (2,1,1) = {"
 GA
 GA
-GA
-GA
+Jo
+Jo
 Jo
 Jo
 Xl
@@ -338,23 +451,23 @@ Jo
 "}
 (3,1,1) = {"
 GA
-GA
+Jo
 Jo
 Jo
 Jo
 Xl
 Xl
 KM
-UJ
+WG
 rJ
 fq
-mE
+fq
 pZ
 pZ
 Jo
 "}
 (4,1,1) = {"
-GA
+Jo
 Jo
 Jo
 Xl
@@ -365,8 +478,8 @@ rJ
 fq
 NV
 fq
-fq
-fq
+bP
+mE
 pZ
 Jo
 "}
@@ -377,7 +490,7 @@ Xl
 Xl
 Xl
 ng
-IV
+UJ
 fq
 fq
 fq
@@ -407,7 +520,7 @@ Jo
 (7,1,1) = {"
 Jo
 Xl
-rJ
+zz
 UE
 fq
 OP
@@ -419,7 +532,7 @@ fq
 pZ
 fq
 Jo
-GA
+Jo
 "}
 (8,1,1) = {"
 Jo
@@ -436,13 +549,13 @@ Ud
 fq
 pZ
 Jo
-GA
+Jo
 "}
 (9,1,1) = {"
 Jo
 xv
 fq
-mE
+fq
 fq
 fq
 fq
@@ -453,7 +566,7 @@ pZ
 pZ
 fq
 Jo
-GA
+Jo
 "}
 (10,1,1) = {"
 Mo
@@ -461,7 +574,7 @@ Mo
 pu
 pu
 Mo
-WG
+Mo
 fU
 aG
 pZ
@@ -475,9 +588,9 @@ Jo
 (11,1,1) = {"
 vn
 xV
-JR
-JR
-JR
+Xf
+MQ
+SJ
 AH
 kl
 wi
@@ -494,7 +607,7 @@ vn
 ie
 TO
 JR
-Br
+pk
 Mo
 Mj
 HS
@@ -509,16 +622,16 @@ Jo
 (13,1,1) = {"
 Mo
 qT
-JR
+fy
 Br
-JR
+yq
 vn
-tK
+eD
 Nk
-fq
-kt
-kt
-kt
+BT
+IV
+Aq
+IV
 Jo
 Jo
 Jo
@@ -526,51 +639,51 @@ Jo
 (14,1,1) = {"
 vn
 sH
-Br
+td
 JR
 kn
 vn
 tK
 Se
-kt
-kt
-kt
-kt
+IV
+IV
+IV
+IV
 Jo
-GA
-GA
+Jo
+Jo
 "}
 (15,1,1) = {"
 vn
 mv
-JR
+OS
 SH
 Mo
 Mo
 Jo
 Jo
-kt
+IV
 Aq
-kt
+IV
 Jo
 Jo
-GA
+Jo
 GA
 "}
 (16,1,1) = {"
 Mo
+Ss
+Ss
+Ss
 Mo
-Mo
-Mo
-Mo
-GA
-GA
 Jo
 Jo
 Jo
 Jo
 Jo
-GA
-GA
+Jo
+Jo
+Jo
+Jo
 GA
 "}

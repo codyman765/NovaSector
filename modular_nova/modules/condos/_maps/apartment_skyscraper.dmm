@@ -1,13 +1,11 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "aa" = (
-/obj/effect/abstract/marker{
-	icon = 'modular_nova/master_files/icons/obj/skyscraper/rain.dmi';
-	icon_state = "rain";
-	alpha = 100
+/obj/effect/turf_decal/tile/dark_blue/diagonal_edge,
+/obj/effect/turf_decal/siding/white{
+	dir = 10
 	},
-/turf/open/skyline{
-	icon_state = "21,20"
-	},
+/obj/structure/window/reinforced/survival_pod/indestructible/spawner/directional/west,
+/turf/open/floor/iron/white/diagonal,
 /area/misc/condo)
 "ad" = (
 /obj/effect/abstract/marker{
@@ -77,14 +75,14 @@
 	color = "#878787";
 	pixel_x = 32
 	},
-/obj/effect/abstract/marker{
-	icon = 'modular_nova/master_files/icons/obj/skyscraper/rain.dmi';
-	icon_state = "rain";
-	alpha = 100
+/obj/structure/decorative{
+	icon_state = "siding_plain_end";
+	icon = 'icons/turf/decals.dmi';
+	base_icon_state = "elevatorshaft";
+	color = "#36373a";
+	anchored = 1
 	},
-/turf/open/indestructible/tram{
-	color = "#d6d6d6"
-	},
+/turf/closed/wall,
 /area/misc/condo)
 "aR" = (
 /obj/effect/abstract/marker{
@@ -449,21 +447,11 @@
 	},
 /area/misc/condo)
 "dh" = (
-/obj/structure/decorative{
-	icon_state = "siding_plain_end";
-	icon = 'icons/turf/decals.dmi';
-	base_icon_state = "elevatorshaft";
-	color = "#36373a";
-	anchored = 1
+/obj/effect/turf_decal/siding/dark{
+	dir = 4
 	},
-/obj/structure/decorative{
-	icon_state = "siding_plain";
-	icon = 'icons/turf/decals.dmi';
-	dir = 8;
-	color = "#878787";
-	pixel_x = 32
-	},
-/turf/closed/wall,
+/obj/structure/closet/secure_closet/freezer/kitchen/all_access,
+/turf/open/floor/iron/kitchen/herringbone,
 /area/misc/condo)
 "dt" = (
 /obj/effect/abstract/marker{
@@ -607,34 +595,26 @@
 /obj/structure/decorative{
 	icon_state = "siding_plain";
 	icon = 'icons/turf/decals.dmi';
-	dir = 8;
-	color = "#878787"
+	base_icon_state = "elevatorshaft";
+	color = "#36373a";
+	anchored = 1;
+	dir = 5
 	},
-/obj/effect/abstract/marker{
-	icon = 'modular_nova/master_files/icons/obj/skyscraper/rain.dmi';
-	icon_state = "rain";
-	alpha = 100
+/obj/structure/decorative{
+	icon_state = "siding_plain_corner";
+	icon = 'icons/turf/decals.dmi';
+	base_icon_state = "elevatorshaft";
+	color = "#36373a";
+	dir = 8
 	},
-/turf/open/indestructible/tram{
-	color = "#e8e8e8"
-	},
+/turf/closed/wall,
 /area/misc/condo)
 "ex" = (
-/obj/structure/decorative{
-	icon_state = "siding_plain";
-	icon = 'icons/turf/decals.dmi';
-	dir = 8;
-	color = "#878787";
-	pixel_x = 32
+/obj/effect/turf_decal/tile/dark_blue/diagonal_edge,
+/obj/effect/turf_decal/siding/white{
+	dir = 5
 	},
-/obj/effect/abstract/marker{
-	icon = 'modular_nova/master_files/icons/obj/skyscraper/rain.dmi';
-	icon_state = "rain";
-	alpha = 100
-	},
-/turf/open/indestructible/tram{
-	color = "#f0f0f0"
-	},
+/turf/open/floor/iron/white/diagonal,
 /area/misc/condo)
 "ey" = (
 /obj/effect/abstract/marker{
@@ -823,14 +803,10 @@
 	},
 /area/misc/condo)
 "fT" = (
-/obj/effect/abstract/marker{
-	icon = 'modular_nova/master_files/icons/obj/skyscraper/rain.dmi';
-	icon_state = "rain";
-	alpha = 100
+/obj/effect/turf_decal/siding/dark{
+	dir = 4
 	},
-/turf/open/skyline{
-	icon_state = "22,20"
-	},
+/turf/open/floor/carpet/black,
 /area/misc/condo)
 "fU" = (
 /obj/structure/decorative{
@@ -844,27 +820,19 @@
 /turf/closed/wall,
 /area/misc/condo)
 "fV" = (
-/obj/structure/decorative{
-	icon_state = "siding_plain";
-	icon = 'icons/turf/decals.dmi';
-	dir = 8;
-	color = "#878787";
-	pixel_x = 32
+/obj/machinery/oven/range_frontier,
+/obj/effect/turf_decal/siding/dark{
+	dir = 9
 	},
-/obj/structure/decorative{
-	icon_state = "siding_plain";
-	icon = 'icons/turf/decals.dmi';
-	dir = 8;
-	color = "#878787"
+/obj/machinery/griddle/frontier_tabletop{
+	pixel_x = 0;
+	pixel_y = 8
 	},
-/obj/effect/abstract/marker{
-	icon = 'modular_nova/master_files/icons/obj/skyscraper/rain.dmi';
-	icon_state = "rain";
-	alpha = 100
+/obj/item/reagent_containers/cup/soup_pot{
+	pixel_x = -4;
+	pixel_y = 16
 	},
-/turf/open/indestructible/tram{
-	color = "#f0f0f0"
-	},
+/turf/open/floor/iron/kitchen/herringbone,
 /area/misc/condo)
 "fW" = (
 /obj/effect/abstract/marker{
@@ -896,19 +864,8 @@
 	},
 /area/misc/condo)
 "go" = (
-/obj/structure/table/greyscale,
-/obj/structure/decorative{
-	icon = 'modular_nova/master_files/icons/obj/skyscraper/curtains_apartments.dmi';
-	icon_state = "0,5";
-	anchored = 1;
-	name = "sink";
-	pixel_x = -15
-	},
-/obj/item/reagent_containers/spray/cleaner{
-	pixel_x = 8;
-	pixel_y = 15
-	},
-/turf/open/floor/iron/dark/smooth_large,
+/obj/machinery/light/floor,
+/turf/open/floor/iron/kitchen/herringbone,
 /area/misc/condo)
 "gq" = (
 /obj/effect/abstract/marker{
@@ -1050,22 +1007,19 @@
 /obj/structure/decorative{
 	icon_state = "siding_plain";
 	icon = 'icons/turf/decals.dmi';
-	dir = 8;
-	color = "#878787";
-	pixel_x = 32
+	base_icon_state = "elevatorshaft";
+	color = "#36373a";
+	dir = 1;
+	anchored = 1
 	},
-/obj/effect/light_emitter/interlink{
-	light_color = "#ffe7cf";
-	light_power = 1.5
+/obj/structure/decorative{
+	icon_state = "siding_plain";
+	icon = 'icons/turf/decals.dmi';
+	base_icon_state = "elevatorshaft";
+	color = "#36373a";
+	anchored = 1
 	},
-/obj/effect/abstract/marker{
-	icon = 'modular_nova/master_files/icons/obj/skyscraper/rain.dmi';
-	icon_state = "rain";
-	alpha = 100
-	},
-/turf/open/indestructible/tram{
-	color = "#cfcfcf"
-	},
+/turf/closed/wall,
 /area/misc/condo)
 "ht" = (
 /obj/structure/decorative{
@@ -1514,6 +1468,23 @@
 	},
 /area/misc/condo)
 "kv" = (
+/obj/effect/turf_decal/siding/dark,
+/obj/effect/turf_decal/siding/dark{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/wideplating_new/dark/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/wideplating_new/dark/corner,
+/obj/effect/turf_decal/siding/wideplating_new/dark/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/wideplating_new/dark/corner{
+	dir = 1
+	},
+/obj/machinery/door/airlock/survival_pod{
+	name = "Bathroom"
+	},
 /obj/structure/curtain/cloth/fancy/mechanical{
 	icon = 'modular_nova/master_files/icons/obj/skyscraper/curtains_apartments.dmi';
 	icon_state = "curtain_apartments_top-open";
@@ -1606,21 +1577,14 @@
 	},
 /area/misc/condo)
 "lx" = (
-/obj/structure/decorative{
-	icon_state = "siding_plain";
-	icon = 'icons/turf/decals.dmi';
-	dir = 8;
-	color = "#878787";
-	pixel_x = 32
+/obj/effect/turf_decal/tile/dark_blue/diagonal_edge,
+/obj/structure/toilet{
+	dir = 8
 	},
-/obj/effect/abstract/marker{
-	icon = 'modular_nova/master_files/icons/obj/skyscraper/rain.dmi';
-	icon_state = "rain";
-	alpha = 100
+/obj/effect/turf_decal/siding/white{
+	dir = 6
 	},
-/turf/open/indestructible/tram{
-	color = "#e8e8e8"
-	},
+/turf/open/floor/iron/white/diagonal,
 /area/misc/condo)
 "ly" = (
 /obj/effect/abstract/marker{
@@ -1659,14 +1623,11 @@
 	},
 /area/misc/condo)
 "lC" = (
-/obj/effect/abstract/marker{
-	icon = 'modular_nova/master_files/icons/obj/skyscraper/rain.dmi';
-	icon_state = "rain";
-	alpha = 100
+/obj/effect/turf_decal/siding/dark{
+	dir = 6
 	},
-/turf/open/skyline{
-	icon_state = "24,20"
-	},
+/obj/structure/closet/secure_closet/freezer/fridge,
+/turf/open/floor/iron/kitchen/herringbone,
 /area/misc/condo)
 "lF" = (
 /obj/structure/decorative{
@@ -1676,13 +1637,10 @@
 	color = "#878787";
 	pixel_x = 32
 	},
-/obj/effect/abstract/marker{
-	icon = 'modular_nova/master_files/icons/obj/skyscraper/rain.dmi';
-	icon_state = "rain";
-	alpha = 100
-	},
-/turf/open/indestructible/tram{
-	color = "#cfcfcf"
+/obj/structure/curtain/bounty,
+/turf/closed/wall/mineral/titanium/shuttle_wall/window/evac{
+	icon_state = "15,16";
+	dir = 1
 	},
 /area/misc/condo)
 "lH" = (
@@ -2142,14 +2100,9 @@
 	},
 /area/misc/condo)
 "oS" = (
-/obj/effect/abstract/marker{
-	icon = 'modular_nova/master_files/icons/obj/skyscraper/rain.dmi';
-	icon_state = "rain";
-	alpha = 100
-	},
-/turf/open/indestructible/tram{
-	color = "#e8e8e8"
-	},
+/obj/structure/drain,
+/obj/machinery/shower/directional/east,
+/turf/open/floor/iron/white/herringbone,
 /area/misc/condo)
 "oX" = (
 /obj/effect/abstract/marker{
@@ -2210,28 +2163,21 @@
 	},
 /area/misc/condo)
 "po" = (
-/obj/structure/decorative{
-	icon_state = "siding_plain_corner";
-	icon = 'icons/turf/decals.dmi';
-	base_icon_state = "elevatorshaft";
-	color = "#36373a";
-	dir = 8
+/obj/effect/turf_decal/siding/dark{
+	dir = 5
 	},
-/obj/structure/decorative{
-	icon_state = "siding_plain_corner";
-	icon = 'icons/turf/decals.dmi';
-	base_icon_state = "elevatorshaft";
-	color = "#36373a"
+/obj/structure/table,
+/obj/machinery/microwave/frontier_printed{
+	pixel_x = 0;
+	pixel_y = 22;
+	color = "#828281";
+	layer = 3
 	},
-/obj/structure/decorative{
-	icon_state = "siding_plain";
-	icon = 'icons/turf/decals.dmi';
-	base_icon_state = "elevatorshaft";
-	color = "#36373a";
-	dir = 1;
-	anchored = 1
+/obj/item/kitchen/rollingpin{
+	pixel_x = 1;
+	pixel_y = 7
 	},
-/turf/closed/wall,
+/turf/open/floor/iron/kitchen/herringbone,
 /area/misc/condo)
 "pq" = (
 /obj/effect/abstract/marker{
@@ -2589,14 +2535,19 @@
 	},
 /area/misc/condo)
 "rI" = (
-/obj/effect/abstract/marker{
-	icon = 'modular_nova/master_files/icons/obj/skyscraper/rain.dmi';
-	icon_state = "rain";
-	alpha = 100
+/obj/structure/decorative{
+	icon_state = "siding_plain_end";
+	icon = 'icons/turf/decals.dmi';
+	base_icon_state = "elevatorshaft";
+	color = "#36373a";
+	anchored = 1
 	},
-/turf/open/skyline{
-	icon_state = "19,20"
+/obj/machinery/smartfridge/food{
+	layer = 2.7;
+	pixel_x = 5;
+	pixel_y = 1
 	},
+/turf/closed/wall,
 /area/misc/condo)
 "rK" = (
 /obj/effect/abstract/marker{
@@ -2741,18 +2692,14 @@
 	},
 /area/misc/condo)
 "sO" = (
-/obj/effect/light_emitter/interlink{
-	light_color = "#ffe7cf";
-	light_power = 1.5
+/obj/effect/turf_decal/tile/dark_blue/diagonal_edge,
+/obj/effect/turf_decal/siding/white{
+	dir = 1
 	},
-/obj/effect/abstract/marker{
-	icon = 'modular_nova/master_files/icons/obj/skyscraper/rain.dmi';
-	icon_state = "rain";
-	alpha = 100
+/obj/effect/turf_decal/siding/white/corner{
+	dir = 8
 	},
-/turf/open/indestructible/tram{
-	color = "#f0f0f0"
-	},
+/turf/open/floor/iron/white/diagonal,
 /area/misc/condo)
 "sR" = (
 /obj/effect/abstract/marker{
@@ -2880,14 +2827,11 @@
 	},
 /area/misc/condo)
 "tR" = (
-/obj/effect/abstract/marker{
-	icon = 'modular_nova/master_files/icons/obj/skyscraper/rain.dmi';
-	icon_state = "rain";
-	alpha = 100
+/obj/effect/turf_decal/tile/dark_blue/diagonal_edge,
+/obj/effect/turf_decal/siding/white/end{
+	dir = 8
 	},
-/turf/open/indestructible/tram{
-	color = "#f0f0f0"
-	},
+/turf/open/floor/iron/white/diagonal,
 /area/misc/condo)
 "tX" = (
 /obj/effect/abstract/marker{
@@ -2981,21 +2925,26 @@
 /area/misc/condo)
 "uF" = (
 /obj/structure/decorative{
-	icon_state = "siding_plain_end";
+	icon_state = "siding_plain";
 	icon = 'icons/turf/decals.dmi';
 	base_icon_state = "elevatorshaft";
 	color = "#36373a";
+	dir = 10;
+	anchored = 1
+	},
+/obj/structure/decorative{
+	icon_state = "siding_plain_corner";
+	icon = 'icons/turf/decals.dmi';
+	base_icon_state = "elevatorshaft";
+	color = "#36373a";
+	dir = 4;
 	anchored = 1
 	},
 /turf/closed/wall,
 /area/misc/condo)
 "uL" = (
-/obj/effect/abstract/marker{
-	icon = 'modular_nova/master_files/icons/obj/skyscraper/rain.dmi';
-	icon_state = "rain";
-	alpha = 100
-	},
-/turf/open/indestructible/tram,
+/obj/machinery/light_switch/directional/west,
+/turf/open/floor/iron/dark/smooth_large,
 /area/misc/condo)
 "uM" = (
 /obj/effect/abstract/marker{
@@ -3133,14 +3082,26 @@
 	},
 /area/misc/condo)
 "vD" = (
-/obj/effect/abstract/marker{
-	icon = 'modular_nova/master_files/icons/obj/skyscraper/rain.dmi';
-	icon_state = "rain";
-	alpha = 100
+/obj/effect/turf_decal/siding/wideplating_new/dark{
+	dir = 9
 	},
-/turf/open/skyline{
-	icon_state = "20,20"
+/obj/effect/turf_decal/trimline/dark_blue/filled/line{
+	color = "#D4D4D4";
+	alpha = 255;
+	dir = 9
 	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 9
+	},
+/obj/effect/turf_decal/trimline/neutral/corner{
+	alpha = 255
+	},
+/obj/machinery/light/floor{
+	brightness = 4;
+	pixel_x = 16;
+	pixel_y = -16
+	},
+/turf/open/floor/circuit/red/off,
 /area/misc/condo)
 "vI" = (
 /obj/effect/abstract/marker{
@@ -3373,47 +3334,49 @@
 /turf/open/floor/iron/dark/smooth_large,
 /area/misc/condo)
 "xd" = (
-/obj/effect/turf_decal/trimline/dark_blue/filled/corner{
-	dir = 8;
-	color = "#D4D4D4";
-	alpha = 255
-	},
-/obj/effect/turf_decal/siding/wideplating_new/dark{
+/obj/structure/decorative{
+	icon = 'icons/obj/machines/wallmounts.dmi';
+	icon_state = "access_button_cycle";
+	pixel_y = -25;
 	dir = 1
 	},
-/obj/effect/turf_decal/siding/wideplating_new/dark/corner{
-	dir = 8
+/obj/machinery/button/curtain{
+	pixel_y = -26;
+	id = "apartments_curtain_livingroom";
+	alpha = 0;
+	color = "#FFFFFF"
+	},
+/obj/effect/turf_decal/trimline/neutral/corner{
+	alpha = 255;
+	dir = 4
+	},
+/obj/machinery/light_switch/directional/south{
+	pixel_y = -35
 	},
 /obj/effect/turf_decal/trimline/dark_blue/filled/line{
 	color = "#D4D4D4";
-	alpha = 255;
-	dir = 1
+	alpha = 255
 	},
-/obj/effect/turf_decal/siding/wood{
+/obj/effect/turf_decal/siding/wideplating_new/dark,
+/obj/effect/turf_decal/siding/wood,
+/obj/effect/turf_decal/trimline/dark_blue/filled/corner{
+	dir = 1;
+	color = "#D4D4D4";
+	alpha = 255
+	},
+/obj/effect/turf_decal/siding/wideplating_new/dark/corner{
 	dir = 1
 	},
 /obj/effect/turf_decal/siding/wood/corner{
-	dir = 8
-	},
-/obj/effect/turf_decal/trimline/neutral/corner{
-	alpha = 255
-	},
-/obj/machinery/light/floor{
-	brightness = 4;
-	pixel_x = 16;
-	pixel_y = -16
+	dir = 1
 	},
 /turf/open/floor/circuit/red/off,
 /area/misc/condo)
 "xk" = (
-/obj/structure/toilet{
-	dir = 8
+/obj/effect/turf_decal/siding/dark{
+	dir = 7
 	},
-/obj/effect/turf_decal/tile/dark_blue/diagonal_edge,
-/obj/effect/turf_decal/siding/white/end{
-	dir = 4
-	},
-/turf/open/floor/iron/white/diagonal,
+/turf/open/floor/iron/kitchen/herringbone,
 /area/misc/condo)
 "xp" = (
 /obj/effect/abstract/marker{
@@ -3619,21 +3582,21 @@
 /area/misc/condo)
 "yL" = (
 /obj/effect/turf_decal/siding/dark,
+/obj/effect/turf_decal/siding/wideplating_new/dark/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/wideplating_new/dark/corner,
 /obj/effect/turf_decal/siding/dark{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/wideplating_new/dark/corner{
 	dir = 1
 	},
 /obj/effect/turf_decal/siding/wideplating_new/dark/corner{
 	dir = 4
 	},
-/obj/effect/turf_decal/siding/wideplating_new/dark/corner,
-/obj/effect/turf_decal/siding/wideplating_new/dark/corner{
-	dir = 8
-	},
-/obj/effect/turf_decal/siding/wideplating_new/dark/corner{
-	dir = 1
-	},
-/obj/machinery/door/airlock/survival_pod{
-	name = "Restroom"
+/obj/machinery/door/morgue{
+	name = "Living Room"
 	},
 /turf/open/floor/iron/dark/smooth_large,
 /area/misc/condo)
@@ -3728,12 +3691,10 @@
 	},
 /area/misc/condo)
 "zO" = (
-/obj/effect/turf_decal/tile/dark_blue/diagonal_edge,
-/obj/effect/turf_decal/siding/white/end{
-	dir = 8
+/obj/effect/turf_decal/siding/dark{
+	dir = 10
 	},
-/obj/machinery/light_switch/directional/south,
-/turf/open/floor/iron/white/diagonal,
+/turf/open/floor/iron/kitchen/herringbone,
 /area/misc/condo)
 "zS" = (
 /obj/effect/abstract/marker{
@@ -4851,14 +4812,23 @@
 	color = "#878787";
 	pixel_x = 32
 	},
-/obj/effect/abstract/marker{
-	icon = 'modular_nova/master_files/icons/obj/skyscraper/rain.dmi';
-	icon_state = "rain";
-	alpha = 100
+/obj/structure/decorative{
+	icon_state = "siding_plain";
+	icon = 'icons/turf/decals.dmi';
+	base_icon_state = "elevatorshaft";
+	color = "#36373a";
+	dir = 6;
+	anchored = 1
 	},
-/turf/open/indestructible/tram{
-	color = "#b8b8b8"
+/obj/structure/decorative{
+	icon_state = "siding_plain_corner";
+	icon = 'icons/turf/decals.dmi';
+	base_icon_state = "elevatorshaft";
+	color = "#36373a";
+	dir = 1;
+	anchored = 1
 	},
+/turf/closed/wall,
 /area/misc/condo)
 "Id" = (
 /obj/effect/light_emitter/interlink{
@@ -4915,17 +4885,19 @@
 	},
 /area/misc/condo)
 "ID" = (
-/obj/structure/table/greyscale,
-/obj/structure/mirror/directional/north,
-/obj/machinery/light/floor{
-	brightness = 3;
-	pixel_x = 16;
-	pixel_y = 1
+/obj/effect/turf_decal/siding/dark{
+	dir = 8
 	},
-/obj/item/towel{
-	pixel_y = 7
+/obj/structure/sink/kitchen/directional/east,
+/obj/structure/decorative{
+	icon_state = "siding_plain";
+	icon = 'icons/turf/decals.dmi';
+	base_icon_state = "elevatorshaft";
+	color = "#36373a";
+	dir = 8;
+	anchored = 1
 	},
-/turf/open/floor/iron/dark/smooth_large,
+/turf/open/floor/iron/kitchen/herringbone,
 /area/misc/condo)
 "II" = (
 /obj/effect/abstract/marker{
@@ -5049,14 +5021,7 @@
 	color = "#878787";
 	pixel_x = 32
 	},
-/obj/effect/abstract/marker{
-	icon = 'modular_nova/master_files/icons/obj/skyscraper/rain.dmi';
-	icon_state = "rain";
-	alpha = 100
-	},
-/turf/open/indestructible/tram{
-	color = "#ababab"
-	},
+/turf/closed/wall,
 /area/misc/condo)
 "JY" = (
 /obj/structure/decorative{
@@ -5175,37 +5140,10 @@
 	},
 /area/misc/condo)
 "KL" = (
-/obj/structure/decorative{
-	icon = 'icons/obj/machines/wallmounts.dmi';
-	icon_state = "access_button_cycle";
-	pixel_y = -25;
-	dir = 1
+/obj/effect/turf_decal/siding/dark{
+	dir = 8
 	},
-/obj/machinery/button/curtain{
-	pixel_y = -26;
-	id = "apartments_curtain_livingroom";
-	alpha = 0;
-	color = "#FFFFFF"
-	},
-/obj/effect/turf_decal/siding/wideplating_new/dark{
-	dir = 10
-	},
-/obj/effect/turf_decal/trimline/dark_blue/filled/line{
-	color = "#D4D4D4";
-	alpha = 255;
-	dir = 10
-	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 10
-	},
-/obj/effect/turf_decal/trimline/neutral/corner{
-	alpha = 255;
-	dir = 4
-	},
-/obj/machinery/light_switch/directional/south{
-	pixel_y = -35
-	},
-/turf/open/floor/circuit/red/off,
+/turf/open/floor/carpet/black,
 /area/misc/condo)
 "KM" = (
 /obj/structure/curtain/cloth/fancy/mechanical{
@@ -6289,19 +6227,19 @@
 	},
 /area/misc/condo)
 "Sc" = (
+/obj/structure/table/greyscale,
+/obj/item/reagent_containers/spray/cleaner{
+	pixel_x = 8;
+	pixel_y = 15
+	},
 /obj/structure/decorative{
-	icon_state = "siding_plain";
-	icon = 'icons/turf/decals.dmi';
-	dir = 8;
-	color = "#878787";
-	pixel_x = 32
+	icon = 'modular_nova/master_files/icons/obj/skyscraper/curtains_apartments.dmi';
+	icon_state = "0,5";
+	anchored = 1;
+	name = "sink";
+	pixel_x = -15
 	},
-/obj/effect/abstract/marker{
-	icon = 'modular_nova/master_files/icons/obj/skyscraper/rain.dmi';
-	icon_state = "rain";
-	alpha = 100
-	},
-/turf/open/indestructible/tram,
+/turf/open/floor/iron/dark/smooth_large,
 /area/misc/condo)
 "Sd" = (
 /obj/effect/abstract/marker{
@@ -6574,18 +6512,30 @@
 	},
 /area/misc/condo)
 "Ud" = (
-/obj/effect/light_emitter/interlink{
-	light_color = "#ffe7cf";
-	light_power = 1.5
+/obj/structure/decorative{
+	icon_state = "siding_plain_corner";
+	icon = 'icons/turf/decals.dmi';
+	base_icon_state = "elevatorshaft";
+	color = "#36373a";
+	dir = 1;
+	anchored = 1
 	},
-/obj/effect/abstract/marker{
-	icon = 'modular_nova/master_files/icons/obj/skyscraper/rain.dmi';
-	icon_state = "rain";
-	alpha = 100
+/obj/structure/decorative{
+	icon_state = "siding_plain_corner";
+	icon = 'icons/turf/decals.dmi';
+	base_icon_state = "elevatorshaft";
+	color = "#36373a";
+	dir = 8
 	},
-/turf/open/skyline{
-	icon_state = "18,20"
+/obj/structure/decorative{
+	icon_state = "siding_plain";
+	icon = 'icons/turf/decals.dmi';
+	base_icon_state = "elevatorshaft";
+	color = "#36373a";
+	dir = 4;
+	anchored = 1
 	},
+/turf/closed/wall,
 /area/misc/condo)
 "Ue" = (
 /obj/effect/abstract/marker{
@@ -6718,21 +6668,26 @@
 /turf/open/indestructible/tram,
 /area/misc/condo)
 "US" = (
-/obj/structure/decorative{
-	icon_state = "siding_plain";
-	icon = 'icons/turf/decals.dmi';
-	dir = 8;
-	color = "#878787";
-	pixel_x = 32
+/obj/machinery/door/airlock/survival_pod{
+	name = "Restroom"
 	},
-/obj/effect/abstract/marker{
-	icon = 'modular_nova/master_files/icons/obj/skyscraper/rain.dmi';
-	icon_state = "rain";
-	alpha = 100
+/obj/effect/turf_decal/siding/dark{
+	dir = 8
 	},
-/turf/open/indestructible/tram{
-	color = "#c6c6c6"
+/obj/effect/turf_decal/siding/dark{
+	dir = 4
 	},
+/obj/effect/turf_decal/siding/wideplating_new/dark/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/wideplating_new/dark/corner,
+/obj/effect/turf_decal/siding/wideplating_new/dark/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/wideplating_new/dark/corner{
+	dir = 1
+	},
+/turf/open/floor/iron/dark/smooth_large,
 /area/misc/condo)
 "Vd" = (
 /obj/structure/wargame_hologram/ship_marker/large/alternate{
@@ -7177,14 +7132,16 @@
 	},
 /area/misc/condo)
 "Yx" = (
-/obj/effect/abstract/marker{
-	icon = 'modular_nova/master_files/icons/obj/skyscraper/rain.dmi';
-	icon_state = "rain";
-	alpha = 100
+/obj/effect/turf_decal/siding/dark{
+	dir = 1
 	},
-/turf/open/skyline{
-	icon_state = "17,20"
+/obj/structure/table,
+/obj/item/cutting_board,
+/obj/item/knife/kitchen{
+	pixel_x = 12;
+	pixel_y = 1
 	},
+/turf/open/floor/iron/kitchen/herringbone,
 /area/misc/condo)
 "YG" = (
 /obj/effect/abstract/marker{
@@ -7448,14 +7405,17 @@
 	},
 /area/misc/condo)
 "ZY" = (
-/obj/effect/abstract/marker{
-	icon = 'modular_nova/master_files/icons/obj/skyscraper/rain.dmi';
-	icon_state = "rain";
-	alpha = 100
+/obj/structure/table/greyscale,
+/obj/item/towel{
+	pixel_y = 7
 	},
-/turf/open/skyline{
-	icon_state = "23,20"
+/obj/structure/mirror/directional/north,
+/obj/machinery/light/floor{
+	brightness = 3;
+	pixel_x = 16;
+	pixel_y = 1
 	},
+/turf/open/floor/iron/dark/smooth_large,
 /area/misc/condo)
 
 (1,1,1) = {"
@@ -7872,13 +7832,13 @@ Iq
 uD
 fs
 UK
-Yx
 dz
 uM
 GO
+vD
 xd
-KL
 fU
+lH
 ht
 vS
 wq
@@ -7899,7 +7859,6 @@ Md
 Nz
 AS
 hn
-Ud
 ZP
 pF
 Yd
@@ -7909,6 +7868,7 @@ VJ
 IQ
 RM
 Ad
+KL
 vQ
 xa
 RH
@@ -7926,7 +7886,6 @@ Xs
 CX
 ZK
 zS
-rI
 GT
 XS
 kw
@@ -7936,6 +7895,7 @@ Ac
 FH
 Wx
 sg
+fT
 dY
 FH
 HE
@@ -7953,7 +7913,6 @@ zV
 Cn
 wK
 tO
-vD
 Jn
 XS
 hT
@@ -7961,12 +7920,13 @@ NZ
 TW
 sB
 OS
-uF
+lH
+rI
 yL
-BG
-BT
-Lg
 fU
+Ud
+lH
+lH
 uF
 Cu
 AJ
@@ -7980,7 +7940,6 @@ dW
 ra
 hI
 iy
-aa
 Lr
 XS
 MA
@@ -7988,14 +7947,15 @@ KV
 TB
 GC
 JY
+fV
 ID
 zO
-JY
+US
 uL
 tR
 oS
-Ty
-FO
+JY
+Cu
 AJ
 "}
 (21,1,1) = {"
@@ -8007,22 +7967,22 @@ sv
 la
 BR
 Vl
-fT
 Qv
 Jo
 hb
 sS
 So
 pM
-JY
+hq
+Yx
 go
 xk
-JY
-uL
+FH
+ZY
 sO
-oS
-Ty
-FO
+aa
+JY
+Cu
 AJ
 "}
 (22,1,1) = {"
@@ -8034,22 +7994,22 @@ LH
 Xa
 de
 ss
-ZY
 Bw
 Kk
 NM
 ZQ
 OL
 qD
+hq
 po
 dh
-Lg
-hA
+lC
+JY
 Sc
 ex
 lx
-aJ
-hq
+JY
+Cu
 AJ
 "}
 (23,1,1) = {"
@@ -8061,7 +8021,6 @@ rx
 As
 gR
 Kr
-lC
 qo
 Fb
 Zv
@@ -8069,12 +8028,13 @@ Zv
 Zv
 CD
 OA
-Sc
-fV
+lF
+lF
+Lg
 es
 aJ
 lF
-US
+Fb
 HV
 JM
 AJ
