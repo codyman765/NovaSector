@@ -1,0 +1,786 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"aa" = (
+/obj/structure/bookcase/random/fiction,
+/obj/effect/turf_decal/siding/wood,
+/obj/structure/sign/painting/library{
+	pixel_y = 32
+	},
+/turf/open/floor/wood/large,
+/area/misc/condo)
+"ax" = (
+/obj/structure/railing/wooden_fencing{
+	dir = 8
+	},
+/obj/structure/table/wood,
+/obj/machinery/chem_dispenser/drinks/beer/fullupgrade,
+/turf/open/floor/wood/wood_13,
+/area/misc/condo)
+"aF" = (
+/obj/structure/table/wood,
+/obj/machinery/chem_master/condimaster,
+/turf/open/floor/wood/wood_13,
+/area/misc/condo)
+"ci" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 6
+	},
+/turf/open/floor/carpet/polite/red,
+/area/misc/condo)
+"cT" = (
+/obj/structure/fake_stairs/wood/directional/north,
+/obj/structure/railing/wooden_fencing{
+	dir = 8
+	},
+/turf/open/space/basic,
+/area/misc/condo)
+"dV" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/item/kirbyplants/random,
+/obj/machinery/light/directional/south,
+/turf/open/floor/wood/large,
+/area/misc/condo)
+"fP" = (
+/turf/open/floor/stone,
+/area/misc/condo)
+"gf" = (
+/turf/closed/wall/mineral/stone,
+/area/misc/condo)
+"ix" = (
+/turf/open/floor/carpet/polite/red,
+/area/misc/condo)
+"ji" = (
+/obj/effect/turf_decal/siding/wood,
+/obj/structure/table/wood/fancy,
+/obj/item/reagent_containers/cup/glass/mug/tea{
+	pixel_x = -6
+	},
+/turf/open/floor/wood/large,
+/area/misc/condo)
+"jr" = (
+/obj/effect/turf_decal/siding/wood,
+/obj/structure/chair/comfy/beige,
+/turf/open/floor/wood/large,
+/area/misc/condo)
+"kM" = (
+/obj/structure/railing/wooden_fencing{
+	dir = 8
+	},
+/turf/open/floor/wood/wood_13,
+/area/misc/condo)
+"nu" = (
+/turf/closed/indestructible/wood,
+/area/misc/condo)
+"nY" = (
+/obj/structure/table/wood,
+/turf/open/floor/wood/wood_13,
+/area/misc/condo)
+"or" = (
+/obj/structure/fake_stairs/wood/directional/north,
+/turf/open/space/basic,
+/area/misc/condo)
+"oB" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/turf/open/floor/carpet/polite/red,
+/area/misc/condo)
+"oG" = (
+/obj/structure/chair/stool/bar/directional/north,
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/turf/open/floor/carpet/polite/red,
+/area/misc/condo)
+"pI" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/turf/open/floor/carpet/polite/red,
+/area/misc/condo)
+"ql" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/structure/closet/cabinet,
+/turf/open/floor/wood/large,
+/area/misc/condo)
+"rg" = (
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 1
+	},
+/turf/open/floor/carpet/polite/red,
+/area/misc/condo)
+"rQ" = (
+/turf/closed/mineral/earth_like,
+/area/misc/condo)
+"su" = (
+/obj/item/kirbyplants/random,
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/machinery/light/directional/south,
+/turf/open/floor/wood/large,
+/area/misc/condo)
+"ut" = (
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 4
+	},
+/turf/open/floor/carpet/polite/red,
+/area/misc/condo)
+"vr" = (
+/obj/structure/railing/wooden_fencing,
+/turf/open/floor/carpet/polite/red,
+/area/misc/condo)
+"xi" = (
+/obj/structure/chair/wood/wings,
+/turf/open/floor/wood/tile,
+/area/misc/condo)
+"xY" = (
+/obj/effect/turf_decal/siding/wood/corner,
+/turf/open/floor/carpet/polite/red,
+/area/misc/condo)
+"zf" = (
+/obj/structure/table/wood,
+/obj/machinery/chem_dispenser/drinks/fullupgrade,
+/turf/open/floor/wood/wood_13,
+/area/misc/condo)
+"zu" = (
+/obj/structure/hedge,
+/obj/structure/window/fulltile{
+	polarizer_id_on_spawn = "ilinkbooth2"
+	},
+/obj/structure/curtain/cloth,
+/turf/open/floor/grass,
+/area/misc/condo)
+"AI" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/turf/open/floor/carpet/polite/red,
+/area/misc/condo)
+"AL" = (
+/turf/open/space/basic,
+/area/misc/condo)
+"Bn" = (
+/obj/structure/bookcase/random/adult,
+/obj/effect/turf_decal/siding/wood,
+/turf/open/floor/wood/large,
+/area/misc/condo)
+"CE" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 3
+	},
+/turf/open/floor/carpet/polite/red,
+/area/misc/condo)
+"Do" = (
+/obj/effect/turf_decal/siding/wood,
+/obj/structure/table/wood,
+/obj/item/reagent_containers/cup/bowl{
+	pixel_y = 8
+	},
+/turf/open/floor/wood/large,
+/area/misc/condo)
+"Er" = (
+/turf/open/floor/wood/wood_13,
+/area/misc/condo)
+"ED" = (
+/obj/machinery/door/airlock/multi_tile/public/glass{
+	name = "Garden"
+	},
+/turf/open/floor/carpet/polite/red,
+/area/misc/condo)
+"Fe" = (
+/obj/structure/fake_stairs/wood/directional/north,
+/obj/structure/railing/wooden_fencing{
+	dir = 4
+	},
+/turf/open/space/basic,
+/area/misc/condo)
+"GB" = (
+/obj/effect/turf_decal/siding/wood,
+/obj/structure/displaycase/trophy,
+/turf/open/floor/wood/large,
+/area/misc/condo)
+"Hq" = (
+/turf/open/floor/wood/parquet,
+/area/misc/condo)
+"IB" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 10
+	},
+/turf/open/floor/carpet/polite/red,
+/area/misc/condo)
+"Ji" = (
+/obj/machinery/door/airlock/multi_tile/public/glass{
+	name = "Garden"
+	},
+/turf/open/floor/stone,
+/area/misc/condo)
+"Jp" = (
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 8
+	},
+/turf/open/floor/carpet/polite/red,
+/area/misc/condo)
+"Nx" = (
+/turf/open/floor/carpet/orange,
+/area/misc/condo)
+"NO" = (
+/obj/structure/railing/wooden_fencing{
+	dir = 4
+	},
+/turf/open/floor/wood/wood_13,
+/area/misc/condo)
+"Od" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/structure/table/wood,
+/obj/item/plate{
+	pixel_y = 8
+	},
+/turf/open/floor/wood/large,
+/area/misc/condo)
+"Rq" = (
+/obj/structure/railing/wooden_fencing{
+	dir = 4
+	},
+/obj/machinery/vending/boozeomat/cafe,
+/turf/open/floor/wood/wood_13,
+/area/misc/condo)
+"SB" = (
+/turf/closed/indestructible/weeb,
+/area/misc/condo)
+"SE" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/structure/table/wood,
+/obj/item/flashlight/lamp/green{
+	pixel_y = 6;
+	pixel_x = -7
+	},
+/turf/open/floor/wood/large,
+/area/misc/condo)
+"SI" = (
+/obj/structure/table/wood,
+/obj/item/book/random{
+	pixel_x = -7;
+	pixel_y = 5
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/turf/open/floor/wood/large,
+/area/misc/condo)
+"SU" = (
+/turf/closed/indestructible/hoteldoor/fakedoor{
+	dir = 4
+	},
+/area/misc/condo)
+"Uq" = (
+/obj/structure/mirror/directional/east,
+/turf/open/floor/carpet/orange,
+/area/misc/condo)
+"UQ" = (
+/obj/structure/table/wood,
+/obj/item/phone{
+	pixel_y = 1;
+	pixel_x = 8
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/turf/open/floor/wood/large,
+/area/misc/condo)
+"Wi" = (
+/turf/open/floor/wood/tile,
+/area/misc/condo)
+"WK" = (
+/obj/effect/turf_decal/siding/wood,
+/obj/item/bouquet/sunflower{
+	pixel_y = 6
+	},
+/obj/structure/table/wood,
+/turf/open/floor/wood/large,
+/area/misc/condo)
+"WZ" = (
+/obj/structure/dresser,
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/turf/open/floor/wood/large,
+/area/misc/condo)
+"Yt" = (
+/turf/open/floor/carpet/royalblack,
+/area/misc/condo)
+
+(1,1,1) = {"
+AL
+AL
+AL
+AL
+AL
+AL
+AL
+AL
+AL
+AL
+AL
+rQ
+nu
+gf
+SU
+gf
+nu
+gf
+AL
+AL
+AL
+AL
+AL
+AL
+AL
+AL
+AL
+"}
+(2,1,1) = {"
+AL
+AL
+AL
+AL
+AL
+AL
+AL
+AL
+AL
+AL
+AL
+nu
+nu
+Nx
+Nx
+Nx
+nu
+nu
+AL
+AL
+AL
+AL
+AL
+AL
+AL
+AL
+AL
+"}
+(3,1,1) = {"
+AL
+AL
+AL
+AL
+AL
+AL
+AL
+AL
+AL
+AL
+AL
+nu
+Bn
+Nx
+Nx
+Nx
+su
+nu
+AL
+AL
+AL
+AL
+AL
+AL
+AL
+AL
+AL
+"}
+(4,1,1) = {"
+AL
+nu
+nu
+AL
+AL
+AL
+AL
+AL
+AL
+AL
+AL
+SB
+WK
+Wi
+Hq
+xi
+SI
+zu
+AL
+AL
+AL
+AL
+AL
+AL
+AL
+AL
+AL
+"}
+(5,1,1) = {"
+nu
+ix
+ix
+AI
+AI
+cT
+AI
+AI
+IB
+AL
+AL
+SB
+Do
+Hq
+Wi
+Hq
+UQ
+zu
+AL
+AL
+AL
+AL
+AL
+AL
+AL
+AL
+AL
+"}
+(6,1,1) = {"
+nu
+ix
+ix
+xY
+oB
+or
+oB
+ut
+CE
+AL
+AL
+gf
+aa
+Wi
+Hq
+Wi
+WZ
+gf
+AL
+AL
+AL
+AL
+AL
+AL
+AL
+AL
+AL
+"}
+(7,1,1) = {"
+nu
+ix
+ix
+vr
+ax
+kM
+Er
+pI
+CE
+AL
+AL
+gf
+gf
+Yt
+Yt
+Yt
+gf
+gf
+fP
+AL
+AL
+AL
+AL
+AL
+AL
+AL
+AL
+"}
+(8,1,1) = {"
+nu
+ix
+ix
+vr
+zf
+Er
+nY
+oG
+Jp
+AI
+AI
+ED
+ix
+ix
+ix
+ix
+fP
+Ji
+fP
+fP
+AL
+AL
+AL
+AL
+AL
+AL
+AL
+"}
+(9,1,1) = {"
+nu
+ix
+ix
+vr
+aF
+Er
+nY
+oG
+xY
+oB
+oB
+ix
+ix
+ix
+ix
+ix
+fP
+fP
+fP
+fP
+AL
+AL
+AL
+AL
+AL
+AL
+AL
+"}
+(10,1,1) = {"
+nu
+ix
+ix
+vr
+Rq
+NO
+nY
+oG
+CE
+AL
+AL
+gf
+gf
+Yt
+Yt
+Yt
+gf
+gf
+fP
+AL
+AL
+AL
+AL
+AL
+AL
+AL
+AL
+"}
+(11,1,1) = {"
+nu
+ix
+ix
+Jp
+AI
+or
+AI
+rg
+CE
+AL
+AL
+gf
+GB
+Wi
+Hq
+Wi
+ql
+gf
+AL
+AL
+AL
+AL
+AL
+AL
+AL
+AL
+AL
+"}
+(12,1,1) = {"
+nu
+ix
+ix
+oB
+oB
+Fe
+oB
+oB
+ci
+AL
+AL
+SB
+jr
+Hq
+Wi
+Hq
+SE
+zu
+AL
+AL
+AL
+AL
+AL
+AL
+AL
+AL
+AL
+"}
+(13,1,1) = {"
+AL
+nu
+nu
+AL
+AL
+AL
+AL
+AL
+AL
+AL
+AL
+SB
+ji
+Wi
+Hq
+xi
+Od
+zu
+AL
+AL
+AL
+AL
+AL
+AL
+AL
+AL
+AL
+"}
+(14,1,1) = {"
+AL
+AL
+AL
+AL
+AL
+AL
+AL
+AL
+AL
+AL
+AL
+nu
+jr
+Nx
+Nx
+Nx
+dV
+nu
+AL
+AL
+AL
+AL
+AL
+AL
+AL
+AL
+AL
+"}
+(15,1,1) = {"
+AL
+AL
+AL
+AL
+AL
+AL
+AL
+AL
+AL
+AL
+AL
+nu
+nu
+Nx
+Nx
+Uq
+nu
+nu
+AL
+AL
+AL
+AL
+AL
+AL
+AL
+AL
+AL
+"}
+(16,1,1) = {"
+AL
+AL
+AL
+AL
+AL
+AL
+AL
+AL
+AL
+AL
+AL
+rQ
+nu
+gf
+SU
+gf
+nu
+AL
+AL
+AL
+AL
+AL
+AL
+AL
+AL
+AL
+AL
+"}
