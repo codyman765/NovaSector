@@ -300,7 +300,3 @@
 		else
 			return FALSE
 
-	/mob/living/proc/interact_with() 	// SPLURT EDIT - INTERACTIONS - All mobs should be interactable
-	set name = "Interact With"
-	set desc = "Perform an interaction with someone."
-	set category = "IC"
