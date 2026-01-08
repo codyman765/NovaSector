@@ -11,6 +11,10 @@
 #define INTERACTION_REQUIRE_SELF_HAND "self_hand"
 #define INTERACTION_REQUIRE_TARGET_HAND "target_hand"
 
+// A person needs to be human to do this interaction
+#define INTERACTION_REQUIRE_SELF_HUMAN "self_human"
+#define INTERACTION_REQUIRE_TARGET_HUMAN "target_human"
+
 // Interaction Types: Do we do it to ourself or someone else
 #define INTERACTION_SELF "self"
 #define INTERACTION_OTHER "other"

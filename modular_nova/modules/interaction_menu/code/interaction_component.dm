@@ -1,7 +1,7 @@
 
 /datum/component/interactable
 	/// A hard reference to the parent
-	var/mob/living/carbon/human/self = null
+	var/mob/living/self = null
 	/// A list of interactions that the user can engage in.
 	var/list/datum/interaction/interactions
 	var/interact_last = 0
@@ -14,10 +14,12 @@
 		qdel(src)
 		return
 
-	if(!ishuman(parent))
+	if(!isliving(parent))
 		return COMPONENT_INCOMPATIBLE
 
 	self = parent
+
+	add_verb(self, /mob/living/proc/interact_with)
 
 	build_interactions_list()
 
@@ -26,7 +28,7 @@
 	for(var/iterating_interaction_id in GLOB.interaction_instances)
 		var/datum/interaction/interaction = GLOB.interaction_instances[iterating_interaction_id]
 		if(interaction.lewd)
-			if(!self.client?.prefs?.read_preference(/datum/preference/toggle/erp))
+			if(!self.client?.prefs?.read_preference(/datum/preference/toggle/erp)&& !(!ishuman(self) && !self.client))
 				continue
 			if(interaction.sexuality != "" && interaction.sexuality != self.client?.prefs?.read_preference(/datum/preference/choiced/erp_sexuality))
 				continue
@@ -46,16 +48,16 @@
 /datum/component/interactable/proc/open_interaction_menu(datum/source, mob/user)
 	SIGNAL_HANDLER
 
-	if(!ishuman(user))
+	if(!isliving(user))
 		return
 	build_interactions_list()
 	INVOKE_ASYNC(src, PROC_REF(ui_interact), user)
 	return CLICK_ACTION_SUCCESS
 
-/datum/component/interactable/proc/can_interact(datum/interaction/interaction, mob/living/carbon/human/target)
+/datum/component/interactable/proc/can_interact(datum/interaction/interaction, mob/living/target)
 	if(!interaction.allow_act(target, self))
 		return FALSE
-	if(interaction.lewd && !target.client?.prefs?.read_preference(/datum/preference/toggle/erp))
+	if(interaction.lewd && !target.client?.prefs?.read_preference(/datum/preference/toggle/erp) && !(!ishuman(target) && !target.client))
 		return FALSE
 	if(!interaction.distance_allowed && !target.Adjacent(self))
 		return FALSE
@@ -73,7 +75,7 @@
 		ui.open()
 
 /datum/component/interactable/ui_status(mob/user, datum/ui_state/state)
-	if(!ishuman(user))
+	if(!isliving(user))
 		return UI_CLOSE
 
 	return UI_INTERACTIVE // This UI is always interactive as we handle distance flags via can_interact
@@ -108,12 +110,15 @@
 	data["ref_user"] = REF(user)
 	data["ref_self"] = REF(self)
 	data["self"] = self.name
-	data["block_interact"] = interact_next >= world.time
+	data["block_interact"] = user_interaction_component?.interact_next >= world.time
 	data["interactions"] = categories
 	data["use_subtler"] = use_subtler
 	data["erp_interaction"] = self.client?.prefs?.read_preference(/datum/preference/toggle/erp)
 
 	var/mob/living/carbon/human/human_user = user
+	var/mob/living/carbon/human/human_self = self
+
+	var/datum/component/interactable/user_interaction_component = user.GetComponent(/datum/component/interactable)
 
 	data["isTargetSelf"] = (user == self)
 
@@ -123,32 +128,35 @@
 	var/user_pain = 0
 
 	if(user)
-		user_pleasure = human_user.pleasure
-		user_arousal = human_user.arousal
-		user_pain = human_user.pain
-
+		data["pleasure"] = user.pleasure || 0
+		data["maxPleasure"] = AROUSAL_LIMIT * (istype(human_user) ? human_user.dna.features["lust_tolerance"] || 1 : 1)
+		data["arousal"] = user.arousal || 0
+		data["maxArousal"] = AROUSAL_LIMIT
 		data["pleasure"] = user_pleasure
 		data["arousal"] = user_arousal
-		data["pain"] = user_pain
-
+		data["pain"] = user.pain || 0
+		data["selfAttributes"] = get_interaction_attributes(user)
 
 	// self - the one who the interaction component belongs to, aka who it's opened on (confusing var name yep)
 	if(user != self)
-		data["theirPleasure"] = self.pleasure
-		data["theirArousal"] = self.arousal
-		data["theirPain"] = self.pain
+		data["theirAttributes"] = get_interaction_attributes(self)
+		data["theirPleasure"] = self.pleasure || 0
+		data["theirMaxPleasure"] = AROUSAL_LIMIT * (istype(human_self) ? human_self.dna.features["lust_tolerance"] || 1 : 1)
+		data["theirArousal"] = self.arousal || 0
+		data["theirMaxArousal"] = AROUSAL_LIMIT
+		data["theirPain"] = self.pain || 0
 
 	var/list/parts = list()
 
 	if(ishuman(user) && can_lewd_strip(user, self))
 		if(self.client?.prefs?.read_preference(/datum/preference/toggle/erp/sex_toy))
 			if(self.has_vagina())
-				parts += list(generate_strip_entry(ORGAN_SLOT_VAGINA, self, user, self.vagina))
+				parts += list(generate_strip_entry(ORGAN_SLOT_VAGINA, self, user, human_self.vagina))
 			if(self.has_penis())
-				parts += list(generate_strip_entry(ORGAN_SLOT_PENIS, self, user, self.penis))
+				parts += list(generate_strip_entry(ORGAN_SLOT_PENIS, self, user, human_self.penis))
 			if(self.has_anus())
-				parts += list(generate_strip_entry(ORGAN_SLOT_ANUS, self, user, self.anus))
-			parts += list(generate_strip_entry(ORGAN_SLOT_NIPPLES, self, user, self.nipples))
+				parts += list(generate_strip_entry(ORGAN_SLOT_ANUS, self, user, human_self.anus))
+			parts += list(generate_strip_entry(ORGAN_SLOT_NIPPLES, self, user, human_self.nipples))
 
 	data["lewd_slots"] = parts
 
@@ -175,7 +183,7 @@
 	if(.)
 		return
 
-	if(!ishuman(ui.user))
+	if(!isliving(ui.user))
 		return
 
 	if(action == "toggle_subtler")
@@ -185,7 +193,7 @@
 	if(params["interaction"])
 		var/interaction_id = params["interaction"]
 		if(GLOB.interaction_instances[interaction_id])
-			var/mob/living/carbon/human/user = locate(params["userref"])
+			var/mob/living/user = locate(params["userref"])
 			if(!can_interact(GLOB.interaction_instances[interaction_id], user))
 				return FALSE
 			GLOB.interaction_instances[interaction_id].act(user, locate(params["selfref"]), use_subtler)
@@ -198,8 +206,8 @@
 	if(params["item_slot"])
 		// This code should be easy enough to follow... I hope.
 		var/item_index = params["item_slot"]
-		var/mob/living/carbon/human/source = locate(params["userref"])
-		var/mob/living/carbon/human/target = locate(params["selfref"])
+		var/mob/living/source = locate(params["userref"])
+		var/mob/living/target = locate(params["selfref"])
 		var/obj/item/clothing/sextoy/new_item = source.get_active_held_item()
 		var/obj/item/clothing/sextoy/existing_item = target.vars[item_index]
 
@@ -294,3 +302,8 @@
 			return item.lewd_slot_flags & LEWD_SLOT_NIPPLES
 		else
 			return FALSE
+
+	/mob/living/proc/interact_with() 	// SPLURT EDIT - INTERACTIONS - All mobs should be interactable
+	set name = "Interact With"
+	set desc = "Perform an interaction with someone."
+	set category = "IC"

@@ -89,7 +89,7 @@ GLOBAL_LIST_EMPTY_TYPED(interaction_instances, /datum/interaction)
 				CRASH("Unimplemented interaction requirement '[requirement]'")
 	return TRUE
 
-/datum/interaction/proc/act(mob/living/carbon/human/user, mob/living/carbon/human/target, use_subtler)
+/datum/interaction/proc/act(mob/living/user, mob/living/target, use_subtler)
 	if(!allow_act(user, target))
 		return
 	if(!message)
@@ -152,8 +152,11 @@ GLOBAL_LIST_EMPTY_TYPED(interaction_instances, /datum/interaction)
 
 	INVOKE_ASYNC(src, PROC_REF(apply_effects), user, target)
 
+	var/mob/living/carbon/human/human_user = user
+	var/mob/living/carbon/human/human_target = target
+
 /// Applies side effects to the user and/or target of the interaction.
-/datum/interaction/proc/apply_effects(mob/living/carbon/human/user, mob/living/carbon/human/target)
+/datum/interaction/proc/apply_effects(mob/living/user, mob/living/target)
 	if(user_pain)
 		user.adjust_pain(user_pain)
 	if(target_pain)
@@ -237,6 +240,10 @@ GLOBAL_LIST_EMPTY_TYPED(interaction_instances, /datum/interaction)
 	var/file = file(fpath)
 	WRITE_FILE(file, json_encode(json))
 	return TRUE
+
+	/mob/living/Initialize(mapload) // SPLURT EDIT - INTERACTIONS - All mobs should be interactable
+	. = ..()
+	AddComponent(/datum/component/interactable)
 
 /// Global loading procs
 /proc/populate_interaction_instances()

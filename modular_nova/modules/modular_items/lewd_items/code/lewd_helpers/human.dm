@@ -1,10 +1,10 @@
 /mob/living/carbon/human
-	var/arousal = 0
-	var/pleasure = 0
-	var/pain = 0
+	// var/arousal = 0
+	// var/pleasure = 0
+	// var/pain = 0
 
-	var/pain_limit = 0
-	var/arousal_status = AROUSAL_NONE
+	// var/pain_limit = 0
+	// var/arousal_status = AROUSAL_NONE
 
 	// Add variables for slots to the human class
 	var/obj/item/vagina = null
@@ -19,15 +19,15 @@
 */
 
 /// Are we wearing something that covers our chest?
-/mob/living/carbon/human/proc/is_topless()
+/mob/living/carbon/human/is_topless()
 	return (!(wear_suit) || !(wear_suit.body_parts_covered & CHEST)) && (!(w_uniform) || !(w_uniform.body_parts_covered & CHEST))
 
 /// Are we wearing something that covers our groin?
-/mob/living/carbon/human/proc/is_bottomless()
+/mob/living/carbon/human/is_bottomless()
 	return (!(wear_suit) || !(wear_suit.body_parts_covered & GROIN)) && (!(w_uniform) || !(w_uniform.body_parts_covered & GROIN))
 
 /// Are we wearing something that covers our shoes?
-/mob/living/carbon/human/proc/is_barefoot()
+/mob/living/carbon/human/is_barefoot()
 	return (!(wear_suit) || !(wear_suit.body_parts_covered & GROIN)) && (!(shoes) || !(shoes.body_parts_covered & FEET))
 
 /mob/living/carbon/human/proc/is_hands_uncovered()
@@ -149,7 +149,7 @@
 			return hand_count
 
 /// Returns true if the human has a accessible feet for the parameter, returning the number of feet the human has if they do. Accepts any of the `REQUIRE_GENITAL_` defines.
-/mob/living/carbon/human/proc/has_feet(required_state = REQUIRE_GENITAL_ANY)
+/mob/living/carbon/human/has_feet(required_state = REQUIRE_GENITAL_ANY)
 	var/feet_count = 0
 
 	for(var/obj/item/bodypart/leg/left/left_leg in bodyparts)
@@ -174,7 +174,7 @@
 			return feet_count
 
 /// Gets the number of feet the human has.
-/mob/living/carbon/human/proc/get_num_feet()
+/mob/living/carbon/human/get_num_feet()
 	return has_feet(REQUIRE_GENITAL_ANY)
 
 /// Returns true if the human has a accessible ears for the parameter. Accepts any of the `REQUIRE_GENITAL_` defines.
@@ -366,7 +366,7 @@
 		return ..()
 
 /// Checks if the human is wearing a condom, and also hasn't broken it.
-/mob/living/carbon/human/proc/is_wearing_condom()
+/mob/living/carbon/human/is_wearing_condom()
 	if(!penis || !istype(penis, /obj/item/clothing/sextoy/condom))
 		return FALSE
 
