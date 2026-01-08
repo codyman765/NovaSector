@@ -1,307 +1,280 @@
-
-GLOBAL_LIST_EMPTY_TYPED(interaction_instances, /datum/interaction)
+#define isclownjob(A) (is_species(A, /datum/species/human) && A?.mind?.assigned_role?.title == "Clown")
 
 /datum/interaction
-	/// The name to be displayed in the interaction menu for this interaction
-	var/name = "broken interaction"
-	/// The description of the interacton.
-	var/description = "broken"
-	/// If it can be done at a distance.
-	var/distance_allowed = FALSE
-	/// A list of possible messages displayed loaded by the JSON.
-	var/list/message = list()
-	/// A list of possible messages displayed directly to the USER.
-	var/list/user_messages = list()
-	/// A list of possible messages displayed directly to the TARGET.
-	var/list/target_messages = list()
-	/// What category this interaction will fall under in the menu.
-	var/category = INTERACTION_CAT_HIDE
-	/// Defines how we interact with ourselves or others.
-	var/usage = INTERACTION_OTHER
-	/// Does this interaction play a sound?
-	var/sound_use = FALSE
-	/// Does the interaction sound vary in pitch each time?
-	var/sound_vary = TRUE
-	/// If it plays a sound, how far does it travel?
-	var/sound_range = 1
-	/// Stores the sound for later.
-	var/sound_cache = null
-	/// Is this lewd?
-	var/lewd = FALSE
-	/// What parts do WE need(IMPORTANT TO GET IT TO THE CORRECT DEFINE, ORGAN SLOT)?
-	var/list/user_required_parts = list()
-	/// What parts do they need(IMPORTANT TO GET IT TO THE CORRECT DEFINE, ORGAN SLOT)?
-	var/list/target_required_parts = list()
-	/// The amount of pleasure the target receives from this interaciton.
-	var/target_pleasure = 0
-	/// The amount of arousal the target receives from this interaction.
-	var/target_arousal = 0
-	/// The amount of pain the target receives.
-	var/target_pain = 0
-	/// The amount of pleasure the user receives.
-	var/user_pleasure = 0
-	/// The amount of arousal the user receives.
-	var/user_arousal = 0
-	/// The amount of pain the user receives.
-	var/user_pain = 0
-	/// A list of possible sounds.
-	var/list/sound_possible = list()
-	/// What requirements does this interaction have? See defines.
-	var/list/interaction_requires = list()
-	/// What color should the interaction button be?
-	var/color = "blue"
-	/// What sexuality preference do we display for.
-	var/sexuality = ""
+	/// Which genital the interaction cums with (must be penis, vagina or both)
+	var/list/cum_genital = list(CLIMAX_POSITION_USER = null, CLIMAX_POSITION_TARGET = null)
+	/// Where on the partner the interaction cums in? (It must match a genital's ORGAN_SLOT, mouth or sheath)
+	var/list/cum_target = list(CLIMAX_POSITION_USER = null, CLIMAX_POSITION_TARGET = null)
+	/// override of the text to display when the interaction cums (use this if you're not using a cum_target)
+	var/list/cum_message_text_overrides = list(CLIMAX_POSITION_USER = list(), CLIMAX_POSITION_TARGET = list())
+	/// override of the self message to display when the interaction cums (use this if you're not using a cum_target)
+	var/list/cum_self_text_overrides = list(CLIMAX_POSITION_USER = list(), CLIMAX_POSITION_TARGET = list())
+	/// override of the text to display to the partner when the interaction cums (use this if you're not using a cum_target)
+	var/list/cum_partner_text_overrides = list(CLIMAX_POSITION_USER = list(), CLIMAX_POSITION_TARGET = list())
+	/// Is the interaction considered extreme/harmful/unholy?
+	var/unsafe_types = NONE
+	/// Additional details to display in the interaction menu and used in some interaction logic
+	var/list/additional_details = list()
+	/// Interaction modifier flags, edits how the interaction works from its original definition
+	var/interaction_modifier_flags = NONE
+
+	/// List of clown-specific messages for different genital types
+	var/static/list/clown_genital_messages = list(
+		ORGAN_SLOT_VAGINA = list(
+			"\The <b>%OWNER%</b>'s clussy honks[pick(" loudly", "")]!",
+			"\The <b>%OWNER%</b>'s pussy squeaks[pick(" loudly", "")]!"
+		),
+		ORGAN_SLOT_PENIS = list(
+			"\The <b>%OWNER%</b>'s cock honks[pick(" loudly", "")]!",
+			"\The <b>%OWNER%</b>'s penis squeaks[pick(" loudly", "")]!"
+		),
+		ORGAN_SLOT_ANUS = list(
+			"\The <b>%OWNER%</b>'s fun hole honks[pick(" loudly", "")]!",
+			"\The <b>%OWNER%</b>'s ass squeaks[pick(" loudly", "")]!"
+		),
+		ORGAN_SLOT_BREASTS = list(
+			"\The <b>%OWNER%</b>'s honkers produce a loud squeak!",
+			"\The <b>%OWNER%</b>'s breasts honk[pick(" loudly", "")]!"
+		),
+		ORGAN_SLOT_MOUTH = list(
+			"\The <b>%OWNER%</b>'s mouth honks[pick(" loudly", "")]!",
+			"\The <b>%OWNER%</b>'s throat squeaks[pick(" loudly", "")]!"
+		)
+	)
+
+/datum/interaction/New()
+	cum_message_text_overrides[CLIMAX_POSITION_USER] = sanitize_islist(cum_message_text_overrides[CLIMAX_POSITION_USER], list())
+	cum_self_text_overrides[CLIMAX_POSITION_USER] = sanitize_islist(cum_self_text_overrides[CLIMAX_POSITION_USER], list())
+	cum_partner_text_overrides[CLIMAX_POSITION_USER] = sanitize_islist(cum_partner_text_overrides[CLIMAX_POSITION_USER], list())
+	cum_message_text_overrides[CLIMAX_POSITION_TARGET] = sanitize_islist(cum_message_text_overrides[CLIMAX_POSITION_TARGET], list())
+	cum_self_text_overrides[CLIMAX_POSITION_TARGET] = sanitize_islist(cum_self_text_overrides[CLIMAX_POSITION_TARGET], list())
+	cum_partner_text_overrides[CLIMAX_POSITION_TARGET] = sanitize_islist(cum_partner_text_overrides[CLIMAX_POSITION_TARGET], list())
+	. = ..()
+
+/datum/interaction/load_from_json(path)
+	. = ..()
+	if(!.)
+		return FALSE
+
+	var/list/unsafe_flags = list(
+		"extreme" = INTERACTION_EXTREME,
+		"extremeharm" = INTERACTION_EXTREME | INTERACTION_HARMFUL,
+		"unholy" = INTERACTION_UNHOLY,
+	)
+
+	var/list/json = json_decode(file2text(path))
+	cum_genital[CLIMAX_POSITION_USER] = sanitize_text(json["cum_genital_user"])
+	cum_genital[CLIMAX_POSITION_TARGET] = sanitize_text(json["cum_genital_target"])
+	cum_target[CLIMAX_POSITION_USER] = sanitize_text(json["cum_target_user"])
+	cum_target[CLIMAX_POSITION_TARGET] = sanitize_text(json["cum_target_target"])
+	cum_message_text_overrides[CLIMAX_POSITION_USER] = sanitize_islist(json["cum_message_text_overrides_user"], list())
+	cum_message_text_overrides[CLIMAX_POSITION_TARGET] = sanitize_islist(json["cum_message_text_overrides_target"], list())
+	cum_self_text_overrides[CLIMAX_POSITION_USER] = sanitize_islist(json["cum_self_text_overrides_user"], list())
+	cum_self_text_overrides[CLIMAX_POSITION_TARGET] = sanitize_islist(json["cum_self_text_overrides_target"], list())
+	cum_partner_text_overrides[CLIMAX_POSITION_USER] = sanitize_islist(json["cum_partner_text_overrides_user"], list())
+	cum_partner_text_overrides[CLIMAX_POSITION_TARGET] = sanitize_islist(json["cum_partner_text_overrides_target"], list())
+
+	var/list/unsafe_list = sanitize_islist(json["unsafe_types"], list())
+	for(var/unsafe_type in unsafe_list)
+		unsafe_types |= unsafe_flags[unsafe_type]
+
+/datum/interaction/json_save(path)
+	. = ..()
+	if(!.)
+		return FALSE
+
+	var/file = file(path)
+	var/list/json = json_decode(file2text(path))
+
+	json["cum_genital_user"] = cum_genital[CLIMAX_POSITION_USER]
+	json["cum_genital_target"] = cum_genital[CLIMAX_POSITION_TARGET]
+	json["cum_target_user"] = cum_target[CLIMAX_POSITION_USER]
+	json["cum_target_target"] = cum_target[CLIMAX_POSITION_TARGET]
+	json["cum_message_text_overrides_user"] = cum_message_text_overrides[CLIMAX_POSITION_USER]
+	json["cum_message_text_overrides_target"] = cum_message_text_overrides[CLIMAX_POSITION_TARGET]
+	json["cum_self_text_overrides_user"] = cum_self_text_overrides[CLIMAX_POSITION_USER]
+	json["cum_self_text_overrides_target"] = cum_self_text_overrides[CLIMAX_POSITION_TARGET]
+	json["cum_partner_text_overrides_user"] = cum_partner_text_overrides[CLIMAX_POSITION_USER]
+	json["cum_partner_text_overrides_target"] = cum_partner_text_overrides[CLIMAX_POSITION_TARGET]
+
+	var/list/unsafe_flags = list()
+	if(unsafe_types & INTERACTION_EXTREME)
+		unsafe_flags += "extreme"
+	if(unsafe_types & INTERACTION_HARMFUL)
+		unsafe_flags += "extremeharm"
+	if(unsafe_types & INTERACTION_UNHOLY)
+		unsafe_flags += "unholy"
+	json["unsafe_types"] = unsafe_flags
+
+	WRITE_FILE(file, json_encode(json))
+	return TRUE
+
 
 /datum/interaction/proc/allow_act(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	if(target == user && usage == INTERACTION_OTHER)
 		return FALSE
 
-	if(target != user && usage == INTERACTION_SELF)
-		return FALSE
+	var/nonhuman_client_bypass_user = !ishuman(user) && !user.client && !SSinteractions.is_blacklisted(user)
+	var/nonhuman_client_bypass_target = !ishuman(target) && !target.client && !SSinteractions.is_blacklisted(target)
+
+	var/mob/living/carbon/human/human_user = user
+	var/mob/living/carbon/human/human_target = target
+
+	if(unsafe_types & INTERACTION_EXTREME)
+		if(!(user.client?.prefs?.read_preference(/datum/preference/choiced/erp_status_extm) != "No" || nonhuman_client_bypass_user) || !(target.client?.prefs?.read_preference(/datum/preference/choiced/erp_status_extm) != "No" || nonhuman_client_bypass_target))
+			return FALSE
+	if(unsafe_types & INTERACTION_HARMFUL)
+		if(!(user.client?.prefs?.read_preference(/datum/preference/choiced/erp_status_extmharm) != "No" || nonhuman_client_bypass_user) || !(target.client?.prefs?.read_preference(/datum/preference/choiced/erp_status_extmharm) != "No" || nonhuman_client_bypass_target))
+			return FALSE
+	if(unsafe_types & INTERACTION_UNHOLY)
+		if(!(user.client?.prefs?.read_preference(/datum/preference/choiced/erp_status_unholy) != "No" || nonhuman_client_bypass_user) || !(target.client?.prefs?.read_preference(/datum/preference/choiced/erp_status_unholy) != "No" || nonhuman_client_bypass_target))
+			return FALSE
 
 	if(user_required_parts.len)
-		for(var/thing in user_required_parts)
-			var/obj/item/organ/genital/required_part = user.get_organ_slot(thing)
-			if(isnull(required_part))
-				return FALSE
-			if(!required_part.is_exposed())
-				return FALSE
+		for(var/slot in user_required_parts)
+			if(!ishuman(user))
+				if(!user.simulated_genitals[slot])
+					return FALSE
+			else
+				if(!human_user.has_genital(LAZYACCESS(user_required_parts, slot) || REQUIRE_GENITAL_EXPOSED, slot))
+					return FALSE
 
 	if(target_required_parts.len)
-		for(var/thing in target_required_parts)
-			var/obj/item/organ/genital/required_part = target.get_organ_slot(thing)
-			if(isnull(required_part))
-				return FALSE
-			if(!required_part.is_exposed())
-				return FALSE
+		for(var/slot in target_required_parts)
+			if(!ishuman(target))
+				if(!target.simulated_genitals[slot])
+					return FALSE
+			else
+				if(!human_target.has_genital(LAZYACCESS(target_required_parts, slot) || REQUIRE_GENITAL_EXPOSED, slot))
+					return FALSE
 
 	for(var/requirement in interaction_requires)
 		switch(requirement)
+			if(INTERACTION_REQUIRE_SELF_HUMAN)
+				if(!ishuman(user))
+					return FALSE
+			if(INTERACTION_REQUIRE_TARGET_HUMAN)
+				if(!ishuman(target))
+					return FALSE
 			if(INTERACTION_REQUIRE_SELF_HAND)
 				if(!user.get_active_hand())
 					return FALSE
 			if(INTERACTION_REQUIRE_TARGET_HAND)
 				if(!target.get_active_hand())
 					return FALSE
-
+			if(INTERACTION_REQUIRE_SELF_MOUTH)
+				if(!user.get_bodypart(BODY_ZONE_HEAD) || user.is_mouth_covered())
+					return FALSE
+			if(INTERACTION_REQUIRE_TARGET_MOUTH)
+				if(!target.get_bodypart(BODY_ZONE_HEAD) || target.is_mouth_covered())
+					return FALSE
+			if(INTERACTION_REQUIRE_SELF_TOPLESS)
+				if(!user.is_topless())
+					return FALSE
+			if(INTERACTION_REQUIRE_TARGET_TOPLESS)
+				if(!target.is_topless())
+					return FALSE
+			if(INTERACTION_REQUIRE_SELF_BOTTOMLESS)
+				if(!user.is_bottomless())
+					return FALSE
+			if(INTERACTION_REQUIRE_TARGET_BOTTOMLESS)
+				if(!target.is_bottomless())
+					return FALSE
+			if(INTERACTION_REQUIRE_SELF_FEET)
+				if(!(user.has_feet() >= (LAZYACCESS(user_required_parts, INTERACTION_REQUIRE_SELF_FEET) || 2))) //We prolly don't need to care if it's exposed or not
+					return FALSE
+			if(INTERACTION_REQUIRE_TARGET_FEET)
+				if(!(target.has_feet() >= (LAZYACCESS(target_required_parts, INTERACTION_REQUIRE_TARGET_FEET) || 2)))
+					return FALSE
 			else
 				CRASH("Unimplemented interaction requirement '[requirement]'")
 	return TRUE
 
-/datum/interaction/proc/act(mob/living/carbon/human/user, mob/living/carbon/human/target, use_subtler)
-	if(!allow_act(user, target))
+/// Called when the interaction is performed
+/datum/interaction/proc/post_interaction(mob/living/user, mob/living/target)
+	handle_clown_interaction(user, target)
+	return
+
+/// Handles clown-specific interaction effects
+/datum/interaction/proc/handle_clown_interaction(mob/living/user, mob/living/target)
+	if(!prob(50))  // 50% chance for honk effects
 		return
-	if(!message)
-		message_admins("Interaction had a null message list. '[name]'")
+
+	var/is_user_clown = isclownjob(user)
+	var/is_target_clown = target ? isclownjob(target) : FALSE
+	if(!is_user_clown && !is_target_clown)
 		return
-	if(!islist(message) && istext(message))
-		message_admins("Deprecated message handling for '[name]'. Correct format is a list with one entry. This message will only show once.")
-		message = list(message)
-	var/msg = pick(message)
-	// We replace %USER% with nothing because manual_emote already prepends it.
-	msg = trim(replacetext(replacetext(msg, "%TARGET%", "[target]"), "%USER%", ""), INTERACTION_MAX_CHAR)
-	msg = replacetext(replacetext(msg, "%TARGET_PRONOUN_THEIR%", target.p_their()), "%TARGET_PRONOUN_THEIRS%", target.p_theirs())
-	msg = replacetext(replacetext(msg, "%USER_PRONOUN_THEIR%", user.p_their()), "%USER_PRONOUN_THEIRS%", user.p_theirs())
-	msg = replacetext(replacetext(msg, "%TARGET_PRONOUN_THEM%", target.p_them()), "%USER_PRONOUN_THEM%", user.p_them())
-	msg = replacetext(replacetext(msg, "%TARGET_PRONOUN_THEY%", target.p_they()), "%USER_PRONOUN_THEY%", user.p_they())
 
-	if(lewd)
-		if(use_subtler)
-			user.emote("subtler", type_override = /datum/emote/living/subtler::emote_type | EMOTE_LEWD, message = msg, intentional = TRUE)
-		else
-			var/list/ignoring_mobs = list()
-			for(var/mob/not_interested in get_hearers_in_view(DEFAULT_MESSAGE_RANGE, user))
-				if(!not_interested.client?.prefs?.read_preference(/datum/preference/toggle/erp))
-					ignoring_mobs += not_interested
-			user.visible_message(span_purple("[user] [msg]"), ignored_mobs = ignoring_mobs)
-			user.log_message(msg, LOG_EMOTE)
-	else
-		user.manual_emote(msg)
+	// Handle user's genitals if they're a clown
+	if(is_user_clown)
+		for(var/genital_slot in user_required_parts)
+			if(clown_genital_messages[genital_slot])
+				var/message = pick(clown_genital_messages[genital_slot])
+				message = replacetext(message, "%OWNER%", user)
+				user.visible_message(span_lewd(message))
+				playsound(user, 'sound/items/bikehorn.ogg', 40, TRUE, -1)
 
-	if(user_messages.len)
-		var/user_msg = pick(user_messages)
-		user_msg = replacetext(replacetext(user_msg, "%TARGET%", "[target]"), "%USER%", "[user]")
-		user_msg = replacetext(replacetext(user_msg, "%TARGET_PRONOUN_THEIR%", target.p_their()), "%TARGET_PRONOUN_THEIRS%", target.p_theirs())
-		user_msg = replacetext(replacetext(user_msg, "%USER_PRONOUN_THEIR%", user.p_their()), "%USER_PRONOUN_THEIRS%", user.p_theirs())
-		user_msg = replacetext(replacetext(user_msg, "%TARGET_PRONOUN_THEM%", target.p_them()), "%USER_PRONOUN_THEM%", user.p_them())
-		user_msg = replacetext(replacetext(user_msg, "%TARGET_PRONOUN_THEY%", target.p_they()), "%USER_PRONOUN_THEY%", user.p_they())
-		to_chat(user, user_msg)
+	// Handle target's genitals if they're a clown
+	if(is_target_clown && target)
+		for(var/genital_slot in target_required_parts)
+			if(clown_genital_messages[genital_slot])
+				var/message = pick(clown_genital_messages[genital_slot])
+				message = replacetext(message, "%OWNER%", target)
+				target.visible_message(span_lewd(message))
+				playsound(target, 'sound/items/bikehorn.ogg', 40, TRUE, -1)
 
-	if(target_messages.len)
-		var/target_msg = pick(target_messages)
-		target_msg = replacetext(replacetext(target_msg, "%TARGET%", "[target]"), "%USER%", "[user]")
-		target_msg = replacetext(replacetext(target_msg, "%TARGET_PRONOUN_THEIR%", target.p_their()), "%TARGET_PRONOUN_THEIRS%", target.p_theirs())
-		target_msg = replacetext(replacetext(target_msg, "%USER_PRONOUN_THEIR%", user.p_their()), "%USER_PRONOUN_THEIRS%", user.p_theirs())
-		target_msg = replacetext(replacetext(target_msg, "%TARGET_PRONOUN_THEM%", target.p_them()), "%USER_PRONOUN_THEM%", user.p_them())
-		target_msg = replacetext(replacetext(target_msg, "%TARGET_PRONOUN_THEY%", target.p_they()), "%USER_PRONOUN_THEY%", user.p_they())
-		to_chat(target, target_msg)
-
-	if(sound_use)
-		if(!sound_possible)
-			message_admins("Interaction has sound_use set to TRUE but does not set sound! '[name]'")
-			return
-		if(!islist(sound_possible) && istext(sound_possible))
-			message_admins("Deprecated sound handling for '[name]'. Correct format is a list with one entry. This message will only show once.")
-			sound_possible = list(sound_possible)
-		sound_cache = pick(sound_possible)
-		if (lewd)
-			playsound_if_pref(target.loc, sound_cache, 50, sound_vary, max(0, -SOUND_RANGE + sound_range), pref_to_check = /datum/preference/toggle/erp/sounds)
-		else
-			playsound(target.loc, sound_cache, 50, sound_vary, max(0, -SOUND_RANGE + sound_range))
-
-	INVOKE_ASYNC(src, PROC_REF(apply_effects), user, target)
-
-/// Applies side effects to the user and/or target of the interaction.
-/datum/interaction/proc/apply_effects(mob/living/carbon/human/user, mob/living/carbon/human/target)
-	if(user_pain)
-		user.adjust_pain(user_pain)
-	if(target_pain)
-		target.adjust_pain(target_pain)
-	if(!lewd)
-		return
-	if(user_pleasure)
-		user.adjust_pleasure(user_pleasure)
-	if(user_arousal)
-		user.adjust_arousal(user_arousal)
-	if(target_pleasure)
-		target.adjust_pleasure(target_pleasure)
-	if(target_arousal)
-		target.adjust_arousal(target_arousal)
-
-/datum/interaction/proc/load_from_json(path)
-	var/fpath = path
-	if(!fexists(fpath))
-		message_admins("Attempted to load an interaction from json and the file does not exist")
-		qdel(src)
+// Called when either the user or target is cumming from the interaction, makes the interaction text
+/datum/interaction/proc/show_climax(mob/living/cumming, mob/living/came_in, position)
+	var/override_check = length(cum_message_text_overrides[position]) && length(cum_self_text_overrides[position]) && (length(cum_partner_text_overrides[position]) || usage == INTERACTION_SELF)
+	if(!override_check)
 		return FALSE
-	var/file = file(fpath)
-	var/list/json = json_load(file)
-	name = sanitize_text(json["name"])
-	description = sanitize_text(json["description"])
-	distance_allowed = sanitize_integer(json["distance_allowed"], 0, 1, 0)
-	message = sanitize_islist(json["message"], list("json error"))
-	category = sanitize_text(json["category"])
-	usage = sanitize_text(json["usage"])
-	sound_use = sanitize_integer(json["sound_use"], 0, 1, 0)
-	sound_range = sanitize_integer(json["sound_range"], 1, 7, 1)
-	sound_vary = sanitize_integer(json["sound_vary"], 0, 1, 1)
-	sound_possible = sanitize_islist(json["sound_possible"], list("json error"))
-	interaction_requires = sanitize_islist(json["interaction_requires"], list())
-	color = sanitize_text(json["color"])
 
-	user_messages = sanitize_islist(json["user_messages"], list())
-	user_required_parts = sanitize_islist(json["user_required_parts"], list())
-	user_arousal = sanitize_integer(json["user_arousal"], 0, 100, 0)
-	user_pleasure = sanitize_integer(json["user_pleasure"], 0, 100, 0)
-	user_pain = sanitize_integer(json["user_pain"], 0, 100, 0)
-	target_messages = sanitize_islist(json["target_messages"], list())
-	target_required_parts = sanitize_islist(json["target_required_parts"], list())
-	target_arousal = sanitize_integer(json["target_arousal"], 0, 100, 0)
-	target_pleasure = sanitize_integer(json["target_pleasure"], 0, 100, 0)
-	target_pain = sanitize_integer(json["target_pain"], 0, 100, 0)
-	lewd = sanitize_integer(json["lewd"], 0, 1, 0)
-	sexuality = sanitize_text(json["sexuality"])
-	return TRUE
+	var/cumming_their = cumming.p_their()
+	var/cumming_them = cumming.p_them()
+	var/came_in_them = came_in.p_them()
+	var/came_in_their = came_in.p_their()
+	var/genital_used = cum_genital[position]
+	var/hole_used = cum_target[position]
 
-/datum/interaction/proc/json_save(path)
-	var/fpath = path
-	if(fexists(fpath))
-		fdel(fpath)
-	var/list/json = list(
-		"name" = name,
-		"description" = description,
-		"distance_allowed" = distance_allowed,
-		"message" = message,
-		"category" = category,
-		"usage" = usage,
-		"sound_use" = sound_use,
-		"sound_range" = sound_range,
-		"sound_vary" = sound_vary,
-		"sound_possible" = sound_possible,
-		"interaction_requires" = interaction_requires,
-		"color" = color,
-		"user_messages" = user_messages,
-		"user_required_parts" = user_required_parts,
-		"user_arousal" = user_arousal,
-		"user_pleasure" = user_pleasure,
-		"user_pain" = user_pain,
-		"target_messages" = target_messages,
-		"target_required_parts" = target_required_parts,
-		"target_arousal" = target_arousal,
-		"target_pleasure" = target_pleasure,
-		"target_pain" = target_pain,
-		"lewd" = lewd,
-		"sexuality" = sexuality,
-	)
-	var/file = file(fpath)
-	WRITE_FILE(file, json_encode(json))
-	return TRUE
+	if(override_check)
+		var/message = pick(cum_message_text_overrides[position])
+		message = replacetext(message, "%CUMMING%", "[cumming]")
+		message = replacetext(message, "%CUMMING_THEIR%", "[cumming_their]")
+		message = replacetext(message, "%CUMMING_THEM%", "[cumming_them]")
+		message = replacetext(message, "%CAME_IN%", "[came_in]")
+		message = replacetext(message, "%CAME_IN_THEIR%", "[came_in_their]")
+		message = replacetext(message, "%CAME_IN_THEM%", "[came_in_them]")
+		message = replacetext(message, "%CUM_GENITAL%", "[genital_used]")
+		message = replacetext(message, "%CUM_TARGET%", "[hole_used]")
 
-/// Global loading procs
-/proc/populate_interaction_instances()
-	for(var/spath in subtypesof(/datum/interaction))
-		var/datum/interaction/interaction = new spath()
-		GLOB.interaction_instances[interaction.name] = interaction
-	populate_interaction_jsons(INTERACTION_JSON_FOLDER)
+		var/self_message = pick(cum_self_text_overrides[position])
+		self_message = replacetext(self_message, "%CUMMING%", "[cumming]")
+		self_message = replacetext(self_message, "%CUMMING_THEIR%", "[cumming_their]")
+		self_message = replacetext(self_message, "%CUMMING_THEM%", "[cumming_them]")
+		self_message = replacetext(self_message, "%CAME_IN%", "[came_in]")
+		self_message = replacetext(self_message, "%CAME_IN_THEIR%", "[came_in_their]")
+		self_message = replacetext(self_message, "%CAME_IN_THEM%", "[came_in_them]")
+		self_message = replacetext(self_message, "%CUM_GENITAL%", "[genital_used]")
+		self_message = replacetext(self_message, "%CUM_TARGET%", "[hole_used]")
 
-/proc/populate_interaction_jsons(directory)
-	for(var/file in flist(directory))
-		if(flist(directory + file) && !findlasttext(directory + file, ".json"))
-			populate_interaction_instances(directory + file)
-			continue
-		if(findlasttext(directory + file, ".master.json")) // This is a master json which has special handling
-			populate_interaction_jsons_master(directory + file)
-			continue
-		var/datum/interaction/interaction = new()
-		if(interaction.load_from_json(directory + file))
-			GLOB.interaction_instances[interaction.name] = interaction
-		else message_admins("Error loading interaction from file: '[directory + file]'. Inform coders.")
+		cumming.visible_message(span_userlove(message), span_userlove(self_message))
 
-/proc/populate_interaction_jsons_master(path)
-	if(!fexists(path))
-		message_admins("We are attempting to load an interaction master without the file existing! '[path]'")
-		return
-	var/file = file(path)
-	var/list/json = json_load(file)
+		if(usage == INTERACTION_OTHER)
+			var/partner_message = pick(cum_partner_text_overrides[position])
+			partner_message = replacetext(partner_message, "%CUMMING%", "[cumming]")
+			partner_message = replacetext(partner_message, "%CUMMING_THEIR%", "[cumming_their]")
+			partner_message = replacetext(partner_message, "%CUMMING_THEM%", "[cumming_them]")
+			partner_message = replacetext(partner_message, "%CAME_IN%", "[came_in]")
+			partner_message = replacetext(partner_message, "%CAME_IN_THEIR%", "[came_in_their]")
+			partner_message = replacetext(partner_message, "%CAME_IN_THEM%", "[came_in_them]")
+			partner_message = replacetext(partner_message, "%CUM_GENITAL%", "[genital_used]")
+			partner_message = replacetext(partner_message, "%CUM_TARGET%", "[hole_used]")
 
-	for(var/iname in json)
-		if(GLOB.interaction_instances[iname])
-			message_admins("Interaction Master '[path]' contained a duplicate interaction! '[iname]'")
-			continue
+			to_chat(came_in, span_userlove(partner_message))
+		return TRUE
 
-		var/list/ijson = json[iname]
-		if(ijson["name"] != iname)
-			message_admins("Interaction Master '[path]' contained an invalid interaction! '[iname]'")
-			continue
+/// Called after either the user or target cums from the interaction
+/datum/interaction/proc/post_climax(mob/living/carbon/human/cumming, mob/living/carbon/human/came_in, position)
+	return
 
-		var/datum/interaction/interaction = new()
-
-		interaction.distance_allowed = sanitize_integer(ijson["distance_allowed"], 0, 1, 0)
-		interaction.message = sanitize_islist(ijson["message"], list("json error"))
-		interaction.category = sanitize_text(ijson["category"])
-		interaction.usage = sanitize_text(ijson["usage"])
-		interaction.sound_use = sanitize_integer(ijson["sound_use"], 0, 1, 0)
-		interaction.sound_range = sanitize_integer(ijson["sound_range"], 1, 7, 1)
-		interaction.sound_vary = sanitize_integer(ijson["sound_vary"], 0, 1, 1)
-		interaction.sound_possible = sanitize_islist(ijson["sound_possible"], list("json error"))
-		interaction.interaction_requires = sanitize_islist(ijson["interaction_requires"], list())
-		interaction.color = sanitize_text(ijson["color"])
-
-		interaction.user_messages = sanitize_islist(ijson["user_messages"], list())
-		interaction.user_required_parts = sanitize_islist(ijson["user_required_parts"], list())
-		interaction.user_arousal = sanitize_integer(ijson["user_arousal"], 0, 100, 0)
-		interaction.user_pleasure = sanitize_integer(ijson["user_pleasure"], 0, 100, 0)
-		interaction.user_pain = sanitize_integer(ijson["user_pain"], 0, 100, 0)
-		interaction.target_messages = sanitize_islist(ijson["target_messages"], list())
-		interaction.target_required_parts = sanitize_islist(ijson["target_required_parts"], list())
-		interaction.target_arousal = sanitize_integer(ijson["target_arousal"], 0, 100, 0)
-		interaction.target_pleasure = sanitize_integer(ijson["target_pleasure"], 0, 100, 0)
-		interaction.target_pain = sanitize_integer(ijson["target_pain"], 0, 100, 0)
-		interaction.lewd = sanitize_integer(ijson["lewd"], 0, 1, 0)
-		interaction.sexuality = sanitize_text(ijson["sexuality"])
-
-		GLOB.interaction_instances[iname] = interaction
-
-ADMIN_VERB(reload_interactions, R_DEBUG, "Reload Interactions", "Force reload interactions.", ADMIN_CATEGORY_DEBUG)
-	populate_interaction_instances()
+#undef isclownjob

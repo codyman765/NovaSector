@@ -1,10 +1,12 @@
 /mob/living/carbon/human
-	var/arousal = 0
-	var/pleasure = 0
-	var/pain = 0
+	// SPLURT EDIT REMOVAL - Moving lewd variables to /mob/living, see modular_zzplurt/code/modules/mob/living/living_lewd.dm
+	// var/arousal = 0
+	// var/pleasure = 0
+	// var/pain = 0
 
-	var/pain_limit = 0
-	var/arousal_status = AROUSAL_NONE
+	// var/pain_limit = 0
+	// var/arousal_status = AROUSAL_NONE
+	// SPLURT EDIT END
 
 	// Add variables for slots to the human class
 	var/obj/item/vagina = null
@@ -12,22 +14,21 @@
 	var/obj/item/nipples = null
 	var/obj/item/penis = null
 
-
 /*
 *	This code needed to determine if the human is naked in that part of body or not
 *	You can use this for your own stuff if you want, haha.
 */
 
 /// Are we wearing something that covers our chest?
-/mob/living/carbon/human/proc/is_topless()
+/mob/living/carbon/human/is_topless()	// SPLURT EDIT - INTERACTIONS - Now is a continuation of the same proc in modular_zzplurt\code\modules\mob\living\living_lewd.dm
 	return (!(wear_suit) || !(wear_suit.body_parts_covered & CHEST)) && (!(w_uniform) || !(w_uniform.body_parts_covered & CHEST))
 
 /// Are we wearing something that covers our groin?
-/mob/living/carbon/human/proc/is_bottomless()
+/mob/living/carbon/human/is_bottomless()	// SPLURT EDIT - INTERACTIONS - Now is a continuation of the same proc in modular_zzplurt\code\modules\mob\living\living_lewd.dm
 	return (!(wear_suit) || !(wear_suit.body_parts_covered & GROIN)) && (!(w_uniform) || !(w_uniform.body_parts_covered & GROIN))
 
 /// Are we wearing something that covers our shoes?
-/mob/living/carbon/human/proc/is_barefoot()
+/mob/living/carbon/human/is_barefoot()	// SPLURT EDIT - INTERACTIONS - Now is a continuation of the same proc in modular_zzplurt\code\modules\mob\living\living_lewd.dm
 	return (!(wear_suit) || !(wear_suit.body_parts_covered & GROIN)) && (!(shoes) || !(shoes.body_parts_covered & FEET))
 
 /mob/living/carbon/human/proc/is_hands_uncovered()
@@ -36,9 +37,10 @@
 /mob/living/carbon/human/proc/is_head_uncovered()
 	return (head?.body_parts_covered & HEAD)
 
+/* SPLURT EDIT REMOVAL - Interactions - Refractored in modular
 /// Returns true if the human has an accessible penis for the parameter. Accepts any of the `REQUIRE_GENITAL_` defines.
 /mob/living/carbon/human/proc/has_penis(required_state = REQUIRE_GENITAL_ANY)
-	var/obj/item/organ/genital/genital = get_organ_slot(ORGAN_SLOT_PENIS)
+	var/obj/item/organ/external/genital/genital = get_organ_slot(ORGAN_SLOT_PENIS)
 	if(!genital)
 		return FALSE
 
@@ -54,7 +56,7 @@
 
 /// Returns true if the human has a accessible balls for the parameter. Accepts any of the `REQUIRE_GENITAL_` defines.
 /mob/living/carbon/human/proc/has_balls(required_state = REQUIRE_GENITAL_ANY)
-	var/obj/item/organ/genital/genital = get_organ_slot(ORGAN_SLOT_TESTICLES)
+	var/obj/item/organ/external/genital/genital = get_organ_slot(ORGAN_SLOT_TESTICLES)
 	if(!genital)
 		return FALSE
 
@@ -70,7 +72,7 @@
 
 /// Returns true if the human has an accessible vagina for the parameter. Accepts any of the `REQUIRE_GENITAL_` defines.
 /mob/living/carbon/human/proc/has_vagina(required_state = REQUIRE_GENITAL_ANY)
-	var/obj/item/organ/genital/genital = get_organ_slot(ORGAN_SLOT_VAGINA)
+	var/obj/item/organ/external/genital/genital = get_organ_slot(ORGAN_SLOT_VAGINA)
 	if(!genital)
 		return FALSE
 
@@ -86,7 +88,7 @@
 
 /// Returns true if the human has a accessible breasts for the parameter. Accepts any of the `REQUIRE_GENITAL_` defines.
 /mob/living/carbon/human/proc/has_breasts(required_state = REQUIRE_GENITAL_ANY)
-	var/obj/item/organ/genital/genital = get_organ_slot(ORGAN_SLOT_BREASTS)
+	var/obj/item/organ/external/genital/genital = get_organ_slot(ORGAN_SLOT_BREASTS)
 	if(!genital)
 		return FALSE
 
@@ -104,7 +106,7 @@
 /mob/living/carbon/human/proc/has_anus(required_state = REQUIRE_GENITAL_ANY)
 	if(issilicon(src))
 		return TRUE
-	var/obj/item/organ/genital/genital = get_organ_slot(ORGAN_SLOT_ANUS)
+	var/obj/item/organ/external/genital/genital = get_organ_slot(ORGAN_SLOT_ANUS)
 	if(!genital)
 		return FALSE
 
@@ -117,6 +119,7 @@
 			return genital.visibility_preference != GENITAL_ALWAYS_SHOW && !is_bottomless()
 		else
 			return TRUE
+*/ //SPLURT EDIT END
 
 /// Returns true if the human has a accessible feet for the parameter, returning the number of feet the human has if they do. Accepts any of the `REQUIRE_GENITAL_` defines.
 /mob/living/carbon/human/proc/has_arms(required_state = REQUIRE_GENITAL_ANY)
@@ -149,7 +152,7 @@
 			return hand_count
 
 /// Returns true if the human has a accessible feet for the parameter, returning the number of feet the human has if they do. Accepts any of the `REQUIRE_GENITAL_` defines.
-/mob/living/carbon/human/proc/has_feet(required_state = REQUIRE_GENITAL_ANY)
+/mob/living/carbon/human/has_feet(required_state = REQUIRE_GENITAL_ANY) // SPLURT EDIT - INTERACTIONS - Now is a continuation of the same proc in modular_zzplurt\code\modules\mob\living\living_lewd.dm
 	var/feet_count = 0
 
 	for(var/obj/item/bodypart/leg/left/left_leg in bodyparts)
@@ -174,7 +177,7 @@
 			return feet_count
 
 /// Gets the number of feet the human has.
-/mob/living/carbon/human/proc/get_num_feet()
+/mob/living/carbon/human/get_num_feet() // SPLURT EDIT - INTERACTIONS - Now is a continuation of the same proc in modular_zzplurt\code\modules\mob\living\living_lewd.dm
 	return has_feet(REQUIRE_GENITAL_ANY)
 
 /// Returns true if the human has a accessible ears for the parameter. Accepts any of the `REQUIRE_GENITAL_` defines.
@@ -187,9 +190,9 @@
 		if(REQUIRE_GENITAL_ANY)
 			return TRUE
 		if(REQUIRE_GENITAL_EXPOSED)
-			return !get_item_by_slot(ITEM_SLOT_EARS)
+			return !get_item_by_slot(ITEM_SLOT_EARS_LEFT) // SPLURT EDIT - Extra Inventory
 		if(REQUIRE_GENITAL_UNEXPOSED)
-			return get_item_by_slot(ITEM_SLOT_EARS)
+			return get_item_by_slot(ITEM_SLOT_EARS_LEFT) // SPLURT EDIT - Extra Inventory
 		else
 			return TRUE
 
@@ -271,7 +274,7 @@
 	overlays_standing[VAGINA_LAYER] = vagina_overlay
 
 	apply_overlay(VAGINA_LAYER)
-	update_body_parts()
+	update_mutant_bodyparts()
 
 /// Updating anus slot
 /mob/living/carbon/human/proc/update_inv_anus()
@@ -295,7 +298,7 @@
 	overlays_standing[ANUS_LAYER] = anus_overlay
 
 	apply_overlay(ANUS_LAYER)
-	update_body_parts()
+	update_mutant_bodyparts()
 
 /// Updating nipples slot
 /mob/living/carbon/human/proc/update_inv_nipples()
@@ -319,7 +322,7 @@
 	overlays_standing[NIPPLES_LAYER] = nipples_overlay
 
 	apply_overlay(NIPPLES_LAYER)
-	update_body_parts()
+	update_mutant_bodyparts()
 
 /// Updating penis slot
 /mob/living/carbon/human/proc/update_inv_penis()
@@ -343,7 +346,7 @@
 	overlays_standing[PENIS_LAYER] = penis_overlay
 
 	apply_overlay(PENIS_LAYER)
-	update_body_parts()
+	update_mutant_bodyparts()
 
 /// Helper proc for calling all the lewd slot update_inv_ procs.
 /mob/living/carbon/human/proc/update_inv_lewd()
@@ -359,26 +362,26 @@
 // Handles breaking out of gloves that restrain people.
 /mob/living/carbon/human/resist_restraints()
 	if(gloves?.breakouttime)
-		changeNext_move(gloves.resist_cooldown)
-		last_special = world.time + gloves.resist_cooldown
+		changeNext_move(CLICK_CD_BREAKOUT)
+		last_special = world.time + CLICK_CD_BREAKOUT
 		cuff_resist(gloves)
 	else
-		return ..()
+		..()
 
 /// Checks if the human is wearing a condom, and also hasn't broken it.
-/mob/living/carbon/human/proc/is_wearing_condom()
+/mob/living/carbon/human/is_wearing_condom() // SPLURT EDIT - INTERACTIONS - Now is a continuation of the same proc in modular_zzplurt\code\modules\mob\living\living_lewd.dm
 	if(!penis || !istype(penis, /obj/item/clothing/sextoy/condom))
 		return FALSE
 
 	var/obj/item/clothing/sextoy/condom/condom = penis
-	return condom.condom_state != "broken"
+	return condom.condom_state != TRAIT_CONDOM_BROKEN
 
 // For handling things that don't already have handcuff handlers.
 /mob/living/carbon/human/set_handcuffed(new_value)
 	if(wear_suit && istype(wear_suit, /obj/item/clothing/suit/straight_jacket/kinky_sleepbag))
 		return FALSE
-	return ..()
+	..()
 
 /// Checks if the tail is exposed.
-/obj/item/organ/tail/proc/is_exposed()
+/obj/item/organ/external/tail/proc/is_exposed()
 	return TRUE // your tail is always exposed, dummy! why are you checking this
