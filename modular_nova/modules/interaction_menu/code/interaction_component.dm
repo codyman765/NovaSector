@@ -68,24 +68,24 @@
 	return TRUE
 
 /// UI Control
-/datum/component/interactable/ui_interact(mob/user, datum/tgui/ui)
+/datum/component/interactable/ui_interact(mob/living/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
 		ui = new(user, src, "InteractionPanel")
 		ui.open()
 
-/datum/component/interactable/ui_status(mob/user, datum/ui_state/state)
+/datum/component/interactable/ui_status(mob/living/user, datum/ui_state/state)
 	if(!isliving(user))
 		return UI_CLOSE
 
 	return UI_INTERACTIVE // This UI is always interactive as we handle distance flags via can_interact
 
-/datum/component/interactable/ui_static_data(mob/user)
+/datum/component/interactable/ui_static_data(mob/living/user)
 	var/list/data = list()
 	data["arousalLimit"] = AROUSAL_LIMIT
 	return data
 
-/datum/component/interactable/ui_data(mob/user)
+/datum/component/interactable/ui_data(mob/living/user)
 	var/list/data = list()
 	var/list/descriptions = list()
 	var/list/categories = list()
@@ -110,7 +110,7 @@
 	data["ref_user"] = REF(user)
 	data["ref_self"] = REF(self)
 	data["self"] = self.name
-	data["block_interact"] = user_interaction_component?.interact_next >= world.time
+	data["block_interact"] = self.interact_next >= world.time
 	data["interactions"] = categories
 	data["use_subtler"] = use_subtler
 	data["erp_interaction"] = self.client?.prefs?.read_preference(/datum/preference/toggle/erp)
@@ -135,11 +135,8 @@
 		data["pleasure"] = user_pleasure
 		data["arousal"] = user_arousal
 		data["pain"] = user.pain || 0
-		data["selfAttributes"] = get_interaction_attributes(user)
-
 	// self - the one who the interaction component belongs to, aka who it's opened on (confusing var name yep)
 	if(user != self)
-		data["theirAttributes"] = get_interaction_attributes(self)
 		data["theirPleasure"] = self.pleasure || 0
 		data["theirMaxPleasure"] = AROUSAL_LIMIT * (istype(human_self) ? human_self.dna.features["lust_tolerance"] || 1 : 1)
 		data["theirArousal"] = self.arousal || 0
