@@ -1,7 +1,7 @@
 
 /datum/component/interactable
 	/// A hard reference to the parent
-	var/mob/living/carbon/human/self = null
+	var/mob/living/self = null
 	/// A list of interactions that the user can engage in.
 	var/list/datum/interaction/interactions
 	var/interact_last = 0
@@ -14,7 +14,7 @@
 		qdel(src)
 		return
 
-	if(!ishuman(parent))
+	if(!isliving(parent))
 		return COMPONENT_INCOMPATIBLE
 
 	self = parent
@@ -26,7 +26,7 @@
 	for(var/iterating_interaction_id in GLOB.interaction_instances)
 		var/datum/interaction/interaction = GLOB.interaction_instances[iterating_interaction_id]
 		if(interaction.lewd)
-			if(!self.client?.prefs?.read_preference(/datum/preference/toggle/erp))
+			if(!self.client?.prefs?.read_preference(/datum/preference/toggle/erp) && !(!ishuman(self) && !self.client))
 				continue
 			if(interaction.sexuality != "" && interaction.sexuality != self.client?.prefs?.read_preference(/datum/preference/choiced/erp_sexuality))
 				continue
@@ -46,16 +46,16 @@
 /datum/component/interactable/proc/open_interaction_menu(datum/source, mob/user)
 	SIGNAL_HANDLER
 
-	if(!ishuman(user))
+	if(!isliving(user))
 		return
 	build_interactions_list()
 	INVOKE_ASYNC(src, PROC_REF(ui_interact), user)
 	return CLICK_ACTION_SUCCESS
 
-/datum/component/interactable/proc/can_interact(datum/interaction/interaction, mob/living/carbon/human/target)
+/datum/component/interactable/proc/can_interact(datum/interaction/interaction, mob/living/target)
 	if(!interaction.allow_act(target, self))
 		return FALSE
-	if(interaction.lewd && !target.client?.prefs?.read_preference(/datum/preference/toggle/erp))
+	if(interaction.lewd && !target.client?.prefs?.read_preference(/datum/preference/toggle/erp) && !(!ishuman(target) && !target.client))
 		return FALSE
 	if(!interaction.distance_allowed && !target.Adjacent(self))
 		return FALSE
@@ -73,7 +73,7 @@
 		ui.open()
 
 /datum/component/interactable/ui_status(mob/user, datum/ui_state/state)
-	if(!ishuman(user))
+	if(!isliving(user))
 		return UI_CLOSE
 
 	return UI_INTERACTIVE // This UI is always interactive as we handle distance flags via can_interact
@@ -175,7 +175,7 @@
 	if(.)
 		return
 
-	if(!ishuman(ui.user))
+	if(!isliving(ui.user))
 		return
 
 	if(action == "toggle_subtler")

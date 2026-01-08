@@ -53,7 +53,7 @@ GLOBAL_LIST_EMPTY_TYPED(interaction_instances, /datum/interaction)
 	/// What sexuality preference do we display for.
 	var/sexuality = ""
 
-/datum/interaction/proc/allow_act(mob/living/carbon/human/user, mob/living/carbon/human/target)
+/datum/interaction/proc/allow_act(mob/living/user, mob/living/target)
 	if(target == user && usage == INTERACTION_OTHER)
 		return FALSE
 
@@ -89,7 +89,7 @@ GLOBAL_LIST_EMPTY_TYPED(interaction_instances, /datum/interaction)
 				CRASH("Unimplemented interaction requirement '[requirement]'")
 	return TRUE
 
-/datum/interaction/proc/act(mob/living/carbon/human/user, mob/living/carbon/human/target, use_subtler)
+/datum/interaction/proc/act(mob/living/user, mob/living/target, use_subtler)
 	if(!allow_act(user, target))
 		return
 	if(!message)
@@ -153,7 +153,7 @@ GLOBAL_LIST_EMPTY_TYPED(interaction_instances, /datum/interaction)
 	INVOKE_ASYNC(src, PROC_REF(apply_effects), user, target)
 
 /// Applies side effects to the user and/or target of the interaction.
-/datum/interaction/proc/apply_effects(mob/living/carbon/human/user, mob/living/carbon/human/target)
+/datum/interaction/proc/apply_effects(mob/living/user, mob/living/target)
 	if(user_pain)
 		user.adjust_pain(user_pain)
 	if(target_pain)
