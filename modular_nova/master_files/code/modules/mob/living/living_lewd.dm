@@ -146,8 +146,5 @@
 /mob/living/proc/has_feet(required_state = REQUIRE_GENITAL_ANY)
 	return simulated_interaction_requirements["INTERACTION_REQUIRE_SELF_FEET"]
 
-/mob/living/proc/has_balls(required_state = REQUIRE_GENITAL_ANY)
-	return simulated_genitals["ORGAN_SLOT_PENIS"]
-
 /mob/living/proc/get_num_feet()
 	return simulated_interaction_requirements["INTERACTION_REQUIRE_SELF_FEET"]
