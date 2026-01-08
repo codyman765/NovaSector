@@ -19,8 +19,6 @@
 
 	self = parent
 
-	add_verb(self, /mob/living/proc/interact_with)
-
 	build_interactions_list()
 
 /datum/component/interactable/proc/build_interactions_list()
@@ -142,7 +140,7 @@
 		data["theirArousal"] = self.arousal || 0
 		data["theirMaxArousal"] = AROUSAL_LIMIT
 		data["theirPain"] = self.pain || 0
-
+//
 	var/list/parts = list()
 
 	if(ishuman(user) && can_lewd_strip(user, self))
