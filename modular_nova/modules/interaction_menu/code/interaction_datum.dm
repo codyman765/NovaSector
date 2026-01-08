@@ -241,7 +241,7 @@ GLOBAL_LIST_EMPTY_TYPED(interaction_instances, /datum/interaction)
 	WRITE_FILE(file, json_encode(json))
 	return TRUE
 
-	/mob/living/Initialize(mapload) // SPLURT EDIT - INTERACTIONS - All mobs should be interactable
+/mob/living/Initialize(mapload) // SPLURT EDIT - INTERACTIONS - All mobs should be interactable
 	. = ..()
 	AddComponent(/datum/component/interactable)
 
