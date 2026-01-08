@@ -110,7 +110,7 @@
 	data["ref_user"] = REF(user)
 	data["ref_self"] = REF(self)
 	data["self"] = self.name
-	data["block_interact"] = self.interact_next >= world.time
+	data["block_interact"] = interact_next >= world.time
 	data["interactions"] = categories
 	data["use_subtler"] = use_subtler
 	data["erp_interaction"] = self.client?.prefs?.read_preference(/datum/preference/toggle/erp)
@@ -299,4 +299,3 @@
 			return item.lewd_slot_flags & LEWD_SLOT_NIPPLES
 		else
 			return FALSE
-
