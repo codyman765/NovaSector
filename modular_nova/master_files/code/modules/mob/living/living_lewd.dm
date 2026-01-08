@@ -33,21 +33,87 @@
 	pleasure = clamp(amount, 0, 100)
 	update_pleasure_hud()
 
-/// Returns true if the mob has an accessible penis for the parameter
+/// Returns true if the human has an accessible penis for the parameter. Accepts any of the `REQUIRE_GENITAL_` defines.
 /mob/living/proc/has_penis(required_state = REQUIRE_GENITAL_ANY)
-	return simulated_genitals["ORGAN_SLOT_PENIS"]
+	var/obj/item/organ/genital/genital = get_organ_slot(ORGAN_SLOT_PENIS)
+	if(!genital)
+		return FALSE
 
-/// Returns true if the mob has an accessible vagina for the parameter
+	switch(required_state)
+		if(REQUIRE_GENITAL_ANY)
+			return TRUE
+		if(REQUIRE_GENITAL_EXPOSED)
+			return genital.visibility_preference == GENITAL_ALWAYS_SHOW || is_bottomless()
+		if(REQUIRE_GENITAL_UNEXPOSED)
+			return genital.visibility_preference != GENITAL_ALWAYS_SHOW && !is_bottomless()
+		else
+			return TRUE
+
+/// Returns true if the human has a accessible balls for the parameter. Accepts any of the `REQUIRE_GENITAL_` defines.
+/mob/living/proc/has_balls(required_state = REQUIRE_GENITAL_ANY)
+	var/obj/item/organ/genital/genital = get_organ_slot(ORGAN_SLOT_TESTICLES)
+	if(!genital)
+		return FALSE
+
+	switch(required_state)
+		if(REQUIRE_GENITAL_ANY)
+			return TRUE
+		if(REQUIRE_GENITAL_EXPOSED)
+			return genital.visibility_preference == GENITAL_ALWAYS_SHOW || is_bottomless()
+		if(REQUIRE_GENITAL_UNEXPOSED)
+			return genital.visibility_preference != GENITAL_ALWAYS_SHOW && !is_bottomless()
+		else
+			return TRUE
+
+/// Returns true if the human has an accessible vagina for the parameter. Accepts any of the `REQUIRE_GENITAL_` defines.
 /mob/living/proc/has_vagina(required_state = REQUIRE_GENITAL_ANY)
-	return simulated_genitals["ORGAN_SLOT_VAGINA"]
+	var/obj/item/organ/genital/genital = get_organ_slot(ORGAN_SLOT_VAGINA)
+	if(!genital)
+		return FALSE
 
-/// Returns true if the mob has accessible breasts for the parameter
+	switch(required_state)
+		if(REQUIRE_GENITAL_ANY)
+			return TRUE
+		if(REQUIRE_GENITAL_EXPOSED)
+			return genital.visibility_preference == GENITAL_ALWAYS_SHOW || is_bottomless()
+		if(REQUIRE_GENITAL_UNEXPOSED)
+			return genital.visibility_preference != GENITAL_ALWAYS_SHOW && !is_bottomless()
+		else
+			return TRUE
+
+/// Returns true if the human has a accessible breasts for the parameter. Accepts any of the `REQUIRE_GENITAL_` defines.
 /mob/living/proc/has_breasts(required_state = REQUIRE_GENITAL_ANY)
-	return simulated_genitals["ORGAN_SLOT_BREASTS"]
+	var/obj/item/organ/genital/genital = get_organ_slot(ORGAN_SLOT_BREASTS)
+	if(!genital)
+		return FALSE
 
-/// Returns true if the mob has an accessible anus for the parameter
+	switch(required_state)
+		if(REQUIRE_GENITAL_ANY)
+			return TRUE
+		if(REQUIRE_GENITAL_EXPOSED)
+			return genital.visibility_preference == GENITAL_ALWAYS_SHOW || is_topless()
+		if(REQUIRE_GENITAL_UNEXPOSED)
+			return genital.visibility_preference != GENITAL_ALWAYS_SHOW && !is_topless()
+		else
+			return TRUE
+
+/// Returns true if the human has an accessible anus for the parameter. Accepts any of the `REQUIRE_GENITAL_` defines.
 /mob/living/proc/has_anus(required_state = REQUIRE_GENITAL_ANY)
-	return simulated_genitals["ORGAN_SLOT_ANUS"]
+	if(issilicon(src))
+		return TRUE
+	var/obj/item/organ/genital/genital = get_organ_slot(ORGAN_SLOT_ANUS)
+	if(!genital)
+		return FALSE
+
+	switch(required_state)
+		if(REQUIRE_GENITAL_ANY)
+			return TRUE
+		if(REQUIRE_GENITAL_EXPOSED)
+			return genital.visibility_preference == GENITAL_ALWAYS_SHOW || is_bottomless()
+		if(REQUIRE_GENITAL_UNEXPOSED)
+			return genital.visibility_preference != GENITAL_ALWAYS_SHOW && !is_bottomless()
+		else
+			return TRUE
 
 /// These are stub procs that should be overridden by human
 /mob/living/proc/is_topless()

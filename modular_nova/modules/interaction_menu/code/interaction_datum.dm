@@ -152,9 +152,6 @@ GLOBAL_LIST_EMPTY_TYPED(interaction_instances, /datum/interaction)
 
 	INVOKE_ASYNC(src, PROC_REF(apply_effects), user, target)
 
-	var/mob/living/carbon/human/human_user = user
-	var/mob/living/carbon/human/human_target = target
-
 /// Applies side effects to the user and/or target of the interaction.
 /datum/interaction/proc/apply_effects(mob/living/user, mob/living/target)
 	if(user_pain)
